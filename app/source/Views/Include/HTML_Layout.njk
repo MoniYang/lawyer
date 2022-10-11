@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{{css_path}}/all.css">
         <link rel="stylesheet" href="{{css_path}}/main.css">
         <!-- Demo Only -->
-
+       <script src="{{ vendor_path }}/swiper-bundle.js"></script>
     
     {% endblock %}
 
@@ -87,21 +87,20 @@
             <div class="main">
                 {%- block main %}
                 {% endblock -%}
+                </div>
             </div>
-
-            {# <div class="footer">
+            <div class="footer">
                 <div class="footer__nav-list" >
-                    {% for footerNavItem in footerNavItems %}
+                    {# {% for footerNavItem in footerNavItems %}
                         <div class="footer__item" data-selected="{{ footerNavItem.open }}" onclick="window.open('{{ footerNavItem.item_url }}', '_blank')">
                             <span class="text">{{ footerNavItem.text }}</span>
                         </div>
-                    {% endfor %}
+                    {% endfor %} #}
                 </div>
                 <div class="footer__cpr"> 
                     <span class="text">© Copyright 2022. {{ site_name }}. All Rights Reserved.</span>
                 </div>
             </div>
-         #}
         {% endblock -%}
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>

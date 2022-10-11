@@ -10,3 +10,11 @@ $("body").on("click", function () {
  
     $('.dropdown').attr("data-open","false");
 });
+
+
+var swiper = new Swiper(".new-download__swiper .swiper", {
+    slidesPerView: 4,
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});
