@@ -1,0 +1,35 @@
+<!-- 版面更改識別文字給 CSS Media Query 使用 -->
+<script>
+    $(function () {
+        // Setup the breakpoint variable
+        var breakpoint;
+
+        // Get the current breakpoint
+        var getBreakpoint = function () {
+            // 偵測 CSS Media Query 內指定給 <boby> 的文字
+            return window.getComputedStyle(document.body, '::before').content.replace(/\"/g, '');
+        };
+
+        // Display breakpoint value in the DOM
+        var displayBreakpoint = function () {
+            // 將文字加在 <html> [data-layout=mobile] 或 [data-layout=desktop] 讓 CSS 以此作為識別
+            document.querySelector('html').dataset.layout = breakpoint;
+        };
+
+        // Calculate breakpoint on page load
+        breakpoint = getBreakpoint();
+
+        // Display breakpoint value in the DOM
+        displayBreakpoint();
+
+        // Recalculate breakpoint on resize
+        window.addEventListener('resize', function () {
+            
+            breakpoint = getBreakpoint();
+
+            // Display breakpoint value in the DOM
+            displayBreakpoint();
+
+        }, false);
+    });
+</script>

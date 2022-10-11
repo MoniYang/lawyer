@@ -1,0 +1,65 @@
+{% extends "Views/Include/HTML_Layout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block main %}
+ 
+    <div class="preface" style="background-image:url('{{img_url}}/bg.jpg')">
+        <div class="preface__content">
+            <div class="preface__logo">
+                <img src="{{img_url}}/logo.png">
+                <span class="text">軍師幫</span>
+            </div>
+            <div class="preface__text">
+                <p>圖)這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字</p>
+            </div>
+        </div>
+        <div class="search">
+            <div class="search__content">
+                <input type="text" placeholder="關鍵字：勞資 不動產 設計 公寓大廈 借款">
+                <button class="btn btn--search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    
+    </div>
+    <div class="video">
+        <div class="video__content">
+            <div class="video__text">
+                <span class="text">大律師合約</span>
+            </div>
+            <div class="video__source">
+                <img src="">
+                <div class="video-container">
+                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/fdk9ARVvhEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="title">
+        <span class="text-deco" style="background-image:url('{{img_url}}/text/text-deco.png')"></span>
+        <img src="{{img_url}}/text/new-prod.png">
+    </div>
+    <div class="new-product" style="background-image:url('{{img_url}}/prod_bg.png')">
+        <div class="new-product__content">
+            
+        </div>
+    </div>
+    <div class="title">
+        <span class="text-deco" style="background-image:url('{{img_url}}/text/text-deco.png')"></span>
+        <img src="{{img_url}}/text/new-download-text.png">
+    </div>
+    <div class="new-download">
+        <div class="new-download__content" style="background-image:url('{{img_url}}/download_bg.jpg')">
+        </div>
+    </div>
+{% endblock -%}

@@ -1,0 +1,87 @@
+
+
+.dropdown {
+    flex: 0 0 auto;
+    color: var(--white-opacity-1);
+    transition: .3s ease-in-out;
+
+    $this:'dropdown';
+
+    @at-root .#{$this} {
+        &[data-open="false"] {
+
+            .#{$this}__content {
+                opacity: 0;
+                height: 0;
+                visibility: hidden;
+          
+            }
+           
+        }
+      
+    }
+
+   
+
+    @at-root .#{$this} {
+       &__btn {
+            display: flex;
+            align-items: center;
+            min-height: 30px;
+            cursor: pointer;
+            // min-height: 40px;
+       }
+       
+       &__content {
+           padding: .375rem;
+           min-width: 120px;
+           background-color: var(--black-opacity-4);
+           position: absolute;
+       }
+
+       &__item {
+            padding: .375rem .25rem;
+            cursor: pointer;
+       }
+    }
+
+    @at-root .#{$this} {
+        &-group {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            margin: auto 1rem;
+            color: var(--white-opacity-4);
+            white-space: nowrap;
+
+            .#{$this} {
+                flex: 1;
+            }
+            
+        }
+
+        &-text {
+            flex: 0 0 auto;
+            width: 100%;
+            min-height: 1.25rem;
+            margin: 1rem 0 0.125rem;
+            padding: 0;
+            padding-left: .375rem;
+            font-size: .75rem;
+            border-style: dashed double none;
+            border-color: var(--white-opacity-4);
+            border-left-width: 3px;
+            &:empty {
+                border-left: 0;
+            }
+        }
+    }
+
+    @at-root .#{$this} {
+        i {
+            font-size: .75rem;
+            opacity: .5;
+        }
+    }
+
+}

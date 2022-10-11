@@ -1,0 +1,25 @@
+// nova88_new & bong88 new before login
+
+// 共用樣式
+@import "_global/base/normalize";
+@import "_global/base/settings.scss";
+
+// colors 顏色相關
+@import "_global/color/color.scss";
+
+
+// icon
+// @import "../../../nova88_new/common/scss/icons/icon";
+
+//components
+@import "_global/components/components.scss";
+@import "_global/components/dropdown.scss";
+
+//feature
+// @import "../_global/feature/collapse.scss";
+
+// layout
+@import "_global/layout/layout.scss";
+@import "_global/layout/header.scss";
+
+

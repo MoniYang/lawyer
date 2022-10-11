@@ -1,0 +1,21 @@
+{% extends "Views/Include/HTML_Layout.njk" %}
+
+
+
+<!-- 自訂站台 -->
+
+
+
+<!-- 在 <body> 之內加入 -->
+{% macro Dropdown() %}
+    <div class="dropdown dropdown--{{ type }}" data-open="{{ open }}">
+        <div class="dropdown__content">
+            <div class="dropdown__item"></div>
+        </div>
+    </div>
+{% endmacro %}
+
+
+{%- block body %}
+    {{ Dropdown () }}
+{% endblock -%}

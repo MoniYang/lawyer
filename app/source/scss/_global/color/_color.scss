@@ -1,0 +1,78 @@
+// Theme 網站佈景顏色
+// ---------------------------------------------
+:root {
+
+--brand-color      : #725d4b;
+--brand-h          : 28;
+--brand-s          : 21%;
+--brand-l          : 37%;
+
+
+// Primary Color
+
+--primary-color    : var(--brand-color);
+--primary-h        : var(--brand-h);    // 色相: 0 - 360deg (改變顏色)
+--primary-s        : var(--brand-s);    // 飽和: 0 - 100%   (數值越高，顏色越豔)
+--primary-l        : var(--brand-l);    // 明度: 0 - 100%   (數值越高，顏色越白)
+
+// ------------------------------------
+--primary-50                   : HSL(calc(var(--primary-h) + 5),calc(var(--primary-s) + 25%),calc(var(--primary-l) + 45%));// #EBEFFA
+--primary-100                  : HSL(calc(var(--primary-h) + 4),calc(var(--primary-s) + 20%),calc(var(--primary-l) + 35%));// #C4D0EE
+--primary-200                  : HSL(calc(var(--primary-h) + 3),calc(var(--primary-s) + 15%),calc(var(--primary-l) + 25%));// #9FB3DF
+--primary-300                  : HSL(calc(var(--primary-h) + 2),calc(var(--primary-s) + 10%),calc(var(--primary-l) + 15%));// #7E97CE
+--primary-400                  : HSL(calc(var(--primary-h) + 1),calc(var(--primary-s) + 5%),calc(var(--primary-l) + 5%));// #5E7DBA
+--primary-500                  : HSL(calc(var(--primary-h)),calc(var(--primary-s)),calc(var(--primary-l)));// #5372AC
+--primary-600                  : HSL(calc(var(--primary-h) + 1),calc(var(--primary-s) + 5%),calc(var(--primary-l) - 5%));// #4563A1
+--primary-700                  : HSL(calc(var(--primary-h) + 2),calc(var(--primary-s) + 10%),calc(var(--primary-l) - 10%));// #385594
+--primary-800                  : HSL(calc(var(--primary-h) + 3),calc(var(--primary-s) + 15%),calc(var(--primary-l) - 15%));// #2D4786
+--primary-900                  : HSL(calc(var(--primary-h) + 4),calc(var(--primary-s) + 20%),calc(var(--primary-l) - 20%));// #223A77
+
+
+
+
+// ------------------------------------
+--secondary-50                 : HSL(calc(var(--secondary-h) + 0),calc(var(--secondary-s) - 10%),calc(var(--secondary-l) + 45%));  // #FFF2E5
+--secondary-100                : HSL(calc(var(--secondary-h) + 0),calc(var(--secondary-s) + 10%),calc(var(--secondary-l) + 40%));// #FFE5CC
+--secondary-200                : HSL(calc(var(--secondary-h) + 0),calc(var(--secondary-s) + 10%),calc(var(--secondary-l) + 30%));// #FFCC99
+--secondary-300                : HSL(calc(var(--secondary-h) + 0),calc(var(--secondary-s) + 10%),calc(var(--secondary-l) + 20%));// #FFB266
+--secondary-400                : HSL(calc(var(--secondary-h) + 0),calc(var(--secondary-s) + 10%),calc(var(--secondary-l) + 10%));// #FF8C1A
+--secondary-500                : HSL(var(--secondary-h),var(--secondary-s),var(--secondary-l));// #F27F0D
+--secondary-600                : HSL(calc(var(--secondary-h) - 2),calc(var(--secondary-s)),calc(var(--secondary-l) - 5%));// #DA730B
+--secondary-700                : HSL(calc(var(--secondary-h) - 4),calc(var(--secondary-s)),calc(var(--secondary-l) - 10%));// #C2660A
+--secondary-800                : HSL(calc(var(--secondary-h) - 6),calc(var(--secondary-s) + 10%),calc(var(--secondary-l) - 15%));// #B25900
+--secondary-900                : HSL(calc(var(--secondary-h) - 8),calc(var(--secondary-s) + 10%),calc(var(--secondary-l) - 20%));// #994D00
+
+
+
+// Black & White
+// ------------------------------------
+--black                        : hsl( 0, 0%, 0% );
+--black-opacity-1              : hsla( 0, 0%, 0%, .87 );
+--black-opacity-2              : hsla( 0, 0%, 0%, .70 );
+--black-opacity-3              : hsla( 0, 0%, 0%, .54 );
+--black-opacity-4              : hsla( 0, 0%, 0%, .32 );
+--black-opacity-5              : hsla( 0, 0%, 0%, .16 );
+--black-opacity-6              : hsla( 0, 0%, 0%, .08 );
+
+--white                        : hsl( 0, 0%, 100% );
+--white-opacity-1              : hsla( 0, 0%, 100%, .87 );
+--white-opacity-2              : hsla( 0, 0%, 100%, .70 );
+--white-opacity-3              : hsla( 0, 0%, 100%, .54 );
+--white-opacity-4              : hsla( 0, 0%, 100%, .32 );
+--white-opacity-5              : hsla( 0, 0%, 100%, .16 );
+--white-opacity-6              : hsla( 0, 0%, 100%, .08 );
+
+--grey-20                      : hsl( 0, 0%, 98% ); // #FAFAFA;
+--grey-50                      : hsl( 0, 0%, 95% ); // #F2F2F2;
+--grey-100                     : hsl( 0, 0%, 90% ); // #E5E5E5;
+--grey-200                     : hsl( 0, 0%, 80% ); // #CCCCCC;
+--grey-300                     : hsl( 0, 0%, 70% ); // #B2B2B2;
+--grey-400                     : hsl( 0, 0%, 60% ); // #999999;
+--grey-500                     : hsl( 0, 0%, 50% ); // #808080;
+--grey-600                     : hsl( 0, 0%, 40% ); // #666666;
+--grey-700                     : hsl( 0, 0%, 30% ); // #4D4D4D;
+--grey-800                     : hsl( 0, 0%, 20% ); // #333333;
+--grey-900                     : hsl( 0, 0%, 10% ); // #1A1A1A;
+
+
+}

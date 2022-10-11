@@ -1,0 +1,237 @@
+// Base Variable Settings
+// -----------------------------
+:root {
+    --body-font-family: Roboto, Arial, Helvetica, sans-serif;
+    --body-line-height: 1.5;
+
+    --border-radius: .75rem;
+
+    --overlay-1: rgba(0,0,0, .7);
+    --overlay-2: rgba(0,0,0, .35);
+
+    --box-shadow-down: 0 2px 4px rgba(0,0,0,.42);
+    --box-shadow-up: 0 -2px 4px rgba(0,0,0,.42);
+    --box-shadow: 0 0 4px rgba(0,0,0,.42);
+    --box-shadow-2: 0px 0px 6px rgba(0,0,0,.87);
+
+    --body-bg: var(--grey-50);
+    --body-text: var(--black-opacity-3);
+
+}
+
+
+// Html Elements Settings
+// -----------------------------
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    border: 0 solid;
+    border-color: inherit;
+    transition: .2s ease;
+}
+
+pre {
+    margin: 0;
+    font-family: inherit; // 覆寫 normalize
+    font-size: inherit; // 覆寫 normalize
+    line-height: 1.5;
+    white-space: pre-wrap; // 讓內部文字可斷行並保留連續空格
+}
+
+p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    border: none;
+}
+
+html {
+    font-size: 16px; // = 1rem
+}
+
+// Html 高度滿版，Footer 預設置底
+html, body {
+    display: flex;
+	height: 100%;
+    width: 100%;
+}
+
+body {
+    font-size: .875rem;
+    font-family: var(--body-font-family);
+    font-weight: 400;
+    line-height: var(--body-line-height);
+    color: var(--body-text) ;
+    background-color:  var(--body-bg);
+    border-color: var(--black-opacity-5);
+    // overflow-x: hidden;
+    // overflow-y: scroll; // 固定加上 scrollbar，避免換頁內容載入時，少掉寬度造成跳動
+    > div {
+        flex: 1;
+        min-height: 100%;
+       
+    }
+
+}
+
+
+// RWD 設定
+// -----------------------------
+// data-layout=mobile 預設顯示手機版面
+// .app::before {
+// 	content: "mobile";
+//     visibility: hidden;
+//     position: absolute; // 文字不佔位
+// }
+
+// data-layout=desktop 大於 768 顯示桌機版面
+// @media (min-width: 769px) {
+// 	.app::before {
+// 		content: "desktop";
+//     }
+// }
+
+// 大於 768 - 小於 1024 介於這之間發生的事
+// @media (min-width: 769px) and  (max-width: 1023px) {
+// 	[data-layout=desktop] { /* 未使用 */ }
+// }
+
+
+// RWD Mixin
+// -----------------------------
+@mixin device-desktop {
+    @media (min-width: 1024px) {
+        @content; // 自訂內容
+    }
+}
+
+@mixin device-labtop() {
+    @media  (max-width: 1199px)  {
+        @content; // 自訂內容
+    }
+}
+
+
+// 大於 768 - 小於 1024 介於這之間發生的事
+@mixin device-tablet() {
+    @media (min-width: 769px) and (max-width: 1023px)  {
+        @content; // 自訂內容
+    }
+}
+
+@mixin device-mobile() {
+    @media (max-width: 414px)  {
+        @content; // 自訂內容
+    }
+}
+
+// 不同版面時的基本設定
+// [data-layout=mobile] {
+//     .app { min-width: 320px; }
+// }
+// [data-layout=desktop] {
+//     // .app { min-width: 1366px; }
+
+//     [role=mobile-click] {
+//         pointer-events: none;
+//     }
+// }
+
+// 不同版面時的顯示隱藏
+// [data-layout=desktop] [role=mobile-visible] {
+//     display: none;
+// }
+// [data-layout=mobile] [role=desktop-visible] {
+//     display: none;
+// }
+
+
+// FireFox Hacks
+@mixin FireFox_hacks() {
+    @-moz-document url-prefix() {
+        @content; // 自訂內容
+    }
+}
+
+
+// 偵測是否有 hover 行為 判斷桌機平台/手機平台
+@mixin hover($value: hover) {
+    @media (hover: $value) {
+        @content; // 自訂內容
+    }
+}
+
+
+// 桌機平台 自定義 Scroll 樣式 (包含 RWD 手機版面)
+// -----------------------------
+@include hover() {
+    ::-webkit-scrollbar {
+        width: 8px; // 縱軸寬度
+        height: 8px; // 橫軸高度
+    }
+
+    /* Scroll 軌道 */
+    ::-webkit-scrollbar-track {
+        background-color:  var(--custom-scroll-bg, transparent ) ;
+        // box-shadow: inset 0 0 4px rgba(0,0,0, .54);
+    }
+
+    /* Scroll 本身 */
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--custom-scroll-thumb-color, var(--primary-200) ) ;
+        border-radius: 2em;
+        border: 1px solid;
+        border-color: var( --custom-scroll-thumb-border, var(--primary-100) );
+        box-shadow: 0 0 4px HSLA( var( --custom-scroll-thumb-shadow, var(--black-opacity-4) ) );
+    }
+
+    *:hover::-webkit-scrollbar-thumb {
+        background-color:  var(--custom-scroll-thumb-color-hover,  var(--primary-200) ) ;
+    }
+
+    // Firefox 自定義 Scroll
+    // * {
+    //     scrollbar-width: thin;
+    //     scrollbar-color: var(--custom-scroll-color) var(--custom-scroll-bg);
+    // }
+}
+
+
+// 文字多行點點點 (chrome / firefox / ios )
+// ----------------------
+@mixin line-clamp($value) {
+    // 使用注意:
+    // 1. autoprefixer 會自動刪除某些舊語法 (如 -webkit-box-orient)
+    // 2. css 注解使用 /* autoprefixer: ignore next */ 後續語法即不會被移除
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: $value;
+     /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+}
+
