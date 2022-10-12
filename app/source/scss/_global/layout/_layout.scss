@@ -12,7 +12,7 @@
     align-content: stretch;
     width: 100%;
     min-height: 0;
-    min-width: 1180px;
+    min-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
     padding: 60px 0;
@@ -60,7 +60,7 @@
 
     &__content {
         display: flex;
-        max-width: 1180px;
+        max-width: var(--max-width);
         width: calc(100% - 60%);
         margin: auto;
         position: relative;
@@ -107,7 +107,7 @@
     &__content{
         display: flex;
         justify-content: center;
-        max-width: 1180px;
+        max-width: var(--max-width);
         width: calc(100% - 60%);
         margin: 1rem auto;
         border: 2px solid var(--white-opacity-4);
@@ -127,7 +127,7 @@
     &__content {
         display: flex;
         flex-wrap: wrap;
-        max-width: 1180px;
+        max-width: var(--max-width);
         margin: auto;
         position: relative;
     }
@@ -193,7 +193,7 @@
 
     &__content {
         flex: 1;
-        max-width: 1180px;
+        max-width: var(--max-width);
         padding: 50px 0;
         margin: 0 auto;
     }
@@ -202,13 +202,13 @@
 
 .new-download{
     display: flex;
-    padding: 0px 10% 50px;
+    padding: 0px 10% 25px;
 
     &__content {
         flex: 1;
         display: flex;
         width: 100%;
-        min-height: 600px;
+        min-height: 450px;
         background-size: cover;
         background-attachment: fixed;
         position: relative;
@@ -225,16 +225,21 @@
     }
 
     &__swiper {
-        max-width: 1180px;
-        margin: auto auto 40px;
+        max-width: var(--max-width);
+        margin: 40px auto;
 
         .swiper {
-            padding-bottom: 1rem;
+            padding: 2rem 0;
             overflow-x: hidden;
             --swiper-pagination-color: var(--primary-200);
         }
         .swiper-slide {
             margin: auto .5rem;
+            transition: .3s ease;
+            &:hover{
+                transform: scale(1.05);
+                box-shadow: 5px 5px 10px var(--black-opacity-5);
+            }
         }
 
         .swiper__item {
@@ -255,6 +260,7 @@
             }
 
             &__img {
+                margin-bottom: .25rem;
                 position: relative;
             }
             &__text-group {
@@ -298,9 +304,92 @@
 }
 
 .mission {
+    display: flex;
     padding: 50px 0;
     background-repeat: repeat;
     background-image: url(../img/spikes.png);
+   
+    &__content{
+        flex: 1;
+        max-width: var(--max-width);
+        margin: auto;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__group {
+        flex: 1;
+        display: flex;
+        &:nth-child(2){
+            .mission__item {
+                &:nth-child(1) {
+                    order: 2;
+                }
+                &:nth-child(2) {
+                    order: 1;
+                }
+                &:nth-child(3) {
+                    order: 4;
+                }
+                &:nth-child(4) {
+                    order: 3;
+                }
+            }
+        }
+    }
+        
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        height: 200px;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        &--img {
+            width: 60%;
+
+        }
+        &--text {
+            width: 40%;
+            border: 1px solid var(--primary-200);
+            // &:nth-child(3),
+            // &:nth-child(4) {
+            //     order: -1;
+            // }
+        }
+    }
+}
+
+.member {
+    &__content {
+        display: flex;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+    &__list {
+        display: flex;
+        margin: auto;
+    }
+
+    &__title {
+        font-size: 2rem;
+    }
+
+    &__cost {
+        font-size: 2.5rem;
+    }
+
+    &__item {
+        padding: 1rem;
+        margin: 0 2rem;
+    }
+    &__detail {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 //footer
@@ -308,8 +397,9 @@
     flex: 0 0 auto;
     padding-bottom: 1rem;
     min-width: 960px;
+    color: var(--white-opacity-4);
     text-align: center;
-    background-color: var(--body-bg);
+    background-color: var(--primary-900);
     &:before {
         content: '';
         display: flex;
@@ -322,35 +412,52 @@
     $this:'footer';
 
     @at-root .#{$this} {
+        &__title {
+            flex: 1;
+            width: 100%;
+            margin-bottom: .5rem;
+            text-align: left;
+            font-weight: 500;
+            font-size: 1rem;
+            border-bottom: 1px dotted var(--white-opacity-4);
+            padding-left: .375rem;
+        }
+
+        &__content{
+            max-width: var(--max-width);
+            margin: 1rem auto 0;
+            
+        }
+
         &__nav-list {
             display: inline-flex;
-            margin: 1rem auto .5rem;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 15%;
+            margin: 1rem 1vw .5rem;
         }
 
         &__item {
             flex: 0 0 auto;
             display: inline-flex;
+            flex-direction: column;
             align-items: center;
-            color: var(--primary-500);
+            margin: .375rem 0;
+            padding-left: .375rem;
+            color: var(--white-opacity-3);
+
            
             cursor: pointer;
             
-            & + .#{$this}__item::before {
-                content: '';
-                display: block;
-                margin: auto 1rem;
-                width: 1px;
-                height: .875rem;
-                background-color: var(--primary-500);
+            &:hover{
+                color: var(--white-opacity-1);
             }
-            &[data-selected="true"],
-            &:hover {
-                color: var(--secondary-500);
-
-            }
-            &[data-selected="true"] {
-                text-decoration: underline;
-            }
+        }
+        &__cpr {
+            margin: 1rem 0;
+            width: 100%;
+            padding-top: 1rem;
+            border-top: 1px solid var(--white-opacity-6);
         }
 
     }

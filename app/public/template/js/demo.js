@@ -13,7 +13,7 @@ $("body").on("click", function () {
 
 
 var swiper = new Swiper(".new-download__swiper .swiper", {
-    slidesPerView: 4,
+    slidesPerView: 5,
     pagination: {
         el: ".swiper-pagination",
     },

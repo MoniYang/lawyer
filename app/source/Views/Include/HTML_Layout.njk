@@ -15,9 +15,7 @@
     {% endblock %}
 
 </head>
-
-<body>
-     {% macro Dropdown(type, btn_text, open="false") %}
+ {% macro Dropdown(type, btn_text, open="false") %}
         <div class="dropdown {% if type =='true' %}dropdown--{{ type }}{% endif %}" data-open="{{ open }}">
             <div class="dropdown__btn">
                 <span class="text">{{ btn_text }}</span>
@@ -32,6 +30,22 @@
             </div>
         </div>
     {% endmacro %}
+    {% set footerNavItems = [
+        { text: '軍師幫' },
+        { text: '專家專欄'},
+        { text: '企業訓練'},
+        { text: '用途分類合約'},
+        { text: '產業分合約'},
+        { text: '小律師書狀'},
+        { text: '會員專區'},
+        { text: '常見問答'},
+        { text: '聯絡我們'},
+        { text: '隱私權利'},
+        { text: '網站條款'},
+        { text: '會員權益'}]
+    %}
+<body>
+    
     
     <div class="app" >
         {%- block Body %}
@@ -90,15 +104,50 @@
                 </div>
             </div>
             <div class="footer">
-                <div class="footer__nav-list" >
-                    {# {% for footerNavItem in footerNavItems %}
-                        <div class="footer__item" data-selected="{{ footerNavItem.open }}" onclick="window.open('{{ footerNavItem.item_url }}', '_blank')">
-                            <span class="text">{{ footerNavItem.text }}</span>
+                <div class="footer__content">
+                    <div class="footer__nav-list" >
+                        <div class="footer__title">
+                            <span class="text">關於我們</span>
                         </div>
-                    {% endfor %} #}
-                </div>
-                <div class="footer__cpr"> 
-                    <span class="text">© Copyright 2022. {{ site_name }}. All Rights Reserved.</span>
+                        {% for footerNavItem in footerNavItems.slice( 0, 3) %}
+                            <div class="footer__item">
+                                <span class="text">{{ footerNavItem.text }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="footer__nav-list" >
+                        <div class="footer__title">
+                            <span class="text">商品分類</span>
+                        </div>
+                        {% for footerNavItem2 in footerNavItems.slice( 3, 6) %}
+                            <div class="footer__item">
+                                <span class="text">{{ footerNavItem2.text }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="footer__nav-list" >
+                        <div class="footer__title">
+                            <span class="text">客戶服務</span>
+                        </div>
+                        {% for footerNavItem3 in footerNavItems.slice( 6, 9) %}
+                            <div class="footer__item">
+                                <span class="text">{{ footerNavItem3.text }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="footer__nav-list" >
+                        <div class="footer__title">
+                            <span class="text">相關政策</span>
+                        </div>
+                        {% for footerNavItem4 in footerNavItems.slice( 9, 12) %}
+                            <div class="footer__item">
+                                <span class="text">{{ footerNavItem4.text }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="footer__cpr"> 
+                        <span class="text">© Copyright 2022 大律師知識金庫. All Rights Reserved.</span>
+                    </div>
                 </div>
             </div>
         {% endblock -%}
