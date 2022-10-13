@@ -18,3 +18,31 @@ var swiper = new Swiper(".new-download__swiper .swiper", {
         el: ".swiper-pagination",
     },
 });
+
+var SwiperDesktop = new Swiper(".promotion .swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+   
+    preloadImages: false,
+    slidesPerView: "auto",
+    coverflowEffect: {
+        rotate: 0,
+        stretch:200,
+        depth: 50,
+        modifier:1,
+        scale: 0.8,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".promotions__swiper-button-next",
+        prevEl: ".promotions__swiper-button-prev",
+    },
+    loop: true,
+ 
+    observer: true,
+    observeParents: true,
+});

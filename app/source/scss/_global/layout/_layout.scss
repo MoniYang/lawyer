@@ -184,7 +184,7 @@
     }
 }
 
-.new-product {
+.promotion {
     display: flex;
     min-height: 600px;
     background-size: 100%;
@@ -197,16 +197,76 @@
         padding: 50px 0;
         margin: 0 auto;
     }
+
+    &-item {
+        // max-height: 200px;
+        position: relative;
+        img {
+            width: auto;
+            max-height: 450px;
+        }
+
+        &__text-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0.5rem 1rem 0.5rem 2rem;
+            color: var(--white-opacity-1);
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--black-opacity-3);
+            
+            &::before{
+                content:'';
+                display: flex;
+                background-color: var(--white-opacity-2);
+                width: 2px;
+                position: absolute;
+                left:0;
+                top: 0;
+                bottom: 0;
+                margin: .5rem 1rem;
+
+            }
+
+            .text-title {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+            .text-line{
+                margin-right: auto;
+            }
+            .text{
+                font-size: 1.25rem;
+                color: var(--primary-100);
+            }
+        }
+    }
+    .swiper {
+        padding-bottom: 30px;
+        overflow-y: visible;
+    }
+    .swiper-slide {
+        width: auto;
+        margin: 0 4rem;
+    }
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: 0;
+    }
    
 }
 
 .new-download{
     display: flex;
-    padding: 0px 10% 25px;
+    padding: 80px 10%;
 
     &__content {
         flex: 1;
         display: flex;
+        flex-direction: column;
         width: 100%;
         min-height: 450px;
         background-size: cover;
@@ -226,7 +286,7 @@
 
     &__swiper {
         max-width: var(--max-width);
-        margin: 40px auto;
+        margin: 0px auto 20px;
 
         .swiper {
             padding: 2rem 0;
@@ -300,6 +360,9 @@
                 }
             }
         
+    }
+    .title {
+        position: relative;
     }
 }
 

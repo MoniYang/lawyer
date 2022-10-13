@@ -34,24 +34,54 @@ input{
 .title{
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     max-width: 1180px;
     margin: 0 auto;
     padding: 50px 0 20px;
 
     img {
-        max-height: 50px;
+        max-height: 40px;
     }
 }
 
 .text {
     &-deco {
         display: inline-flex;
-        width: 14px;
+        justify-content: center;
+        align-items: center;
+      
         height: 60px;
-        background-size: cover;
-
+        width: 60px;
+        overflow: hidden;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        
         & + img {
-            margin-left: 1rem;
+            margin: auto 1rem;
+        }
+
+        &--right {
+           position: relative;
+           transform: rotate(180deg);
+        }
+       
+    }
+    &-en {
+        width: 100%;
+        text-align: center;
+        
+        img {
+            max-height: 20px;
         }
     }
+}
+
+.swiper-pagination-bullet-active {
+    --swiper-pagination-color : var(--primary-200);
+}
+.swiper {
+    --swiper-pagination-bullet-inactive-color: var(--white);
+    --swiper-pagination-bullet-inactive-opacity : 0.8;
 }

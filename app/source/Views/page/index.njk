@@ -51,20 +51,56 @@
         </div>
     </div>
     <div class="title">
+        <span class="text-en"><img src="{{img_url}}/text/new-prod_en.png"></span>
         <span class="text-deco" style="background-image:url('{{img_url}}/text/text-deco.png')"></span>
         <img src="{{img_url}}/text/new-prod.png">
+        <span class="text-deco text-deco--right" style="background-image:url('{{img_url}}/text/text-deco.png')"></span>
+       
     </div>
-    <div class="new-product" style="background-image:url('{{img_url}}/prod_bg.png')">
-        <div class="new-product__content">
-            
+    
+    <div class="promotion"  style="background-image:url('{{img_url}}/prod_bg.png')">
+       <div class="promotion__content">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {% for i in range(1, 3) -%}
+                    <div class="swiper-slide">
+                        <div class="swiper__item">
+                            <div class="promotion-item">
+                                <img src="{{img_url}}/download_item.jpg">
+                            </div>
+                            <div class="promotion-item__text-group">
+                                <span class="text-title">和解契約書{{i}}</span>
+                                <span class="text-line">NT$3,000</span>
+                                <span class="text">NT$2,890</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor -%}
+                    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
+        
+        {# {% if platform == 'desktop' %}
+             <div class="promotions__swiper-button-prev"  >
+                    <i class="icon icon--arrow-left" role="desktop-visible"></i>
+                </div>
+                <div class="promotions__swiper-button-next"  >
+                    <i class="icon icon--arrow-right" role="desktop-visible"></i>
+                </div>
+        {% endif %} #}
     </div>
-    <div class="title">
-        <span class="text-deco" style="background-image:url('{{img_url}}/text/text-deco.png')"></span>
-        <img src="{{img_url}}/text/new-download-text.png">
-    </div>
+    
     <div class="new-download">
+        
         <div class="new-download__content" style="background-image:url('{{img_url}}/download_bg.jpg')">
+            <div class="title">
+                <span class="text-en"><img src="{{img_url}}/text/new-download-en.png"></span>
+                <span class="text-deco" style="background-image:url('{{img_url}}/text/text-deco_w.png')"></span>
+                <img src="{{img_url}}/text/new-download-text.png">
+                <span class="text-deco text-deco--right" style="background-image:url('{{img_url}}/text/text-deco_w.png')"></span>
+            </div>
             <div class="new-download__swiper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -95,10 +131,7 @@
     </div>
     <div class="mission">
         <div class="mission__content">
-            <div class="title">
-                <span class="text-deco" style="background-image:url('{{img_url}}/text/text-deco.png')"></span>
-                <img src="{{img_url}}/text/new-download-text.png">
-            </div>
+            
              <div class="mission__list">
                 
                     <div class="mission__group">
@@ -135,8 +168,10 @@
         { title_text:'鑽石會員', cost:'3000', list1:'每月法律法向球（電子報）',list2:'每月可下載5份專業合約'}
     ] %}
     <div class="title">
+        <span class="text-en"><img src="{{img_url}}/text/member_en.png"></span>
         <span class="text-deco" style="background-image:url('{{img_url}}/text/text-deco.png')"></span>
-        <img src="{{img_url}}/text/new-download-text.png">
+        <img src="{{img_url}}/text/member.png">
+        <span class="text-deco text-deco--right" style="background-image:url('{{img_url}}/text/text-deco.png')"></span>
     </div>
     <div class="member">
         <div class="member__content">

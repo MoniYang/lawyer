@@ -631,24 +631,54 @@ input:focus {
 .title {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   max-width: 1180px;
   margin: 0 auto;
   padding: 50px 0 20px;
 }
 
 .title img {
-  max-height: 50px;
+  max-height: 40px;
 }
 
 .text-deco {
   display: inline-flex;
-  width: 14px;
+  justify-content: center;
+  align-items: center;
   height: 60px;
-  background-size: cover;
+  width: 60px;
+  overflow: hidden;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .text-deco + img {
-  margin-left: 1rem;
+  margin: auto 1rem;
+}
+
+.text-deco--right {
+  position: relative;
+  transform: rotate(180deg);
+}
+
+.text-en {
+  width: 100%;
+  text-align: center;
+}
+
+.text-en img {
+  max-height: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  --swiper-pagination-color: var(--primary-200);
+}
+
+.swiper {
+  --swiper-pagination-bullet-inactive-color: var(--white);
+  --swiper-pagination-bullet-inactive-opacity: 0.8;
 }
 
 .dropdown {
@@ -887,7 +917,7 @@ input:focus {
   height: 100%;
 }
 
-.new-product {
+.promotion {
   display: flex;
   min-height: 600px;
   background-size: 100%;
@@ -895,21 +925,85 @@ input:focus {
   background-attachment: fixed;
 }
 
-.new-product__content {
+.promotion__content {
   flex: 1;
   max-width: var(--max-width);
   padding: 50px 0;
   margin: 0 auto;
 }
 
+.promotion-item {
+  position: relative;
+}
+
+.promotion-item img {
+  width: auto;
+  max-height: 450px;
+}
+
+.promotion-item__text-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  color: var(--white-opacity-1);
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black-opacity-3);
+}
+
+.promotion-item__text-group::before {
+  content: '';
+  display: flex;
+  background-color: var(--white-opacity-2);
+  width: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: .5rem 1rem;
+}
+
+.promotion-item__text-group .text-title {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.promotion-item__text-group .text-line {
+  margin-right: auto;
+}
+
+.promotion-item__text-group .text {
+  font-size: 1.25rem;
+  color: var(--primary-100);
+}
+
+.promotion .swiper {
+  padding-bottom: 30px;
+  overflow-y: visible;
+}
+
+.promotion .swiper-slide {
+  width: auto;
+  margin: 0 4rem;
+}
+
+.promotion .swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0;
+}
+
 .new-download {
   display: flex;
-  padding: 0px 10% 25px;
+  padding: 80px 10%;
 }
 
 .new-download__content {
   flex: 1;
   display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 450px;
   background-size: cover;
@@ -930,7 +1024,7 @@ input:focus {
 
 .new-download__swiper {
   max-width: var(--max-width);
-  margin: 40px auto;
+  margin: 0px auto 20px;
 }
 
 .new-download__swiper .swiper {
@@ -1003,6 +1097,10 @@ input:focus {
 
 .new-download-item .btn--cart:hover {
   background-color: var(--primary-500);
+}
+
+.new-download .title {
+  position: relative;
 }
 
 .mission {
