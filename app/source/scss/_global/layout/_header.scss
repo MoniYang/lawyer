@@ -17,15 +17,18 @@
     flex: 0 0 auto;
     display: flex;
     min-height: 60px;
-    background-color:hsla(33deg, 52% , 9% ,.85);
+    background-color:hsla(33deg, 52% , 9% ,.7);
     position: fixed;
     z-index: 10;
     left: 0;
     right: 0;
     top: 0;
-    $this:'header';
-    
+    transition: .5s ease;
 
+    $this:'header';
+    &:hover{
+        background-color:hsla(33deg, 52% , 9% ,.95);
+    }
    
     @at-root .#{$this} {
         //.header__main
@@ -47,52 +50,49 @@
             align-items: center;
             justify-content: center;
 
-            // .header-nav__item
-            &__item {
-                flex: 0 0 auto;
-                display: flex;
-                align-items: flex-end;
-                height: 70px;
-                padding-bottom: .75rem;
-                margin: auto 2rem;
-                color: var(--white);
-                font-size: 1rem;
-                position: relative;
-
-                &[data-selected="true"] {
-                    color:  var(--secondary-500);
+            .dropdown {
+                &__btn {
+                    position: relative;
+                    &::before {
+                        content:'';
+                        display: flex;
+                        height: 3px;
+                        background-color: var(--primary-100);
+                        position: absolute;
+                        width: 0%;
+                        
+                        
+                        bottom: 0;
+                   
+                    }
+ 
                 }
-
-                &[data-selected="true"]::after,
-                &::after {
-                    content: "";
-                    display: block;
-                    margin: auto;
-                    height: 4px;
-                    background-color: var(--secondary-500);
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    transform: scaleX(0);
-                    transition: ease .3s;
-                }
-
-                &[data-selected="true"]::after,
-                &:hover::after { 
-                    transform: scaleX(1); 
-                }
-
-                .btn {
-                    padding: 0;
-                    .text {
-                        text-align: center;
-                        line-height: 1.25;
+                &__item {
+                    &:hover{
+                        color: var(--primary-100);
                     }
                 }
+                &:hover {
+                    .dropdown__btn {
+                        &::before {
+                            width: 100%;
+                            animation: menu .2s 1;
+                        }
+                    }
+                }
+               
             }
+            
         }
     }
+    @keyframes menu {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 100%;
+        }
+      }
 
     @at-root .#{$this} {
         .logo {

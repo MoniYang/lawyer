@@ -101,9 +101,12 @@
             <div class="main">
                 {%- block main %}
                 {% endblock -%}
-                </div>
             </div>
+            
+            
             <div class="footer">
+                <div class="footer__top" style="background-image:url('{{img_url}}/footer_bg.png')"></div>
+                <div class="footer__inner">
                 <div class="footer__content">
                     <div class="footer__nav-list" >
                         <div class="footer__title">
@@ -148,6 +151,7 @@
                     <div class="footer__cpr"> 
                         <span class="text">© Copyright 2022 大律師知識金庫. All Rights Reserved.</span>
                     </div>
+                </div>
                 </div>
             </div>
         {% endblock -%}
