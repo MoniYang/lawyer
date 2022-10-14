@@ -39,13 +39,29 @@
     </div>
     <div class="video">
         <div class="video__content">
-            <div class="video__text">
-                <span class="text">大律師合約</span>
-            </div>
-            <div class="video__source">
-                <img src="">
-                <div class="video-container">
-                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/fdk9ARVvhEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video__inner">
+                <div class="video__text">
+                    <span class="text-title">大律師合約</span>
+                    <div class="text-group">
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    <p>說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字</p>
+                    </div>
+                </div>
+                <div class="video__source">
+                    <img src="">
+                    <div class="video-container">
+                        <iframe width="100%" height="350" src="https://www.youtube.com/embed/fdk9ARVvhEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,7 +80,7 @@
                 <div class="swiper-wrapper">
                     {% for i in range(1, 3) -%}
                     <div class="swiper-slide">
-                        <div class="swiper__item">
+                        <a href="#" class="swiper__item">
                             <div class="promotion-item">
                                 <img src="{{img_url}}/download_item.jpg">
                             </div>
@@ -73,7 +89,7 @@
                                 <span class="text-line">NT$3,000</span>
                                 <span class="text">NT$2,890</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     {% endfor -%}
                     
@@ -106,7 +122,7 @@
                     <div class="swiper-wrapper">
                          {% for i in range(1, 10) -%}
                         <div class="swiper-slide">
-                            <div class="swiper__item">
+                            <a href="#" class="swiper__item">
                                 <div class="new-download-item">
                                     <div class="new-download-item__img">
                                         <img src="{{img_url}}/download_item.jpg">
@@ -120,7 +136,7 @@
                                         <span class="text">NT$2,890</span>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                          {% endfor %}
                     </div>
@@ -167,21 +183,24 @@
             cost:'註冊免費', 
             list1:'每月法律法向球（電子報）',
             list2:'',
-            bg:'member_1.png'
+            bg:'member_1.png',
+            cart_text:'立即註冊'
             },
         { 
             title_text:'黃⾦會員', 
             cost:'1296', 
             list1:'每月法律法向球（電子報）',
             list2:'每月可下載2份專業合約',
-            bg:'member_2.jpg'
+            bg:'member_2.jpg',
+            cart_text:'立即購買'
         },
         { 
             title_text:'鑽石會員', 
             cost:'3000',
             list1:'每月法律法向球（電子報）',
             ist2:'每月可下載5份專業合約',
-            bg:'member_3.jpg'
+            bg:'member_3.jpg',
+            cart_text:'立即購買'
         }
     ] %}
     <div class="title">
@@ -194,7 +213,8 @@
         <div class="member__content">
            
             <div class="member__list">
-                <div class="member__item" style="background-image:url('{{img_url}}/member/{{ memberItems[0].bg }}')">
+                
+                <a href="#" class="member__item" style="background-image:url('{{img_url}}/member/{{ memberItems[0].bg }}')">
                     <div class="member__inner">
                         <div class="member__title">{{ memberItems[0].title_text }}</div>
                         <div class="member__cost">{{ memberItems[0].cost }}</div>
@@ -203,13 +223,13 @@
                         </div>
                         <button class="btn btn--cart">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <span class="text">加入購物車</span>
+                            <span class="text">{{memberItems[0].cart_text }}</span>
                         </button>
                     </div>
                     
-                </div>
+                </a>
                 {% for memberItem in memberItems.slice(1, 3) -%}
-                <div class="member__item" style="background-image:url('{{img_url}}/member/{{ memberItem.bg }}')">
+                <a href="#" class="member__item" style="background-image:url('{{img_url}}/member/{{ memberItem.bg }}')">
                     <div class="member__inner">
                         <div class="member__title">{{ memberItem.title_text }}</div>
                         <div class="member__cost"><span class="text-cost">NT.</span>{{ memberItem.cost }}<span class="text-cost">/年</span></div>
@@ -219,10 +239,10 @@
                         </div>
                         <button class="btn btn--cart">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <span class="text">加入購物車</span>
+                            <span class="text">{{ memberItem.cart_text }}</span>
                         </button>
                     </div>
-                </div>
+                </a>
                 {% endfor %}
             </div>
         </div>

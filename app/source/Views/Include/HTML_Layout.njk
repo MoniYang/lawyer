@@ -23,9 +23,9 @@
             </div>
             <div class="dropdown__content">
                 {% for i in range(1, 6) -%}
-                <div class="dropdown__item">
+                <a href="#" class="dropdown__item">
                     <span class="text">{{i}}我是選項</span>
-                </div>
+                </a>
                 {% endfor %}
             </div>
         </div>
@@ -91,10 +91,10 @@
                             {{ Dropdown (  btn_text="會員專區" )}}
                         </div>
                     </div>
-                    <button class="btn btn--cart">
+                    {# <button class="btn btn--cart">
                         <span class="badge">1</span>
                         <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
+                    </button> #}
                 </div>
             </div> 
             

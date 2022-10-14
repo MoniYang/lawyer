@@ -19,6 +19,14 @@
     &--cart {
         color: var(--white-opacity-1);
     }
+    &--search {
+        &:hover {
+            background-color: var(--primary-500);
+        }
+        &:focus {
+            background-color: var(--primary-300);
+        }
+    }
 }
 
 input{
