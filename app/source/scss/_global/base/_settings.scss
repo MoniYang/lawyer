@@ -151,6 +151,17 @@ body {
     }
 }
 
+@mixin rwdw-max($max){
+    @media only screen and (max-width:$max + px) {
+        @content;
+    }
+}
+
+@mixin rwdw-min($min){
+    @media only screen and (min-width:$min + px) {
+        @content;
+    }
+}
 // 不同版面時的基本設定
 // [data-layout=mobile] {
 //     .app { min-width: 320px; }
@@ -204,15 +215,15 @@ body {
 
     /* Scroll 本身 */
     ::-webkit-scrollbar-thumb {
-        background-color: var(--custom-scroll-thumb-color, var(--primary-200) ) ;
+        background-color: var(--custom-scroll-thumb-color, var(--primary-600) ) ;
         border-radius: 2em;
         border: 1px solid;
-        border-color: var( --custom-scroll-thumb-border, var(--primary-100) );
+        border-color: var( --custom-scroll-thumb-border, var(--primary-500) );
         box-shadow: 0 0 4px HSLA( var( --custom-scroll-thumb-shadow, var(--black-opacity-4) ) );
     }
 
     *:hover::-webkit-scrollbar-thumb {
-        background-color:  var(--custom-scroll-thumb-color-hover,  var(--primary-200) ) ;
+        background-color:  var(--custom-scroll-thumb-color-hover,  var(--primary-400) ) ;
     }
 
     // Firefox 自定義 Scroll

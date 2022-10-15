@@ -1,22 +1,32 @@
 
 
-// $(".dropdown").on("hover", function (e) {
-   
-// });
-$(".dropdown").hover(function() {
+$(".dropdown").on("click", function (e) {
     console.log(1);
     $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
     e.stopPropagation();
 });
-
-// $("body").on("click", function () {
- 
-//     $('.dropdown').attr("data-open","false");
+// $(".dropdown").hover(function() {
+//     console.log(1);
+//     $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
+//     e.stopPropagation();
 // });
 
+$("body").on("click", function () {
+ 
+    $('.dropdown').attr("data-open","false");
+    $(".header__nav").attr("data-open","false");
+});
 
+
+$(".header__nav .btn--clear").on("click", function (e) {
+    $(".header__nav").attr("data-open","false");
+});
+$(".header__main .btn--nav").on("click", function (e) {
+    $(".header__nav").attr("data-open","true");
+    e.stopPropagation();
+});
 var swiper = new Swiper(".new-download__swiper .swiper", {
-    slidesPerView: 5,
+    slidesPerView: 'auto',
     pagination: {
         el: ".swiper-pagination",
     },

@@ -56,17 +56,20 @@
                         <img src="{{img_url}}/logo.png">
                         <span class="text">軍師幫</span>
                     </div>
-                    <div class="header__nav">
+                    <div class="header__nav" data-open="false">
+                        <button class="btn btn--clear">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
                         <div class="dropdown-group">
                             <span class="dropdown-text">大律師合約系列</span>
-                            {{ Dropdown ( btn_text="依用途分類" )}}
+                            {{ Dropdown ( btn_text="依用途分類",open="true" )}}
                         </div>
                         <div class="dropdown-group">
-                            <span class="dropdown-text"></span>
+                 
                            {{ Dropdown ( btn_text="依產業分類" )}}
                         </div>
                         <div class="dropdown-group">
-                            <span class="dropdown-text"></span>
+                   
                             {{ Dropdown ( btn_text="免費專區" )}}
                         </div>
                             
@@ -95,6 +98,9 @@
                         <span class="badge">1</span>
                         <i class="fa-solid fa-cart-shopping"></i>
                     </button> #}
+                    <button class="btn btn--nav">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
             </div> 
             
