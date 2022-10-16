@@ -8,24 +8,7 @@
 
 <!-- 在 <body> 之內加入 -->
 {% macro Header() %}
-    <div class="header">
-        <div class="header__main">
-            <div class="logo">
-                <img src="img/logo.png">
-            </div>
-            <div class="header-nav">
-                {% for navItem in navItems %}
-                    <div class="header-nav__item" data-selected="{{ navItem.open }}">
-                        <a class="btn" onclick="window.open('{{ navItem.item_url }}', '_blank')">
-                            <span class="text">{{ navItem.text }}</span>
-                        </a>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div> 
 
- 
 {% endmacro %}
 {# 
 {%- block body %}

@@ -7,12 +7,22 @@
 
 
 <!-- 在 <body> 之內加入 -->
-{% macro Dropdown() %}
-    <div class="dropdown dropdown--{{ type }}" data-open="{{ open }}">
+
+{% macro Dropdown( btn_text, open="false") %}
+    <div class="dropdown dropdown--{{ type1 }} dropdown--{{ type2 }}" data-open="{{ open }}">
+        <div class="dropdown__btn">
+            <span class="text">{{ btn_text }}</span>
+            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+        </div>
         <div class="dropdown__content">
-            <div class="dropdown__item"></div>
+            {# {% for i in range(1, 6) -%}
+            <a href="#" class="dropdown__item">
+                <span class="text">{{i}}我是選項</span>
+            </a>
+            {% endfor %} #}
         </div>
     </div>
+ 
 {% endmacro %}
 
 

@@ -69,7 +69,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                padding: 60px 20px;
+                padding: 20px;
                 min-width: 250px;
                 height: 100vh;
                 overflow-y: auto;
@@ -133,14 +133,21 @@
                         color: var(--primary-100);
                     }
                 }
-                &:hover {
+                &[data-open="true"] {
                     .dropdown__btn {
                         &::before {
+                            animation: menu .2s 1; 
                             width: 100%;
-                            animation: menu .2s 1;
+                           
                         }
                     }
                 }
+                // &:hover {
+                //     @include rwdw-min(1199) {
+                       
+                //     }
+                    
+                // }
                &-group {
 
                     @include rwdw-max(1199) {
@@ -158,6 +165,10 @@
                 @include rwdw-min(1199) {
                     display: none;
                 }
+                display: flex;
+                justify-content: flex-end;
+                padding: 0;
+                width: 100%;
                 margin-left: auto;
                 font-size: 1.5rem;
             }

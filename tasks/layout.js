@@ -79,7 +79,7 @@ gulp.task('sass', function () {
 });
 
 // -----------------------------------------------------
-// gulp-nunjucks-render - 模板引擎 Nunjucks -- Support & Info
+// gulp-nunjucks-render - 模板引擎 Nunjucks
 // -----------------------------------------------------
 
 gulp.task('layout-html', function () {

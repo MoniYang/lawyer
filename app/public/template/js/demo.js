@@ -1,22 +1,30 @@
 
 
-$(".dropdown").on("click", function (e) {
-    console.log(1);
-    $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
-    e.stopPropagation();
-});
-// $(".dropdown").hover(function() {
-//     console.log(1);
+
+
+// $(".dropdown").on("click", function (e) {
+
+//     // console.log(1);
 //     $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
 //     e.stopPropagation();
 // });
+$(".dropdown").hover(function(e) {
+
+    $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
+    e.stopPropagation();
+});
+
+
+
 
 $("body").on("click", function () {
  
     $('.dropdown').attr("data-open","false");
     $(".header__nav").attr("data-open","false");
 });
-
+$(".header__nav").on("click", function (e) {
+    e.stopPropagation();
+});
 
 $(".header__nav .btn--clear").on("click", function (e) {
     $(".header__nav").attr("data-open","false");

@@ -15,21 +15,7 @@
     {% endblock %}
 
 </head>
- {% macro Dropdown(type, btn_text, open="false") %}
-        <div class="dropdown {% if type =='true' %}dropdown--{{ type }}{% endif %}" data-open="{{ open }}">
-            <div class="dropdown__btn">
-                <span class="text">{{ btn_text }}</span>
-                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dropdown__content">
-                {% for i in range(1, 6) -%}
-                <a href="#" class="dropdown__item">
-                    <span class="text">{{i}}我是選項</span>
-                </a>
-                {% endfor %}
-            </div>
-        </div>
-    {% endmacro %}
+    
     {% set footerNavItems = [
         { text: '軍師幫' },
         { text: '專家專欄'},
@@ -45,11 +31,11 @@
         { text: '會員權益'}]
     %}
 <body>
-    
+   
     
     <div class="app" >
         {%- block Body %}
-        
+             {% from "Views/Components/dropdown.njk" import Dropdown %}
             <div class="header">
                 <div class="header__main">
                     <div class="logo">
@@ -62,7 +48,7 @@
                         </button>
                         <div class="dropdown-group">
                             <span class="dropdown-text">大律師合約系列</span>
-                            {{ Dropdown ( btn_text="依用途分類",open="true" )}}
+                            {{ Dropdown ( btn_text="依用途分類",open="false" )}}
                         </div>
                         <div class="dropdown-group">
                  
