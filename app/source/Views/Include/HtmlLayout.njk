@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{html_lang}}" >
+<head>
+{# {% set site_name = "nova88" %} #}
+{% block Head %}
+   <title>{{ title_text }}</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+        <link rel="stylesheet" href="{{css_path}}/all.css">
+        <link rel="stylesheet" href="{{css_path}}/main.css">
+        <!-- Demo Only -->
+       <script src="{{ vendor_path }}/swiper-bundle.js"></script>
+    
+{% endblock %}
+</head>
+
+<body>    
+    <div class="app">
+        {%- block Body %}
+                
+
+
+            {% from "Views/Layout/Footer.njk" import footer %}
+            {% from "Views/Components/dropdown.njk" import dropdown %}
+
+             <div class="header">
+                <div class="header__main">
+                    <div class="logo">
+                        <img src="{{img_url}}/logo.png">
+                        <span class="text">軍師幫</span>
+                    </div>
+                    <div class="header__nav" data-open="false">
+                        <button class="btn btn--clear">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <div class="dropdown-group">
+                            <span class="dropdown-text">大律師合約系列</span>
+                            {{ dropdown ( btn_text="依用途分類",open="false" )}}
+                        </div>
+                        <div class="dropdown-group">
+                 
+                           {{ dropdown ( btn_text="依產業分類" )}}
+                        </div>
+                        <div class="dropdown-group">
+                   
+                            {{ dropdown ( btn_text="免費專區" )}}
+                        </div>
+                            
+                        <div class="dropdown-group">
+                            <span class="dropdown-text">小律師書狀系列</span>
+                            {{ dropdown ( btn_text="各類書狀" )}}
+                        </div>
+                        <div class="dropdown-group">
+                            <span class="dropdown-text">CLASS</span>
+                            {{ dropdown (btn_text="企業訓練" )}}
+                        </div>
+                        <div class="dropdown-group">
+                            <span class="dropdown-text">ADVISER</span>
+                            {{ dropdown ( btn_text="專家專欄" )}}
+                        </div>
+                        <div class="dropdown-group">
+                            <span class="dropdown-text">FAQs</span>
+                            {{ dropdown ( btn_text="常見問題" )}}
+                        </div>
+                        <div class="dropdown-group">
+                            <span class="dropdown-text">MEMBER</span>
+                            {{ dropdown (  btn_text="會員專區" )}}
+                        </div>
+                    </div>
+                    {# <button class="btn btn--cart">
+                        <span class="badge">1</span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button> #}
+                    <button class="btn btn--nav">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div> 
+            {# {%- block Header %}{{ Header( img_url=img_url , platform=platform ,site_name=site_name ,lang=html_lang) }}{% endblock -%} #}
+            
+
+            <div class="main">
+                {%- block main %}{% endblock -%}
+            </div>
+
+            <div class="footer">
+                
+                {%- block footer %}{{ footer(img_url=img_url) }}{% endblock -%}
+                    
+            </div>
+            
+        {% endblock -%}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="{{ vendor_path }}/demo.js"></script>
+
+</body>
+</html>

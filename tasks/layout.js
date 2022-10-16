@@ -26,6 +26,9 @@ var browserSync    = require('browser-sync').create(); // 建立本地端伺服�
 
 
 
+
+// -------------------------------------------------
+// gulp sass - 單一個site 的 sass - 將 .scss 編譯為 .css
 // -------------------------------------------------
 gulp.task('sass', function () {
     // 原始 .scss 所在位置
@@ -78,19 +81,23 @@ gulp.task('sass', function () {
    
 });
 
+
+
 // -----------------------------------------------------
-// gulp-nunjucks-render - 模板引擎 Nunjucks
+// gulp-nunjucks-render - 模板引擎 Nunjucks -- 單個 View
 // -----------------------------------------------------
 
-gulp.task('layout-html', function () {
-
+gulp.task('layout', function () {
+    // 原始 .njk 所在位置
+   
     return gulp.src([
             // 此路徑內的 .njk 皆會編譯為 .html
             './app/source/Views/**/*.njk',
-            
+
             // 例外：略過編譯 "Include" 內的 .njk
             '!./app/source/Views/Include/*.njk',
-         
+            '!./app/source/Views/Layout/*.njk',
+            '!./app/source/Views/Components/*.njk',
         ])
 
         // "gulp-plumber" - 指定以此插件處理錯誤，修正後自動重新編譯(watch不中斷)
@@ -103,14 +110,14 @@ gulp.task('layout-html', function () {
 
             // 初始資料設定
             data: {
-                //site_name: site_name[index] , // 預設站台 css 樣式
+                //site_name: 'nova88', // 預設站台 css 樣式
                 //platform: 'desktop',
                 html_lang:'en', // 預設頁面 <html lang="en"> 語系
                 title_text: '軍師幫', // 預設 <title> 標題
                 css_path: '../template/css', // css 預設相對路徑
                 vendor_path: '../template/js', // js插件預設相對路徑
                 img_url: '../template/img', // img 預設相對路徑
-                //demojs_path: '../../', // demojs 預設相對路徑
+                //demojs_path: '../../../login/', // demojs 預設相對路徑
                 //header_path: './', // header 預設相對路徑
                 ui_path: '../', // UI_Develop 預設相對路徑
             }
@@ -124,17 +131,78 @@ gulp.task('layout-html', function () {
 
         // "browser-sync" 即時更新 .html
         .pipe(browserSync.stream());
-    
 });
+
+// -----------------------------------------------------
+// gulp-nunjucks-render - 模板引擎 Nunjucks -- 單個 Site
+// -----------------------------------------------------
+gulp.task('nunjucks-Nova88-site', function () {
+    // 原始 .njk 所在位置
+
+    var site_name =
+    [
+        'nova88',
+        'ibcbet',
+        'neweu'
+
+    ];
+    var defaultTasks = Object.keys(site_name);
+    defaultTasks.forEach(function(index) {
+        return gulp.src([
+                // 此路徑內的 .njk 皆會編譯為 .html
+                './app/source/Views/Sites/' + site_name[index] + '/BeforeLogin_New.njk',
+                './app/source/Views/Sites/' + site_name[index] + '/BeforeLogin_New_festival.njk',
+            ])
+
+            // "gulp-plumber" - 指定以此插件處理錯誤，修正後自動重新編譯(watch不中斷)
+            .pipe(plumber())
+
+            // 指定編譯 .njk 的路徑
+            .pipe(nunjucksRender({
+                // .njk 內的語法: {% extends %}, {% include %}，將以此為根路徑
+                path: './app/source',
+
+                // 初始資料設定
+                data: {
+                    site_name: site_name[index], // 預設站台 css 樣式
+                    platform: 'desktop',
+                    html_lang:'en', // 預設頁面 <html lang="en"> 語系
+                // title_text: 'Nova88', // 預設 <title> 標題
+                    css_path: '../../../login', // css 預設相對路徑
+                    vendor_path: '../../../login', // js插件預設相對路徑
+                    img_url: '../../../login', // img 預設相對路徑
+                    demojs_path: '../../../login', // demojs 預設相對路徑
+                    header_path: './', // header 預設相對路徑
+                    ui_path: '../../Nova88View/', // UI_Develop 預設相對路徑
+                }
+            }))
+
+            // "gulp-changed" - 先檢查檔案，只有異動過的才進行編譯
+            // .pipe(changed('./app/public/Views'))
+
+            // 編譯後輸出 .html 目標位置
+            .pipe(gulp.dest('./app/public/Desktop/Views/Sites/'+ site_name[index] +''))
+
+            // "browser-sync" 即時更新 .html
+            .pipe(browserSync.stream());
+        });
+
+});
+
+
+
+
+
+
 // -------------------------------------------------
 // UI Develop - nova88 僅供開發時使用
 // -------------------------------------------------
 gulp.task('ui-dev', function () {
     // // 編譯輸出 .css
     gulp.src('./app/source/Views/UI_dev/scss/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('./app/public/UI_dev/css'))
-        
+    .pipe(sass())
+    .pipe(gulp.dest('./app/public/UI_dev/css'))
+
     // 輸出合併 .js
     // gulp.src('./app/source/Views/Nova88View/UI_Develop/js/*.js')
     //     .pipe(concat('ui-dev.js')) // 合併後檔名
@@ -147,9 +215,18 @@ gulp.task('ui-dev', function () {
 // -------------------------------------------------
 // Task - 各任務執行列表 (任務名不可與執行任務名相同)
 // -------------------------------------------------
+// gulp default - 批次執行 ['browser-sync'] ['watch'] 任務
+gulp.task('default', ['browser-sync', 'watch']);
 
 
-// gulp html - 批次執行 ['nunjucks']  任務 -- 全站
-gulp.task('html', ['layout-html']);
 
-gulp.task('css', ['sass']);
+// gulp html - 批次執行 ['nunjucks'] ['nunjucks-oneSite/oneView'] 任務 -- 目前給新版Nova88
+gulp.task('html', ['layout']);
+
+
+// gulp css - 個別執行 ['單一個site'] 任務 --- 目前給Nova88_new
+gulp.task('css-Nova88', ['sass-Nova88','sass-mobile-Nova88']);
+
+
+// gulp.task('ui', ['CommonView']);
+gulp.task('ui-nova88', ['ui-dev-nova88']);

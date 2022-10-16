@@ -290,5 +290,32 @@ section {
 .grey-900       { background-color:  var(--grey-900)};
 
 
+.primary-green { background-color:  var(--primary-green )};
+.icon-certified-color { background-color:  var(--icon-certified-color )};
+
+// theme gradient
+.btn-primary-gradient-bg { background-image: var(--btn-primary-gradient-bg); }
+.btn-secondary-gradient-bg { background-image: var(--btn-secondary-gradient-bg); }
+.btn-third-gradient-bg { background-image: var(--btn-third-gradient-bg); }
+.btn-gradient-before-line { background-image: var(--btn-gradient-before-line); }
+.btn-text-gradient-light-bg { background-image: var(--btn-text-gradient-light-bg); }
+
+.icon-gradient-primary-bg { background-image: var(--icon-gradient-primary-bg); }
+.icon-gradient-primary-before-bg { background-image: var(--icon-gradient-primary-before-bg); }
+.icon-gradient-primary-after-bg { background-image: var(--icon-gradient-primary-after-bg); }
+
+.icon-gradient-third-bg { background-image: var(--icon-gradient-third-bg); }
+.icon-gradient-third-before-bg { background-image: var(--icon-gradient-third-before-bg); }
+.icon-gradient-third-after-bg { background-image: var(--icon-gradient-third-after-bg); }
+
+.switch-bar-text-selected { background-image: var(--switch-bar-text-selected); }
+
+
+.gradient-text { background-image: var(--gradient-text); }
+.primary-gradient-border { background-image: var(--primary-gradient-border);}
+.liveScore-gradient-header-bg { background-image: var( --live-score-gradient-header);}
+.liveScore-gradient-match-bg { background-image: var(--live-score-gradient-match);}
+
+
 
 

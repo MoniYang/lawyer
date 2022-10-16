@@ -1,18 +1,18 @@
 <!-- 繼承 <html> 模板 -->
-{% extends "Views/Include/HTML_Layout.njk" %}
+{% extends "Views/Include/HtmlLayout.njk" %}
+
 <!-- 自訂 <title> 標題 -->
-{% set title_text = "Color Scheme " %}
-{# {% set css_path = "../css" %} #}
+{% set title_text = "Color Scheme | Nova88" %}
+
 
 <!-- 自訂站台 -->
-
+{% set site_name = "Nova88" %}
 
 
 <!-- 追加 <head> 內容 -->
 {% block Head %}
     {{ super() }}
- 
-    <link rel="stylesheet" href="../UI_dev/css/ui-dev.css">
+    <link rel="stylesheet" href="{{ ui_path }}UI_Develop/css/ui-dev.css">
 
 {% endblock %}
 
@@ -50,7 +50,18 @@
                 <div class="secondary-800"><b>--secondary-800</b></div>
                 <div class="secondary-900"><b>--secondary-900</b></div>
             </div>
-          
+            <div class="color-palettes">
+                <div class="third-50"><b>--third-50</b></div>
+                <div class="third-100"><b>--third-100 </b></div>
+                <div class="third-200"><b>--third-200</b></div>
+                <div class="third-300"><b>--third-300</b></div>
+                <div class="third-400"><b>--third-400</b></div>
+                <div class="third-500"><b>--third-500</b></div>
+                <div class="third-600"><b>--third-600</b></div>
+                <div class="third-700"><b>--third-700</b></div>
+                <div class="third-800"><b>--third-800</b></div>
+                <div class="third-900"><b>--third-900</b></div>
+            </div>
         </section>
 
         <h3>Black & White 黑白灰階</h3>
@@ -98,7 +109,38 @@
             </div>
         </section>
 
-    
+        <h3>其他特殊色</h3>
+        <section>
+            <div class="color-palettes">
+                <div class="primary-green"><w>--primary-green</w></div>
+                <div class="icon-certified-color"><w>--icon-certified-color</w></div>
+            </div>
+        </section>
+
+        <h3>Theme Gradient 網站佈景漸層</h3>
+        <section>
+            <div class="color-palettes">
+                <div class="btn-primary-gradient-bg"><b>--btn-primary-gradient-bg</b></div>
+                <div class="btn-secondary-gradient-bg"><b>--btn-secondary-gradient-bg</b></div>
+                <div class="btn-third-gradient-bg"><b>--btn-third-gradient-bg</b></div>
+                <div class="btn-gradient-before-line"><b>--btn-gradient-before-line</b></div>
+                <div class="btn-text-gradient-light-bg"><b>--btn-text-gradient-light-bg</b></div>
+                <div class="icon-gradient-primary-bg"><b>icon-gradient-primary-bg</b></div>
+                <div class="icon-gradient-primary-before-bg"><b>icon-gradient-primary-before-bg</b></div>
+                <div class="icon-gradient-primary-after-bg"><b>icon-gradient-primary-after-bg</b></div>
+                <div class="icon-gradient-third-bg"><b>icon-gradient-third-bg</b></div>
+                <div class="icon-gradient-third-before-bg"><b>icon-gradient-third-before-bg</b></div>
+                <div class="icon-gradient-third-after-bg"><b>--icon-gradient-third-after-bg</b></div>
+                <div class="switch-bar-text-selected"><b>--switch-bar-text-selected</b></div>
+                <div class="gradient-text"><b>--gradient-text</b></div>
+                <div class="primary-gradient-border">--primary-gradient-border</div>
+                <div class="liveScore-gradient-header-bg">--liveScore-gradient-header-bg</div>
+                <div class="liveScore-gradient-match-bg">--liveScore-gradient-match-bg</div>
+                <div class="icon-graident-bg">--icon-graident-bg</div>
+                <div class="sports-card-gradient-bg">--sports-card-gradient-bg </div>
+                <div class="sports-card-gradient-border">--sports-card-gradient-border</div>
+            </div>
+        </section>
     {% endmacro %}
 
     {{ ColorScheme() }}

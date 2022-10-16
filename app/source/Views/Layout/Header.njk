@@ -1,16 +1,118 @@
-{% extends "Views/Include/HTML_Layout.njk" %}
+<!-- 繼承 <html> 模板 -->
+{% extends "Views/Include/HtmlLayout.njk" %}
 
 
 
-<!-- 自訂站台 -->
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "Header" %}
 
 
+<!-- 追加 <head> 內容 -->
+{# {% block Head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ ui_path }}UI_Develop/css/ui-dev.css">
+    <style> 
+        .header {
+            position:relative;
+        }
 
-<!-- 在 <body> 之內加入 -->
+    </style>
+{% endblock %} #}
+
+
+{# {% from "Views/nova88View/Components/Components.njk" import PlatformList, LanguageList %} #}
+
+
 {% macro Header() %}
-
-{% endmacro %}
 {# 
-{%- block body %}
-    {{ Header() }}
-{% endblock -%} #}
+    
+        {% if   lang == 'en' %}
+            {% set navItems = ['Sports','Virtual Sports','E-Sports','Number Game','Gaming','RNG Keno','Saba.club'] %}
+            {% set loginText = 'Login'%}
+            {% set joinText = 'Join Now'%}
+        {% elif lang == 'vn' %}
+            {% set navItems = ['Thể Thao','Thể Thao Ảo','E-Sports','Number Game','Trò Chơi','RNG Keno','Cổng Game SABA'] %}
+            {% set loginText = 'Đăng nhập'%}
+            {% set joinText = 'Tham gia ngay'%}
+        {% elif lang == 'ch' %}
+            {% set navItems = ['體育博彩','虛擬運動','電子競技','百練賽','娛樂天地','快樂彩','SABA.games'] %}
+            {% set loginText = '登入'%}
+            {% set joinText = '立即加入'%}
+        {% elif lang == 'jp' %}
+            {% set navItems = ['スポーツ','バーチャルスポーツ','E-Sports','Number Game','Gaming','キノ','SABA.games'] %}
+            {% set loginText = 'ログイン'%}
+            {% set joinText = '今すぐ参加する'%}
+        {% endif %}
+    
+    
+
+    
+    <div class="header">
+        <div class="header__main">
+            <div class="header-logo"></div>
+            {% if platform != 'mobile' %}
+                <div class="header-nav" {% if support == 'false' %}role="desktop-visible"{% endif %}>
+                    {% for navItem in navItems %}
+                    <div class="header-nav__item">
+                        <a class="btn">
+                            <span class="text">{{ navItem }}</span>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="header-option">
+                    <div class="dropdown dropdown--primary" data-open="false" role="desktop-visible">
+                        <a class="btn btn--icon">
+                            <i class="icon icon--gradient-third">
+                                <i class="icon icon--desktop"></i>
+                            </i>
+                        </a>
+                        <span class="text">Desktop</span>
+                        <div class="dropdown__container">
+                            {{ PlatformList() }}
+                        </div>
+                    </div>
+                    <div class="dropdown dropdown--primary" data-open="false" role="desktop-visible">
+                        <a class="btn btn--icon">
+                            <i class="icon icon--gradient-third">
+                                <i class="flag flag--en"></i>
+                            </i>
+                        </a>
+                        <span class="text">English</span>
+                        <div class="dropdown__container">
+                            {{ LanguageList() }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="header-login">
+                {% if platform == 'desktop' %}
+                    <span class="text" data-value="Desktop" role="mobile-visible"></span>
+                {% endif %}
+                {% if site_name != 'neweu' %}
+                <a class="btn btn--primary " href="https://www.nova88sports.com/cs" target="_blank"> 
+                    <span class="text">{{ joinText }}</span>
+                </a>
+                {% endif %}
+                <a class="btn btn--secondary">
+                    <span class="text">{{ loginText }}</span>
+                </a>
+            </div>
+            <div class="header-menu" role="mobile-visible">
+                <a class="btn btn--icon">
+                    <i class="icon-menu-group">
+                        <i class="icon-stick"></i>
+                        <i class="icon-stick"></i>
+                        <i class="icon-stick"></i>
+                    </i>
+                    <i class="icon icon--menu"></i>
+                </a>
+            </div>
+        </div>
+    </div> #}
+{% endmacro %}
+
+
+{%- block Body %}
+
+{% endblock -%} 
