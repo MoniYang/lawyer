@@ -434,10 +434,14 @@
             
         }
         .swiper-slide {
-            width: auto;
-            max-width: 250px;
+            width: calc( 25% - 1rem);
+            // max-width: 250px;
             margin: auto .5rem;
             transition: .3s ease;
+            @include rwdw-max(1199) {
+                width: calc( 33.3% - 1rem);
+                max-width: 100%;
+            }
             @include rwdw-max(768) {
                 width: calc( 50% - 1rem);
                 max-width: 100%;
