@@ -653,56 +653,13 @@ input:focus {
 }
 
 .title img {
-  max-height: 40px;
+  max-height: 60px;
 }
 
 @media only screen and (max-width: 768px) {
   .title img {
     max-height: 30px;
   }
-}
-
-.text-deco {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 60px;
-  overflow: hidden;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.text-deco + img {
-  margin: auto 1rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .text-deco + img {
-    margin: auto .5rem;
-  }
-}
-
-.text-deco--right {
-  position: relative;
-  transform: rotate(180deg);
-}
-
-.text-en {
-  width: 100%;
-  text-align: center;
-  margin-bottom: .5rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .text-en {
-    margin-bottom: .25rem;
-  }
-}
-
-.text-en img {
-  max-height: 20px;
 }
 
 .swiper-pagination-bullet-active {
@@ -826,7 +783,7 @@ input:focus {
 .preface {
   display: flex;
   align-items: center;
-  min-height: 750px;
+  min-height: 300px;
   margin-top: -60px;
   color: var(--white-opacity-2);
   background-size: cover;
@@ -866,7 +823,7 @@ input:focus {
   display: flex;
   align-items: center;
   max-width: var(--max-width);
-  padding: 15% 10%;
+  padding: calc(5% + 70px) 10% 5%;
   margin: auto;
   position: relative;
   z-index: 1;
@@ -927,13 +884,8 @@ input:focus {
 }
 
 .search {
-  padding: 0 15%;
-  background-color: var(--black-opacity-4);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
+  padding: 1rem 15%;
+  background-color: var(--black-opacity-6);
 }
 
 @media only screen and (max-width: 1199px) {
@@ -945,22 +897,23 @@ input:focus {
 .search__content {
   display: flex;
   justify-content: center;
-  max-width: var(--max-width);
-  margin: 1rem auto;
-  border: 2px solid var(--white-opacity-4);
+  margin: auto;
+  max-width: 708px;
+  border: 2px solid var(--black-opacity-5);
 }
 
 .search input {
   flex: 1;
   font-size: 1rem;
+  color: var(--black);
 }
 
 .search input::-webkit-input-placeholder {
-  color: var(--white-opacity-3);
+  color: var(--black-opacity-2);
 }
 
 .search input::placeholder {
-  color: var(--white-opacity-3);
+  color: var(--black-opacity-2);
 }
 
 @media only screen and (max-width: 768px) {
@@ -1057,6 +1010,7 @@ input:focus {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  margin: auto;
   width: calc(100% - 40%);
   background-color: var(--black);
 }
@@ -1200,7 +1154,7 @@ input:focus {
 
 .new-download {
   display: flex;
-  padding: 50px 10%;
+  padding: 0px 10% 50px;
 }
 
 @media only screen and (max-width: 1366px) {
@@ -1668,7 +1622,6 @@ input:focus {
   flex: 1;
   width: 100%;
   margin-bottom: .5rem;
-  text-align: left;
   font-weight: 500;
   font-size: 1rem;
   border-bottom: 1px dotted var(--white-opacity-4);
@@ -1723,10 +1676,10 @@ input:focus {
   display: flex;
   height: 150px;
   width: 100%;
-  margin-top: -150px;
-  position: absolute;
+  position: relative;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center;
+  background-size: cover;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1911,14 +1864,9 @@ input:focus {
   }
 }
 
-.header .logo .text {
-  margin: auto 1rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .header .logo .text {
-    margin: auto .5rem;
-  }
+.header .logo img + img {
+  max-height: 40px;
+  margin-left: .5rem;
 }
 
 /**

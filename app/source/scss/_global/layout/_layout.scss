@@ -32,7 +32,7 @@
 .preface {
     display: flex;
     align-items: center;
-    min-height: 750px;
+    min-height: 300px;
     margin-top: -60px;
     color: var(--white-opacity-2);
     background-size: cover;
@@ -68,7 +68,7 @@
         display: flex;
         align-items: center;
         max-width: var(--max-width);
-        padding: 15% 10%;
+        padding: calc(5% + 70px) 10% 5%;
         margin: auto;
         position: relative;
         z-index: 1;
@@ -122,13 +122,9 @@
 }
 
 .search {
-    padding: 0 15%;
-    background-color: var(--black-opacity-4);
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
+    padding: 1rem 15%;
+    background-color: var(--black-opacity-6);
+ 
     @include rwdw-max (1199) {
         padding:0 10px;
     }
@@ -136,16 +132,18 @@
     &__content{
         display: flex;
         justify-content: center;
-        max-width: var(--max-width);
-        margin: 1rem auto;
-        border: 2px solid var(--white-opacity-4);
+        margin: auto;
+        max-width: 708px;
+      
+        border: 2px solid var(--black-opacity-5);
     }
 
     input {
         flex: 1;
         font-size: 1rem;
+        color: var(--black);
         &::placeholder {
-            color:var(--white-opacity-3);
+            color:var(--black-opacity-2);
         }
         @include rwdw-max(768) {
             font-size: .875rem;
@@ -249,6 +247,7 @@
         flex: 0 0 auto;
         display: flex;
         align-items: center;
+        margin: auto;
         width: calc(100% - 40%);
         background-color: var(--black);
     }
@@ -377,7 +376,7 @@
 
 .new-download{
     display: flex;
-    padding: 50px 10%;
+    padding: 0px 10% 50px;
     @include rwdw-max(1366) {
         padding: 50px 5%;
     }
@@ -815,7 +814,7 @@
             flex: 1;
             width: 100%;
             margin-bottom: .5rem;
-            text-align: left;
+
             font-weight: 500;
             font-size: 1rem;
             border-bottom: 1px dotted var(--white-opacity-4);
@@ -867,10 +866,12 @@
             display: flex;
             height: 150px;
             width: 100%;
-            margin-top: -150px;
-            position: absolute;
+           
+            position: relative;
             background-repeat: no-repeat;
-            background-position: center top;
+            background-position: center;
+            background-size: cover;
+
             @include rwdw-max(767) {
                 background-size: 530%;
             }
