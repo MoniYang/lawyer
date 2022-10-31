@@ -830,7 +830,7 @@
         &__nav-list {
             display: inline-flex;
             flex-direction: column;
-            align-items: flex-start;
+       
             width: 15%;
             margin: 1rem 1vw .5rem;
             @include rwdw-max(1199){
