@@ -271,6 +271,12 @@
     }
 }
 
+.pic {
+    display: flex;
+    justify-content: center;
+    padding: 50px 10px;
+}
+
 .promotion {
     display: flex;
     justify-content: center;
@@ -416,52 +422,62 @@
 
     //.new-download__swiper
     &__swiper {
-        max-width: var(--max-width);
+       
         margin-bottom: 20px;
+        padding: 50px 20px;
         overflow: hidden;
         @include rwdw-max(1199){
             max-width: calc(100% - 5%);
         }
 
         .swiper {
-            padding: 2rem 0;
+           padding: 2rem 0;
             overflow-x: hidden;
             --swiper-pagination-color: var(--primary-200);
-            @include rwdw-max(768) {
-                padding: 0.5rem 0 1rem;
-            }
+          
             
         }
+        
         .swiper-slide {
-            width: calc( 25% - 1rem);
+            width: auto;
+            display: flex;
+            justify-content: center;
             // max-width: 250px;
-            margin: auto .5rem;
+            
             transition: .3s ease;
+           
             @include rwdw-max(1199) {
                 width: calc( 33.3% - 1rem);
                 max-width: 100%;
             }
             @include rwdw-max(768) {
                 width: calc( 50% - 1rem);
-                max-width: 100%;
+               
+               
+               
             }
             @include rwdw-max(480) {
-                width: calc( 100% - 1rem);
-                // max-width: 100%;
+                width: 100%!important;
             }
             &:hover{
-                transform: scale(1.05);
-                box-shadow: 5px 5px 10px var(--black-opacity-5);
+                @include rwdw-min(768){
+                    transform: scale(1.05);
+                    box-shadow: 5px 5px 10px var(--black-opacity-5);
+                }
             }
         }
 
         .swiper__item {
-            display: flex;
-            padding: 1rem;
-            background-color: var(--white-opacity-2);
-            @include rwdw-max(768) {
-                padding: .5rem;
+            padding: 0 .5rem;
+             
+            @include rwdw-max(480) {
+                
+                max-width: 300px;
+                width: calc( 100% - 1rem);
+                // max-width: 100%;
+                
             }
+        
         }
         .swiper-horizontal > .swiper-pagination-bullets {
             position: relative;
@@ -472,7 +488,11 @@
 
     //.new-download-item
     &-item {
-
+        display: flex;
+        flex-wrap: wrap;
+        padding: .75rem;
+        max-width: 300px;
+        background-color: var(--white-opacity-2);
             [class*="text"] {
                 color: var(--black);
             }
@@ -484,10 +504,11 @@
             }
             //.new-download-item__text-group
             &__text-group {
+                flex: 1;
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
-
+            
             }
 
             .text-title {
@@ -541,7 +562,7 @@
     //.mission__content
     &__content{
         flex: 1;
-        max-width: var(--max-width);
+        max-width: 980px;
         margin: auto;
     }
 
@@ -805,7 +826,7 @@
         &__inner {
             display: flex;
             justify-content: center;
-            padding: 30px 0;
+            padding: 20px 0;
             background-color: var(--primary-900);
             position: relative;
         }
@@ -829,15 +850,7 @@
         //.footer__nav-list
         &__nav-list {
             display: inline-flex;
-            flex-direction: column;
        
-            width: 15%;
-            margin: 1rem 1vw .5rem;
-            @include rwdw-max(1199){
-                margin: 0;
-                width: calc(50% - 2vw);
-                padding: 0 2vw 1rem;
-            }
         }
         //.footer__item
         &__item {
@@ -845,8 +858,8 @@
             display: inline-flex;
             flex-direction: column;
             align-items: center;
-            margin: .375rem 0;
-            padding-left: .375rem;
+            margin: .375rem 1rem;
+           
             color: var(--white-opacity-3);
             cursor: pointer;
             

@@ -34,16 +34,19 @@ $(".header__main .btn--nav").on("click", function (e) {
     e.stopPropagation();
 });
 var swiper = new Swiper(".new-download__swiper .swiper", {
-    slidesPerView: 'auto',
+    
+    slidesPerView: "auto",
     pagination: {
         el: ".swiper-pagination",
     },
+    
+  
 });
 
 var SwiperDesktop = new Swiper(".promotion .swiper", {
     effect: "coverflow",
     grabCursor: true,
-    centeredSlides: true,
+    centeredSlides: false,
    
     preloadImages: false,
     slidesPerView: "auto",
@@ -62,7 +65,7 @@ var SwiperDesktop = new Swiper(".promotion .swiper", {
         nextEl: ".promotions__swiper-button-next",
         prevEl: ".promotions__swiper-button-prev",
     },
-    loop: true,
+    loop: false,
  
     observer: true,
     observeParents: true,
