@@ -97,9 +97,11 @@ input{
 //         }
 //     }
 // }
-
+.swiper-pagination-bullet {
+    background-color: var(--white-opacity-3);
+}
 .swiper-pagination-bullet-active {
-    --swiper-pagination-color : var(--primary-200);
+    --swiper-pagination-color : var(--primary-500);
 }
 .swiper {
     --swiper-pagination-bullet-inactive-color: var(--white);

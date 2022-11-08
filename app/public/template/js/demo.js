@@ -35,11 +35,25 @@ $(".header__main .btn--nav").on("click", function (e) {
 });
 var swiper = new Swiper(".new-download__swiper .swiper", {
     
-    slidesPerView: "auto",
+    
+    slidesPerView: 'auto',
     pagination: {
         el: ".swiper-pagination",
     },
-    
+    // breakpoints: { 
+    //     320: {  //当屏幕宽度大于等于320
+    //       slidesPerView: 2,
+       
+    //     },
+    //     768: {  //当屏幕宽度大于等于768 
+    //       slidesPerView: 3,
+        
+    //     },
+    //     1280: {  //当屏幕宽度大于等于1280
+    //       slidesPerView: 4,
+         
+    //     }
+    //   }
   
 });
 
