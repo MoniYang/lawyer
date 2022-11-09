@@ -40,21 +40,7 @@ var swiper = new Swiper(".new-download__swiper .swiper", {
     pagination: {
         el: ".swiper-pagination",
     },
-    // breakpoints: { 
-    //     320: {  //当屏幕宽度大于等于320
-    //       slidesPerView: 2,
-       
-    //     },
-    //     768: {  //当屏幕宽度大于等于768 
-    //       slidesPerView: 3,
-        
-    //     },
-    //     1280: {  //当屏幕宽度大于等于1280
-    //       slidesPerView: 4,
-         
-    //     }
-    //   }
-  
+   
 });
 
 var SwiperDesktop = new Swiper(".promotion .swiper", {
@@ -66,7 +52,7 @@ var SwiperDesktop = new Swiper(".promotion .swiper", {
     slidesPerView: "auto",
     coverflowEffect: {
         rotate: 0,
-        stretch:200,
+        stretch:100,
         depth: 50,
         modifier:1,
         scale: 0.8,
@@ -79,7 +65,7 @@ var SwiperDesktop = new Swiper(".promotion .swiper", {
         nextEl: ".promotions__swiper-button-next",
         prevEl: ".promotions__swiper-button-prev",
     },
-    loop: false,
+    loop: true,
  
     observer: true,
     observeParents: true,
