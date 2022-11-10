@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{{css_path}}/all.css">
         <link rel="stylesheet" href="{{css_path}}/main.css">
         <!-- Demo Only -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
        <script src="{{ vendor_path }}/swiper.js"></script>
     
 {% endblock %}
@@ -37,43 +38,35 @@
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-1.png');">
                             </div>
                             <div class="header__nav-group">
-                                <a href="#" class="header__bottom" style="background-image:url('{{img_url}}/menu/menu_1.png');">
-                                </a>
-                                <a  href="#" class="header__bottom" style="background-image:url('{{img_url}}/menu/menu_2.png');">
-                                </a>
-                                <a  href="#" class="header__bottom" style="background-image:url('{{img_url}}/menu/menu_3.png');">
-                                </a>
+                                {{ dropdown ( btn_text="依用途分類",open="false" )}}
+                                {{ dropdown ( btn_text="依產業分類" )}}
+                                {{ dropdown ( btn_text="免費專區" )}}
                             </div>
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-2.png');">
                             </div>
-                            <a href="#" class="header__bottom" style="background-image:url('{{img_url}}/menu/menu_4.png');">
-                            </a>
+                            {{ dropdown ( btn_text="各類書狀", accent='true' )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-3.png');">
                             </div>
-                            <a href="#" class="header__bottom" style="background-image:url('{{img_url}}/menu/menu_5.png');">
-                            </a>
+                            {{ dropdown (btn_text="企業訓練" )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-4.png');">
                             </div>
-                            <a href="#" class="header__bottom" style="background-image:url('{{img_url}}/menu/menu_6.png');">
-                            </a>
+                            {{ dropdown ( btn_text="專家專欄", accent='true' )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-5.png');">
                             </div>
-                            <a href="#" class="header__bottom" style="background-image:url('{{img_url}}/menu/menu_7.png');">
-                            </a>
+                            {{ dropdown ( btn_text="常見問題" )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-6.png');">
                             </div>
-                            <a href="#" class="header__bottom" style="background-image:url('{{img_url}}/menu/menu_8.png');">
-                            </a>
+                            {{ dropdown (  btn_text="會員專區", accent='true' )}}
                         </div>
                     </div>
                     <div class="header__nav" role="mobile-visible" data-open="false">
@@ -138,8 +131,8 @@
         {% endblock -%}
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="{{ vendor_path }}/demo.js"></script>
+  
+        <script src="{{ vendor_path }}/demo.js"></script>
 
 </body>
 </html>

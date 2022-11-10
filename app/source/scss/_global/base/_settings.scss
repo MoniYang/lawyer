@@ -90,7 +90,7 @@ body {
     color: var(--body-text) ;
     background-color:  var(--body-bg);
     border-color: var(--black-opacity-5);
-    // overflow-x: hidden;
+    overflow-x: hidden;
     // overflow-y: scroll; // 固定加上 scrollbar，避免換頁內容載入時，少掉寬度造成跳動
     > div {
         flex: 1;

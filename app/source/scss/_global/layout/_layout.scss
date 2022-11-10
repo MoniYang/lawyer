@@ -1,3 +1,4 @@
+
 .app {
     // flex: 1;
     display: flex;
@@ -5,6 +6,7 @@
     // height: 100vh;
     min-width: 0;
 }
+
 
 // main
  .main{
@@ -288,9 +290,8 @@
 }
 
 .promotion {
-    display: flex;
-    justify-content: center;
-    min-height: 600px;
+  
+    // min-height: 600px;
     background-size: cover;
     background-position: bottom center;
     background-attachment: fixed;
@@ -298,18 +299,20 @@
 
     @include rwdw-max(1199){
         background-size:cover;
+        background-attachment: initial;
 
     }
 
     @include rwdw-max(768){
-        min-height: 300px;
+        // min-height: 300px;
         background-attachment: initial;
     }
 
     //.promotion__content
     &__content {
-        flex: 1;
-        max-width: var(--max-width);
+        display: flex;
+        justify-content: center;
+        margin: auto;
         padding: 50px 10px;
         @include rwdw-max(768) {
             padding: 30px 10px;
@@ -374,18 +377,20 @@
         }
     }
     .swiper {
+        max-width: 1180px;
         padding-bottom: 30px;
-        overflow-y: visible;
+        // overflow-y: visible;
     }
     .swiper-slide {
         width: auto;
+        max-width: 300px;
         // margin: 0 4rem;
         @include rwdw-max(1199){
             // margin: auto;
         }
     }
-    .swiper-pagination-bullets.swiper-pagination-horizontal {
-        bottom: 0;
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+        bottom: -20px;
     }
    
 }
@@ -422,6 +427,9 @@
             left: 0;
             right: 0;
         }
+        @include rwdw-max(1199) {
+            background-attachment: initial;
+        }
     }
 
     //.new-download__swiper
@@ -433,7 +441,7 @@
         //     max-width: calc(100% - 5%);
         // }
         @include rwdw-max(1199) {
-            max-width: calc( 100% - 20% );
+            max-width: 100%;
         }
         .swiper {
            padding: 2rem 0;
@@ -461,7 +469,7 @@
                 width: calc( 50% - 1rem);
             }
             @include rwdw-max(480) {
-                width: calc( 300px - 1rem);
+                width: 300px;
     
             }
             &:hover{
@@ -485,7 +493,7 @@
         display: flex;
         flex-wrap: wrap;
         padding: .75rem;
-        max-width: 300px;
+        max-width: calc( 300px - 1.5rem);
         background-color: var(--white-opacity-2);
             [class*="text"] {
                 color: var(--black);

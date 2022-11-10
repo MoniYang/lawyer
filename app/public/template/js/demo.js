@@ -2,13 +2,13 @@
 
 
 
-// $(".dropdown").on("click", function (e) {
+$('.header__nav[role="mobile-visible"] .dropdown').on("click", function (e) {
 
-//     // console.log(1);
-//     $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
-//     e.stopPropagation();
-// });
-$(".dropdown").hover(function(e) {
+    // console.log(1);
+    $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
+    e.stopPropagation();
+});
+$('.header__nav[role="desktop-visible"] .dropdown').hover(function(e) {
 
     $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
     e.stopPropagation();
@@ -46,14 +46,14 @@ var swiper = new Swiper(".new-download__swiper .swiper", {
 var SwiperDesktop = new Swiper(".promotion .swiper", {
     effect: "coverflow",
     grabCursor: true,
-    centeredSlides: false,
-   
-    preloadImages: false,
+    centeredSlides: true,
     slidesPerView: "auto",
+    preloadImages: false,
+   
     coverflowEffect: {
         rotate: 0,
         stretch:100,
-        depth: 50,
+        depth: 10,
         modifier:1,
         scale: 0.8,
     },
@@ -70,3 +70,4 @@ var SwiperDesktop = new Swiper(".promotion .swiper", {
     observer: true,
     observeParents: true,
 });
+
