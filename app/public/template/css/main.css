@@ -1713,6 +1713,7 @@ input:focus {
   background-position: bottom center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1900,7 +1901,7 @@ input:focus {
 
 @media only screen and (max-width: 480px) {
   .new-download__swiper .swiper-slide {
-    width: 300px;
+    width: calc( 100% - 1rem);
   }
 }
 
