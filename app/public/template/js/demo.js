@@ -35,7 +35,9 @@ $(".header__main .btn--nav").on("click", function (e) {
 });
 var swiper = new Swiper(".new-download__swiper .swiper", {
     
-    
+    autoplay: {
+        delay: 5000,
+      },
     slidesPerView: 'auto',
     pagination: {
         el: ".swiper-pagination",
@@ -44,6 +46,9 @@ var swiper = new Swiper(".new-download__swiper .swiper", {
 });
 
 var SwiperDesktop = new Swiper(".promotion .swiper", {
+    autoplay: {
+        delay: 5000,
+      },
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
