@@ -4,9 +4,9 @@
 
 <!-- 自訂 <title> 標題 -->
 {% set title_text = "footer" %}
-{% macro dropdown( open="false", btn_text) %}
+{% macro dropdown( open="false", btn_text , accent) %}
       <div class="dropdown" data-open="{{ open }}">
-        <div class="dropdown__btn">
+        <div class="dropdown__btn {% if accent=='true' %} dropdown__btn--accent{% endif %}">
             <span class="text">{{ btn_text }}</span>
             <i class="fa-sharp fa-solid fa-chevron-down"></i>
         </div>

@@ -11,6 +11,9 @@
 // icon
 // @import "../../../nova88_new/common/scss/icons/icon";
 
+//vendor
+@import "_global/vendor/swiper.scss";
+
 //components
 @import "_global/components/components.scss";
 @import "_global/components/dropdown.scss";
@@ -22,5 +25,3 @@
 @import "_global/layout/layout.scss";
 @import "_global/layout/header.scss";
 
-//vendor
-@import "_global/vendor/swiper.scss";

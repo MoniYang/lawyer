@@ -2,13 +2,13 @@
 
 
 
-// $(".dropdown").on("click", function (e) {
+$('.header__nav[role="mobile-visible"] .dropdown').on("click", function (e) {
 
-//     // console.log(1);
-//     $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
-//     e.stopPropagation();
-// });
-$(".dropdown").hover(function(e) {
+    // console.log(1);
+    $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
+    e.stopPropagation();
+});
+$('.header__nav[role="desktop-visible"] .dropdown').hover(function(e) {
 
     $(this).attr("data-open") == "true" ? $(this).attr("data-open","false") : $(this).attr("data-open", "true");
     e.stopPropagation();
@@ -34,23 +34,31 @@ $(".header__main .btn--nav").on("click", function (e) {
     e.stopPropagation();
 });
 var swiper = new Swiper(".new-download__swiper .swiper", {
+    
+    autoplay: {
+        delay: 5000,
+      },
     slidesPerView: 'auto',
     pagination: {
         el: ".swiper-pagination",
     },
+   
 });
 
 var SwiperDesktop = new Swiper(".promotion .swiper", {
+    autoplay: {
+        delay: 5000,
+      },
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
-   
-    preloadImages: false,
     slidesPerView: "auto",
+    preloadImages: false,
+   
     coverflowEffect: {
         rotate: 0,
-        stretch:200,
-        depth: 50,
+        stretch:100,
+        depth: 10,
         modifier:1,
         scale: 0.8,
     },
@@ -67,3 +75,4 @@ var SwiperDesktop = new Swiper(".promotion .swiper", {
     observer: true,
     observeParents: true,
 });
+

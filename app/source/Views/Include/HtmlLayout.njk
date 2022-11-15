@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="{{css_path}}/all.css">
         <link rel="stylesheet" href="{{css_path}}/main.css">
         <!-- Demo Only -->
-       <script src="{{ vendor_path }}/swiper-bundle.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+       <script src="{{ vendor_path }}/swiper.js"></script>
     
 {% endblock %}
 </head>
@@ -27,10 +28,48 @@
              <div class="header">
                 <div class="header__main">
                     <div class="logo">
-                        <img src="{{img_url}}/logo.png">
-                         <img src="{{img_url}}/logo_text.png">
+                        <a href="#">
+                            <img src="{{img_url}}/logo.png">
+                            <img src="{{img_url}}/logo_text.png">
+                        </a>
                     </div>
-                    <div class="header__nav" data-open="false">
+                    <div class="header__nav" role="desktop-visible">
+                        <div class="header__nav-item">
+                            <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-1.png');">
+                            </div>
+                            <div class="header__nav-group">
+                                {{ dropdown ( btn_text="依用途分類",open="false" )}}
+                                {{ dropdown ( btn_text="依產業分類" )}}
+                                {{ dropdown ( btn_text="免費專區" )}}
+                            </div>
+                        </div>
+                        <div class="header__nav-item">
+                            <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-2.png');">
+                            </div>
+                            {{ dropdown ( btn_text="各類書狀", accent='true' )}}
+                        </div>
+                        <div class="header__nav-item">
+                            <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-3.png');">
+                            </div>
+                            {{ dropdown (btn_text="企業訓練" )}}
+                        </div>
+                        <div class="header__nav-item">
+                            <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-4.png');">
+                            </div>
+                            {{ dropdown ( btn_text="專家專欄", accent='true' )}}
+                        </div>
+                        <div class="header__nav-item">
+                            <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-5.png');">
+                            </div>
+                            {{ dropdown ( btn_text="常見問題" )}}
+                        </div>
+                        <div class="header__nav-item">
+                            <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-6.png');">
+                            </div>
+                            {{ dropdown (  btn_text="會員專區", accent='true' )}}
+                        </div>
+                    </div>
+                    <div class="header__nav" role="mobile-visible" data-open="false">
                         <button class="btn btn--clear">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
@@ -45,8 +84,7 @@
                         <div class="dropdown-group">
                    
                             {{ dropdown ( btn_text="免費專區" )}}
-                        </div>
-                            
+                        </div>  
                         <div class="dropdown-group">
                             <span class="dropdown-text">小律師書狀系列</span>
                             {{ dropdown ( btn_text="各類書狀" )}}
@@ -68,10 +106,10 @@
                             {{ dropdown (  btn_text="會員專區" )}}
                         </div>
                     </div>
-                    {# <button class="btn btn--cart">
+                    <button class="btn btn--cart">
                         <span class="badge">1</span>
                         <i class="fa-solid fa-cart-shopping"></i>
-                    </button> #}
+                    </button>
                     <button class="btn btn--nav">
                         <i class="fa-solid fa-bars"></i>
                     </button>
@@ -93,8 +131,8 @@
         {% endblock -%}
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="{{ vendor_path }}/demo.js"></script>
+  
+        <script src="{{ vendor_path }}/demo.js"></script>
 
 </body>
 </html>

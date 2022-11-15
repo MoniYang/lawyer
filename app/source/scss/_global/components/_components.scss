@@ -54,7 +54,7 @@ input{
     img {
         max-height: 60px;
         @include rwdw-max(768){
-            max-height: 30px;
+            max-height: 40px;
         }
     }
 }
@@ -97,9 +97,11 @@ input{
 //         }
 //     }
 // }
-
+.swiper-pagination-bullet {
+    background-color: var(--white-opacity-3);
+}
 .swiper-pagination-bullet-active {
-    --swiper-pagination-color : var(--primary-200);
+    --swiper-pagination-color : var(--primary-500);
 }
 .swiper {
     --swiper-pagination-bullet-inactive-color: var(--white);

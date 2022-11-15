@@ -31,16 +31,17 @@
     </div>
     <div class="video">
         <div class="video__content">
-          
-               
-                <div class="video__source">
-                    <img src="{{img_url}}/demo.png">
-                    <div class="video-container">
-                        <iframe width="100%" height="350" src="https://www.youtube.com/embed/fdk9ARVvhEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+            <div class="video__source">
+                
+                <div class="video-container">
+                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/fdk9ARVvhEQ" ></iframe>
                 </div>
-            
+            </div>
         </div>
+    </div>
+
+    <div class="pic">
+         <img src="{{img_url}}/demo.jpg">
     </div>
      <div class="search">
         <div class="search__content">
@@ -78,17 +79,8 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        
-        {# {% if platform == 'desktop' %}
-             <div class="promotions__swiper-button-prev"  >
-                    <i class="icon icon--arrow-left" role="desktop-visible"></i>
-                </div>
-                <div class="promotions__swiper-button-next"  >
-                    <i class="icon icon--arrow-right" role="desktop-visible"></i>
-                </div>
-        {% endif %} #}
     </div>
-     <div class="title">
+    <div class="title">
         <img src="{{img_url}}/text/new-download-text.png">
     </div>
     <div class="new-download">
@@ -100,21 +92,21 @@
                     <div class="swiper-wrapper">
                          {% for i in range(1, 10) -%}
                         <div class="swiper-slide">
-                            <a href="#" class="swiper__item">
-                                <div class="new-download-item">
-                                    <div class="new-download-item__img">
-                                        <img src="{{img_url}}/download_item.jpg">
-                                        {# <button class="btn btn--cart">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                        </button> #}
-                                    </div>
-                                    <div class="new-download-item__text-group">
-                                        <span class="text-title">和解契約書{{i}}</span>
-                                        <span class="text-line">NT$3,000</span>
-                                        <span class="text">NT$2,890</span>
-                                    </div>
+                           
+                            <a href="#"  class="new-download-item">
+                                <div class="new-download-item__img">
+                                    <img src="{{img_url}}/download_item.jpg">
+                                    {# <button class="btn btn--cart">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button> #}
+                                </div>
+                                <div class="new-download-item__text-group">
+                                    <span class="text-title">和解契約書{{i}}</span>
+                                    <span class="text-line">NT$3,000</span>
+                                    <span class="text">NT$2,890</span>
                                 </div>
                             </a>
+                           
                         </div>
                          {% endfor %}
                     </div>
