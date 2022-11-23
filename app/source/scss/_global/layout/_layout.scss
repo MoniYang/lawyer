@@ -17,7 +17,7 @@
     // min-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-    padding: 60px 0 0;
+    padding: 60px 0 ;
     position: relative;
     // overflow-y: auto;
 
@@ -29,12 +29,15 @@
 
     //.main__content
     &__content {
-        display: flex;
-        height: 850px;
+        margin: auto;
+        max-width: 1180px;
     }
 
 }
-
+.about{
+    margin: auto;
+    max-width: 980px;
+}
 .preface {
     display: flex;
     align-items: center;
@@ -128,11 +131,11 @@
 }
 
 .search {
-    padding: 1rem 15%;
+    padding: 1rem;
     background-color: var(--black-opacity-6);
  
     @include rwdw-max (1199) {
-        padding:0 10px;
+        padding: 10px;
     }
     //.search__content
     &__content{

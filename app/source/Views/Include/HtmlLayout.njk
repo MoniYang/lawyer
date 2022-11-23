@@ -20,8 +20,8 @@
     <div class="app">
         {%- block Body %}
                 
-
-
+            {% from "Views/feature/SideNav.njk" import side_nav %}
+            {% from "Views/feature/Search.njk" import search %}
             {% from "Views/Layout/Footer.njk" import footer %}
             {% from "Views/Components/dropdown.njk" import dropdown %}
 
@@ -116,11 +116,28 @@
                 </div>
             </div> 
             {# {%- block Header %}{{ Header( img_url=img_url , platform=platform ,site_name=site_name ,lang=html_lang) }}{% endblock -%} #}
+            <div class="preface" style="background-image:url('{{img_url}}/bg.jpg')">
+                <div class="preface__content">
+                    <div class="preface__logo">
+                        <img src="{{img_url}}/logo.png">
+                        <span class="text">軍師幫</span>
+                    </div>
+                    <div class="preface__text">
+                        <p>(圖)這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字，這裡是一段文字</p>
+                    </div>
+                </div>
             
-
-            <div class="main">
-                {%- block main %}{% endblock -%}
-            </div>
+            </div>    
+            {%- block main %}
+                <div class="main">
+                    <div class="main__content">
+                    {%- block content %}{% endblock -%}
+                    </div>
+                </div>
+            {% endblock -%}
+           
+                
+            
 
             <div class="footer">
                 

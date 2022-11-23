@@ -1,0 +1,19 @@
+//.product 
+//--------------------------
+
+.product{
+    display: flex;
+
+    &__content {
+        flex: 1;
+        display: flex;
+    }
+
+    .search {
+        flex: 1 0 auto;
+        &__content {
+            margin-right: 0;
+            margin-left: auto;
+        }
+    }
+}

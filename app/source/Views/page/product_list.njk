@@ -1,0 +1,29 @@
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+{# {% set missionItems = [
+    { img:'mission_1', text:'mission_text_1' },
+    { img:'mission_2', text:'mission_text_2' },
+    { img:'mission_3', text:'mission_text_3' },
+    { img:'mission_1', text:'mission_text_1' },
+] %} #}
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block content %}
+ 
+   <div class="product">
+        {{ side_nav(img_url=img_url)}}
+
+        <div class="product__content">
+            {{search()}}
+        </div>
+   </div>
+   
+ 
+{% endblock -%}
