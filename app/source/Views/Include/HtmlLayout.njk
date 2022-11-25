@@ -18,12 +18,16 @@
 
 <body>    
     <div class="app">
+        
         {%- block Body %}
                 
             {% from "Views/feature/SideNav.njk" import side_nav %}
-            {% from "Views/feature/Search.njk" import search %}
-            {% from "Views/Layout/Footer.njk" import footer %}
-            {% from "Views/Components/dropdown.njk" import dropdown %}
+        {% from "Views/feature/Search.njk" import search %}
+        {% from "Views/feature/Member.njk" import member %}
+        {% from "Views/Layout/Footer.njk" import footer %}
+        {% from "Views/Components/dropdown.njk" import dropdown %}
+        {% from "Views/Components/item.njk" import item %}
+        {% from "Views/Components/page_num.njk" import page_num %}
 
              <div class="header">
                 <div class="header__main">
@@ -38,35 +42,35 @@
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-1.png');">
                             </div>
                             <div class="header__nav-group">
-                                {{ dropdown ( btn_text="依用途分類",open="false" )}}
-                                {{ dropdown ( btn_text="依產業分類" )}}
-                                {{ dropdown ( btn_text="免費專區" )}}
+                                {{ dropdown ( btn_text="依用途分類",open="false", type="menu" )}}
+                                {{ dropdown ( btn_text="依產業分類", type="menu" )}}
+                                {{ dropdown ( btn_text="免費專區" , type="menu")}}
                             </div>
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-2.png');">
                             </div>
-                            {{ dropdown ( btn_text="各類書狀", accent='true' )}}
+                            {{ dropdown ( btn_text="各類書狀", accent='true', type="menu" )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-3.png');">
                             </div>
-                            {{ dropdown (btn_text="企業訓練" )}}
+                            {{ dropdown (btn_text="企業訓練", type="menu" )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-4.png');">
                             </div>
-                            {{ dropdown ( btn_text="專家專欄", accent='true' )}}
+                            {{ dropdown ( btn_text="專家專欄", type="menu", accent='true' )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-5.png');">
                             </div>
-                            {{ dropdown ( btn_text="常見問題" )}}
+                            {{ dropdown ( btn_text="常見問題" , type="menu" )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-6.png');">
                             </div>
-                            {{ dropdown (  btn_text="會員專區", accent='true' )}}
+                            {{ dropdown (  btn_text="會員專區",  type="menu", accent='true' )}}
                         </div>
                     </div>
                     <div class="header__nav" role="mobile-visible" data-open="false">
@@ -75,35 +79,35 @@
                         </button>
                         <div class="dropdown-group">
                             <span class="dropdown-text">大律師合約系列</span>
-                            {{ dropdown ( btn_text="依用途分類",open="false" )}}
+                            {{ dropdown ( btn_text="依用途分類", type="menu", open="false" )}}
                         </div>
                         <div class="dropdown-group">
                  
-                           {{ dropdown ( btn_text="依產業分類" )}}
+                           {{ dropdown ( btn_text="依產業分類", type="menu" )}}
                         </div>
                         <div class="dropdown-group">
                    
-                            {{ dropdown ( btn_text="免費專區" )}}
+                            {{ dropdown ( btn_text="免費專區", type="menu" )}}
                         </div>  
                         <div class="dropdown-group">
                             <span class="dropdown-text">小律師書狀系列</span>
-                            {{ dropdown ( btn_text="各類書狀" )}}
+                            {{ dropdown ( btn_text="各類書狀", type="menu" )}}
                         </div>
                         <div class="dropdown-group">
                             <span class="dropdown-text">CLASS</span>
-                            {{ dropdown (btn_text="企業訓練" )}}
+                            {{ dropdown (btn_text="企業訓練" , type="menu" )}}
                         </div>
                         <div class="dropdown-group">
                             <span class="dropdown-text">ADVISER</span>
-                            {{ dropdown ( btn_text="專家專欄" )}}
+                            {{ dropdown ( btn_text="專家專欄" , type="menu" )}}
                         </div>
                         <div class="dropdown-group">
                             <span class="dropdown-text">FAQs</span>
-                            {{ dropdown ( btn_text="常見問題" )}}
+                            {{ dropdown ( btn_text="常見問題", type="menu" )}}
                         </div>
                         <div class="dropdown-group">
                             <span class="dropdown-text">MEMBER</span>
-                            {{ dropdown (  btn_text="會員專區" )}}
+                            {{ dropdown (  btn_text="會員專區" , type="menu" )}}
                         </div>
                     </div>
                     <button class="btn btn--cart">

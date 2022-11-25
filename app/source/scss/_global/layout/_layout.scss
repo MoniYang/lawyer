@@ -22,7 +22,7 @@
     // overflow-y: auto;
 
     @include rwdw-max( 768) {
-        padding: 30px 0 0;
+        padding: 30px 0;
     }
 
     $this:'main';
@@ -37,6 +37,7 @@
 .about{
     margin: auto;
     max-width: 980px;
+    padding: 0 1rem;
 }
 .preface {
     display: flex;
@@ -527,10 +528,7 @@
                 }
             }
 
-            .text-line {
-                margin-right: auto;
-                text-decoration: line-through;
-            }
+            
             .text {
                 font-size: 1.125rem;
                 font-weight: bold;

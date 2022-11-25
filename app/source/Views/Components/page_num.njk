@@ -1,0 +1,29 @@
+<!-- 繼承 <html> 模板 -->
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+
+{% macro page_num( img_url , href='#' ) %}
+    <div class="page-num">
+        <div class="page-num__list">
+            <a href="#"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+            {% for i in range(1, 8) -%}
+            <a class="text" href="#">
+                {{i}}
+            </a>
+            {% endfor -%}
+            <a href="#"><i class="fa-sharp fa-solid fa-arrow-right"></i> </a>
+        </div>
+    </div>
+{% endmacro %}
+
+
+
+
+
+
+{%- block Body %}
+  
+   
+{% endblock -%}

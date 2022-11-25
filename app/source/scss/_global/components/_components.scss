@@ -59,6 +59,41 @@ input{
     }
 }
 
+.text-line {
+    margin-right: auto;
+    text-decoration: line-through;
+    font-size: .875rem;
+}
+
+.page-title {
+    margin-right: auto;
+}
+
+.page-nav {
+    display: flex;
+    align-items: center;
+
+    .dropdown {
+        
+        color: var(--black-opacity-1);
+        border-bottom: 2px solid var(--black-opacity-4);
+    }
+
+    .text + .dropdown {
+        margin-left: .25rem;
+    }
+}
+
+.page-num{
+    margin: .5rem auto 0;
+
+    a {
+        margin: 0 .25rem;
+        &:hover{
+            color:var(--primary-500);
+        }
+    }
+}
 // .text {
 //     &-deco {
 //         display: inline-flex;
