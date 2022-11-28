@@ -39,6 +39,23 @@ input{
     }
 }
 
+.radio {
+    display: inline-flex;
+
+    & + .radio {
+        
+    }
+}
+
+input[type="radio"] {
+
+    margin-right: .5rem;
+    
+    &:checked + label {
+   
+    }
+}
+
 .title{
     display: flex;
     align-items: center;
