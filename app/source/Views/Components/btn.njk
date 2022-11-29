@@ -1,0 +1,22 @@
+<!-- 繼承 <html> 模板 -->
+{# {% extends "Views/Include/HtmlLayout.njk" %} #}
+
+
+<!-- 自訂 <title> 標題 -->
+
+{% macro btn_back( link ) %}
+    <a class="btn btn--back" href="{{ link }}">
+        <span class="text">返回上一頁</span>
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+{% endmacro %}
+
+
+
+
+
+
+{%- block Body %}
+  
+   
+{% endblock -%}
