@@ -290,35 +290,57 @@
 }
 
 .promotion {
-  
-    // min-height: 600px;
-    background-size: cover;
-    background-position: bottom center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    overflow-x: hidden;
+    
+    $this: 'promotion';
 
-    @include rwdw-max(1199){
-        background-size:cover;
-        background-attachment: initial;
+    @at-root .#{$this} {
+        &--index {  
+            // min-height: 600px;
+            background-size: cover;
+            background-position: bottom center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+    
+            @include rwdw-max(1199){
+                background-size:cover;
+                background-attachment: initial;
+    
+            }
+    
+            @include rwdw-max(768){
+                // min-height: 300px;
+                background-attachment: initial;
+            }
 
-    }
+            //.promotion__content
+            .#{$this}__content {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+                padding: 50px 10px;
+                @include rwdw-max(768) {
+                    padding: 30px 10px;
+                }
+            }
+    
+        }
 
-    @include rwdw-max(768){
-        // min-height: 300px;
-        background-attachment: initial;
-    }
+        &--prod {
+            display: flex;
+            margin-top: 30px;
 
-    //.promotion__content
-    &__content {
-        display: flex;
-        justify-content: center;
-        margin: auto;
-        padding: 50px 10px;
-        @include rwdw-max(768) {
-            padding: 30px 10px;
+            .#{$this}-item {
+
+                & + .#{$this}-item  {
+                    margin-left: 1rem;
+                }
+            }
+
         }
     }
+    
+   
 
     //.promotion-item
     &-item {
