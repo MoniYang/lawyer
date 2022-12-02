@@ -45,6 +45,15 @@
 
         }
     }
+    &--add {
+        padding: .375rem 1rem ;
+        color:var(--white-opacity-1);
+        background-color: #9f353a;
+        font-size: 1.25rem;
+        &:hover {
+            filter: brightness(1.1);
+        }
+    }
 }
 
 input{

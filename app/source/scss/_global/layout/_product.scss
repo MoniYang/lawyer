@@ -144,6 +144,8 @@
 
     &-info {
         flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
         width: 60%;
         padding-left: 1.5rem;
 
@@ -190,6 +192,10 @@
             @include rwdw-max(991) {
                 padding-bottom: 0;
             }
+        }
+
+        .btn--add {
+            margin: 1rem auto 0;
         }
     }
 

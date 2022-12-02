@@ -1288,6 +1288,18 @@ button.swiper-pagination-bullet {
   transform: translateX(-3px);
 }
 
+.btn--add {
+  padding: .375rem 1rem;
+  color: var(--white-opacity-1);
+  background-color: #9f353a;
+  font-size: 1.25rem;
+}
+
+.btn--add:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+}
+
 input {
   padding: .5rem;
   color: var(--white-opacity-3);
@@ -3064,6 +3076,8 @@ input[type="radio"] {
 
 .product-info {
   flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
   width: 60%;
   padding-left: 1.5rem;
 }
@@ -3115,4 +3129,8 @@ input[type="radio"] {
   .product-info__content {
     padding-bottom: 0;
   }
+}
+
+.product-info .btn--add {
+  margin: 1rem auto 0;
 }
