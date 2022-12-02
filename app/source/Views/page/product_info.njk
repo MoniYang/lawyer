@@ -72,14 +72,14 @@
    <div class="promotion promotion--prod">
         <span class="title">購買此商品的人也有興趣…</span>
         {%- for i in range(1,5) %}
-            <div class="promotion-item">
+            <a class="promotion-item" href="#">
                 <img src="{{img_url}}/item.jpg">
                  <div class="promotion-item__text-group">
                     <span class="text-title">和解契約書{{i}}</span>
                     <span class="text-line">NT$3,000</span>
                     <span class="text">NT$2,890</span>
                 </div>
-            </div>
+            </a>
            
      {%- endfor %}         
    </div>          
