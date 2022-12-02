@@ -77,19 +77,25 @@ input[type="radio"] {
 .title{
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1180px;
+    
     margin: 0 auto;
-    padding: 50px 0 20px;
-    @include rwdw-max(768) {
-        padding: 30px 0 10px;
-    }
+   
 
-    img {
-        max-height: 60px;
-        @include rwdw-max(768){
-            max-height: 40px;
+    &--index {
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1180px;
+
+        padding: 50px 0 20px;
+        @include rwdw-max(768) {
+            padding: 30px 0 10px;
+        }
+    
+        img {
+            max-height: 60px;
+            @include rwdw-max(768){
+                max-height: 40px;
+            }
         }
     }
 }
