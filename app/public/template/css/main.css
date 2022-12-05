@@ -520,6 +520,10 @@ body > div {
   min-height: 100%;
 }
 
+h1 {
+  margin: 0 0 1rem;
+}
+
 @media (hover: hover) {
   ::-webkit-scrollbar {
     width: 8px;
@@ -1774,9 +1778,24 @@ input[type="radio"] {
   }
 }
 
-.main__content {
+.main__container {
   margin: auto;
   max-width: 1180px;
+}
+
+.main__content {
+  padding: 0 10%;
+}
+
+@media only screen and (max-width: 767px) {
+  .main__content {
+    padding: 0 10px;
+  }
+}
+
+.main__content h1,
+.main__content h3 {
+  color: var(--primary-500);
 }
 
 .preface {

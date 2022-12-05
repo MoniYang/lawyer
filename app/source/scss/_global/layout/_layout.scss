@@ -28,9 +28,21 @@
     $this:'main';
 
     //.main__content
-    &__content {
+    &__container {
         margin: auto;
         max-width: 1180px;
+    }
+
+    &__content {
+        padding: 0 10%;
+        @include rwdw-max(767) {
+            padding: 0 10px;
+        }
+
+        h1,
+        h3 {
+            color: var(--primary-500);
+        }
     }
 
 }
