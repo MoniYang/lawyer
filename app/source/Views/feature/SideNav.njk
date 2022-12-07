@@ -4,16 +4,18 @@
 
 <!-- 自訂 <title> 標題 -->
 
-{% macro side_nav(img_url , side_nav_title , side_nav_type ) %}
+{% macro side_nav(img_url , side_nav_title , side_nav_type , modify ) %}
     {% if side_nav_type =='prod_list'%}
-          {% set navItems = ['買賣交易','供貨代工','合資合夥','經銷加盟','工程承攬','居間仲介','不動產類','解約和解','各類租賃','借款擔保','信託借名','無償贈與','人事勞基','大廈管理','委任委託','婚姻關係','各式聲明','其他類別'] %}
+        {% set navItems = ['買賣交易','供貨代工','合資合夥','經銷加盟','工程承攬','居間仲介','不動產類','解約和解','各類租賃','借款擔保','信託借名','無償贈與','人事勞基','大廈管理','委任委託','婚姻關係','各式聲明','其他類別'] %}
+    {% elif side_nav_type =='faqs'%}
+        {% set navItems = ['不動產業','住宿業','公關活動娛樂業','出版及影音製作','美容健康業','電子商務業','顧問培訓業'] %}
     {% endif %}    
-      <div class="side-nav">
+      <div class="side-nav {{ modify }}">
         <div class="side-nav__header">
             <img src="{{img_url}}/page/side_nav__{{ side_nav_title }}.png" alt="">
         </div>
         <div class="side-nav__list">
-             {% if side_nav_type =='prod_list' %}
+             {% if side_nav_type =='prod_list' or side_nav_type =='faqs' %}
                 {% for navItem in navItems -%}
                 <div class="side-nav__item">
                     <a href="">{{ navItem }}</a>

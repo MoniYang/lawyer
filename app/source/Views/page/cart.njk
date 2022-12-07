@@ -17,8 +17,8 @@
 <!-- 在 <body> 之內加入 -->
 {%- block content %}
 
-<div class="page-title"><img src="{{img_url}}/page/page_title_cart.png" alt=""></div>
 <div class="cart">
+<div class="page-title"><img src="{{img_url}}/page/page_title_cart.png" alt=""></div>
     <div class="cart__content">
         <div class="cart__list">
              <div class="cart__item cart__item--head">
@@ -46,7 +46,16 @@
                     <button type="button" class="btn btn--delete"><i class="fa-solid fa-xmark"></i></button>
                  </div>
             {%- endfor %}
-             {{ btn_back( link ) }}
+            <div class="btn-group">
+                {{ btn( link='#',text='繼續購物', icon='fa-cart-plus',type='primary' ) }}
+                {{ btn( link='#',text='清空購物車', icon='fa-xmark',type='primary' ) }}
+                   <div class="total">
+                        <span class="text">總計:</span>
+                        <span class="text">NT.$8,890</span>
+                    </div>  
+         
+            </div>
+         
         </div>
         <div class="cart-payout">
             <div class="cart-payout__content">
@@ -72,6 +81,7 @@
                 <div class="cart-payout__title">線上刷卡</div>
                     <i class="fa-solid fa-credit-card"></i>
             </div>
+             {{ btn( link='#',text='返回首頁', icon='fa-arrow-left' , type='back' ) }}
         </div>
        
     </div>

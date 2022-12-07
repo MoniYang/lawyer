@@ -4,10 +4,10 @@
 
 <!-- 自訂 <title> 標題 -->
 
-{% macro btn_back( link ) %}
-    <a class="btn btn--back" href="{{ link }}">
-        <span class="text">返回上一頁</span>
-        <i class="fa-solid fa-arrow-left"></i>
+{% macro btn( link , text, icon , type ) %}
+    <a class="btn btn--{{ type }}" href="{{ link }}">
+        <span class="text">{{ text}}</span>
+        <i class="fa-solid {{ icon }}"></i>
     </a>
 {% endmacro %}
 
