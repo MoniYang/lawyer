@@ -1323,6 +1323,7 @@ button.swiper-pagination-bullet {
 }
 
 input {
+  height: 35px;
   padding: .5rem;
   color: var(--white-opacity-3);
   background-color: transparent;
@@ -1330,6 +1331,14 @@ input {
 
 input:focus {
   outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--black-opacity-4);
+}
+
+input::placeholder {
+  color: var(--black-opacity-4);
 }
 
 .radio {
@@ -1409,6 +1418,19 @@ input[type="radio"] {
 .anounce {
   font-size: 1rem;
   margin-top: 1rem;
+}
+
+.path {
+  margin-left: auto;
+  margin-bottom: 1rem;
+}
+
+.path__item:hover .text {
+  color: var(--primary-500);
+}
+
+.path__item + .path__item {
+  margin: 0 .5rem;
 }
 
 .swiper-pagination-bullet {
@@ -1787,6 +1809,87 @@ input[type="radio"] {
   bottom: -20px;
 }
 
+.login {
+  flex: 1;
+  margin: auto;
+  padding: 1.5rem;
+  max-width: 400px;
+  background-color: var(--white-opacity-2);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.login__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.login__btn-group {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  font-size: .75rem;
+}
+
+.login__btn-group .btn:hover {
+  color: var(--primary-500);
+}
+
+.login input {
+  color: var(--black-opacity-1);
+  border: 1px solid var(--black-opacity-4);
+}
+
+.login .title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-500);
+  position: relative;
+}
+
+.login .title:after {
+  content: '';
+  display: flex;
+  margin: auto;
+  width: 40px;
+  height: 2px;
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  left: 0;
+  background-color: var(--primary-500);
+}
+
+.login .verified {
+  display: flex;
+}
+
+.login .verified input {
+  margin-right: .75rem;
+}
+
+.login .verified img {
+  max-height: 35px;
+}
+
+.login .btn + .btn {
+  border-left: 1px solid var(--primary-500);
+}
+
+.login .btn--primary {
+  flex: 1;
+  width: 100%;
+  margin-top: 1rem;
+  padding: .5rem;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -1816,6 +1919,7 @@ input[type="radio"] {
   margin: auto;
   max-width: 1180px;
   padding: 0 10px;
+  width: 100%;
 }
 
 .main__content h1,

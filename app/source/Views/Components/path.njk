@@ -1,0 +1,45 @@
+<!-- 繼承 <html> 模板 -->
+{# {% extends "Views/Include/HtmlLayout.njk" %} #}
+
+
+<!-- 自訂 <title> 標題 -->
+
+{% macro path( type ) %}
+{% if type =='course' %}
+    {% set items =  [
+        { href:'#', text:'依用途分類' },
+        { href:'#', text:'解約合約' },
+        { href:'#', text:'不動產' }
+    ] %}
+{% endif %}
+
+<div class="path">
+    <div class="path__list">
+        <a class="path__item" href="index.html">
+                <span class="text"><i class="fa-solid fa-house-chimney"></i></span>
+                <i class="fa-solid fa-caret-right"></i>
+            </a>
+        {% for item in items.slice( 0 ,2 ) %}
+            <a class="path__item" href="{{ item.href}}">
+                <span class="text">{{ item.text }}</span>
+                <i class="fa-solid fa-caret-right"></i>
+            </a>
+        {% endfor %}
+        <a class="path__item" href="{{ items[2].href}}">
+            <span class="text">{{ items[2].text }}</span>
+            {# <i class="fa-solid fa-caret-right"></i> #}
+        </a>
+    </div>
+</div>
+    
+{% endmacro %}
+
+
+
+
+
+
+{%- block Body %}
+  
+   
+{% endblock -%}

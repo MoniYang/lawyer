@@ -20,9 +20,10 @@
         
     } %}
    <div class="product product--info">
-        {{ side_nav(img_url=img_url, side_nav_title='prod2', side_nav_type='prod')}}
-
+        {{ side_nav(img_url=img_url, side_nav_title='course', side_nav_type='course')}}
+        
         <div class="product__content">
+            {{ path ( type='course' )}}
             {{search()}}
             <div class="product-swiper">
                 <div class="swiper product-info-swiper" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">

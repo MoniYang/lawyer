@@ -4,7 +4,7 @@
 
 <!-- 自訂 <title> 標題 -->
 {% set title_text = "footer" %}
-{% macro dropdown( open="false", btn_text , accent , type) %}
+{% macro dropdown( open="false", btn_text , accent , type , href) %}
       <div class="dropdown" data-open="{{ open }}">
         <div class="dropdown__btn {% if accent=='true' %} dropdown__btn--accent{% endif %}">
             <span class="text">{{ btn_text }}</span>
@@ -13,7 +13,7 @@
         <div class="dropdown__content">
             {% if type =='menu' -%}
                 {% for i in range(1, 6) -%}
-                <a href="product_list.html" class="dropdown__item">
+                <a href="{{ href }}" class="dropdown__item">
                     <span class="text">{{i}}我是選項</span>
                 </a>
                 {% endfor %}
