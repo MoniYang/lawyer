@@ -47,13 +47,13 @@
             .title {
                 width: 100%;
                 font-size: 1.5rem;
-                padding: .125rem 0 .125rem .75rem;
+                padding: .125rem 0 .125rem 0rem;
                 margin: 3rem 0 1rem;
                 color: var(--black);
-                border-left: 3px solid var(--primary-500);
+                border-bottom: 3px solid var(--primary-500);
 
                 @include rwdw-max(991) {
-                   
+                    margin: 0 auto 1rem;
                     font-size: 1.25rem;
                 }
             }
