@@ -25,6 +25,25 @@
             display: flex;
             margin-bottom: .5rem;
         }
+
+        &__img {
+            display: flex;
+            justify-content: center;
+            width: 40%;
+            @include rwdw-max(991) {
+                
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        .btn-group {
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--grey-100);
+            .btn--add {
+                margin: 1rem;
+            }
+        }
         
         .item {
             
@@ -163,6 +182,7 @@
         }
 
         &__detail-content {
+            flex: 0 0 auto;
             display: flex;
             flex-direction: column;
         }

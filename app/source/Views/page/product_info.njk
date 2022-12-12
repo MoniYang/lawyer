@@ -24,30 +24,10 @@
 
         <div class="product__content">
             {{search()}}
-            <div class="product-swiper">
-                <div class="swiper product-info-swiper" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
-                    <div class="swiper-wrapper">
-                    {% set imgs = [ 'prod_1','prod_2','prod_3','prod_4'] %}
-                    {% for img in imgs -%}
-                        <div class="swiper-slide">
-                            <img src="{{img_url}}/prod/{{ img }}.png" />
-                        </div>
-                    {% endfor %}
-                    </div>
-                    {# <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div> #}
-                    </div>
-                    <div thumbsSlider="" class="swiper product-info-swiper-btns">
-                        <div class="swiper-wrapper">
-                        {% for img in imgs -%}
-                            <div class="swiper-slide">
-                                <img src="{{img_url}}/prod/{{ img }}.png" />
-                            </div>
-                        {% endfor %}
-                        </div>
-                    </div>
+            <div class="product__img">
+                <img src="{{img_url}}/item.jpg" />
             </div>
-
+          
             <div class="product-info">
                 <div class="product-info-title">CLASS-【爭端談判學】</div>
                 <div class="product-info__detail-content">
@@ -62,7 +42,7 @@
                     <button class="btn btn--add">加入購物車</button>
                     <button class="btn btn--add">立刻購買</button>
                 </div>
-               
+                {{ btn( link='product_list.html',text='返回上一頁', icon='fa-arrow-left' , type='back' ) }}
             </div>
 
             <div class="product-info__content">

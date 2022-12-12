@@ -35,6 +35,8 @@
         max-width: 1180px;
         padding: 0 10px;
         width: 100%;
+
+       
     }
 
     &__content {
@@ -42,6 +44,22 @@
         // @include rwdw-max(767) {
         //     padding: 0 10px;
         // }
+        
+        &--modify {
+            .title {
+                margin-bottom: 1.5rem;
+                &:before {
+                    content: '';
+                    display: inline-flex;
+                    margin-right: 1.5rem;
+                    margin-left: 1rem;
+                    height: 3rem;
+                    width: 1px;
+                    background-color: var(--primary-500);
+                    transform: rotate(25deg);
+                }
+            }
+        }
 
         h1,
         h3 {
