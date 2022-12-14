@@ -20,14 +20,18 @@
         
     } %}
    <div class="product product--info">
-        {{ side_nav(img_url=img_url, side_nav_title='prod', side_nav_type='prod')}}
+        {{ side_nav(img_url=img_url, side_nav_title='prod', side_nav_type='prod',link='product_list.html')}}
 
         <div class="product__content">
             {{search()}}
             <div class="product__img">
                 <img src="{{img_url}}/item.jpg" />
+                <div class="product__share">
+                    <span class="text">分類：<a href="#">解約和解</a>，<a href="#">不動產業</a></span>
+                    <span class="text">分享: <a href="#">FB</a>/<a href="#">LINE</a>/<a href="#">Mail</a></span>           
+                </div>
             </div>
-          
+            
             <div class="product-info">
                 <div class="product-info-title">CLASS-【爭端談判學】</div>
                 <div class="product-info__detail-content">

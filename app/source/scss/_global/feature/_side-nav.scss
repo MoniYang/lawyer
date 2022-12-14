@@ -14,7 +14,7 @@
 
     $this:'side-nav';
 
-    @include rwdw-max(991) {
+    @include rwdw-max(1023) {
         display: none;
     }
 
@@ -38,8 +38,12 @@
             //.side-nav__item
             &__item {
                 flex: 1;
-                
+                display: flex;
                 margin-bottom: .375rem;
+
+                a {
+                    flex: 1;
+                }
 
                 &:hover{
                     text-decoration: underline;

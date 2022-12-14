@@ -29,6 +29,7 @@
         &__img {
             display: flex;
             justify-content: center;
+            flex-direction: column;
             width: 40%;
             @include rwdw-max(991) {
                 
@@ -37,6 +38,14 @@
             }
         }
         
+        &__share{
+            display: flex;
+            flex-direction: column;
+            margin-top: .5rem;
+            a {
+                margin: 0 .25rem;
+            }
+        }
         .btn-group {
             margin-bottom: 1.5rem;
             border-bottom: 2px solid var(--grey-100);
@@ -140,7 +149,7 @@
         flex-wrap: wrap;
         flex: 0 0 auto;
         width: 40%;
-        overflow: hidden;
+       
       
 
         @include rwdw-max(991) {
@@ -150,6 +159,7 @@
         }
         .product-info-swiper {
             margin-bottom: .5rem;
+            overflow: hidden;
 
             .swiper-slide {
                 width: 100%;
@@ -157,6 +167,13 @@
         }
         .product-info-swiper-btns {
             cursor: pointer;
+            overflow: hidden;
+
+            .swiper-slide {
+                width: calc( 25% - .375rem);
+                margin-right: .5rem;
+              
+            }
         }
     }
 

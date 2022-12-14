@@ -252,14 +252,14 @@ h1 {
     -webkit-box-orient: vertical;
 }
 [role="desktop-visible"] {
-    @include rwdw-max(1200){
+    @include rwdw-max(1024){
         display: none!important;
    }
  }
 
 
 [role="mobile-visible"] {
-    @include rwdw-min(1199){
+    @include rwdw-min(1023){
         display: none!important;
    }
    

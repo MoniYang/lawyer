@@ -77,14 +77,14 @@ var SwiperDesktop = new Swiper(".promotion .swiper", {
 });
 
 var swiper = new Swiper(".product-info-swiper-btns", {
-    spaceBetween: 10,
-    slidesPerView: 4,
+    spaceBetween: 0,
+    slidesPerView: 'auto',
     freeMode: true,
     watchSlidesProgress: true,
   });
   var swiper2 = new Swiper(".product-info-swiper", {
     slidesPerView: 'auto',
-    spaceBetween: 10,
+    spaceBetween: 0,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
