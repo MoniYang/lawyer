@@ -21,6 +21,21 @@
                 <a href="#" class="dropdown__item">
                     <span class="text">我是選項</span>
                 </a>
+            {% elif type =='menu_member' -%}
+                {% set members = [ 
+                { text:'會員專區' , link:'member.html'},
+                { text:'會員登入', link:'login.html'},
+                { text:'會員註冊', link:'register.html' },
+                { text:'忘記密碼', link:'forget.html' },
+                { text:'檔案下載', link:'download.html' },
+                { text:'訂單資訊', link:'order.html' },
+                { text:'會員資訊', link:'member.html' }
+                ] %}
+                {% for member in members -%}
+                    <a href="{{ member.link }}" class="dropdown__item">
+                        <span class="text">{{ member.text }}</span>
+                    </a>
+                {% endfor %}
              {% endif %}
         </div>
     </div>

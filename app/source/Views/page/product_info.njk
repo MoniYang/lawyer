@@ -12,11 +12,11 @@
 <!-- 在 <body> 之內加入 -->
 {%- block content %}
     {% set infos = {
-        '課程介紹':'你看膩坊間厚厚的談判專書了嗎？動輒數十條的談判心法，談判桌上火光電石間你背得起來？用得出來嗎？
-特聘身經百戰的商務律師親自主講的稀世「壓箱寶」將一次絕密大公開！精準地為你打通任督二脈，不需要死背繁雜眾多的談判術，學會爭端談判，讓你「無所不談」又「無往不利」！
-你將成為最受歡迎的談判者，連對手都樂於指定跟你談！',
-        '課程時數':'3 Hour',
-        '適合族群':'◆業務、採購<br>◆想當意見領袖者<br>◆對此議題有興趣者'
+        '商品介紹':'雙方於訴訟過程中達成和解，書立和解契約以資共同遵守。',
+        '商品內容':'和解契約書1份',
+        '購買須知':'◆結帳完成後之檔案請至會員「下載專區」點選下載。<br>
+◆結帳完成商品之下載存檔期限為365日，過期將不再提供下載。<br>
+◆本網站所販售商品為「非以有形媒介提供之數位內容或一經提供即為完成之線上服務」，故無消費者保護法所定「七日鑑賞期」之適用，一旦購買，即無法退款。'
         
     } %}
    <div class="product product--info">
@@ -33,7 +33,17 @@
             </div>
             
             <div class="product-info">
-                <div class="product-info-title">CLASS-【爭端談判學】</div>
+                <div class="product-info-title">
+                    <span class="text">和解契約書</span>
+                    <div class="product-info__price">
+                        <div class="product-info__price-item">
+                            <span class="text-prev">原價: </span><span class="text-price">NT$.3000</span>
+                        </div>
+                        <div class="product-info__price-item">
+                            <span class="text-prev">優惠價:</span><span class="text-price"> NT$.666</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="product-info__detail-content">
                     {% for title , text in infos %}
                     <div class="product-info__detail">
@@ -46,7 +56,7 @@
                     <button class="btn btn--add">加入購物車</button>
                     <button class="btn btn--add">立刻購買</button>
                 </div>
-                {{ btn( link='product_list.html',text='返回上一頁', icon='fa-arrow-left' , type='back' ) }}
+                {{ btn( link='product_list.html',text='返回列表頁', icon='fa-arrow-left' , type='back' ) }}
             </div>
 
             <div class="product-info__content">

@@ -69,7 +69,8 @@
     &--add {
         padding: .375rem 1rem ;
         color:var(--white-opacity-1);
-        background-color: #9f353a;
+        background-color:var(--red);
+
         font-size: 1.25rem;
         @include rwdw-max(991) {
             font-size: 1rem;
