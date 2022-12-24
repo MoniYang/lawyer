@@ -1252,6 +1252,13 @@ button.swiper-pagination-bullet {
   margin-left: .375rem;
 }
 
+u,
+.text-void {
+  display: inline-flex;
+  color: red;
+  text-decoration: none;
+}
+
 .btn {
   flex: 0 0 auto;
   display: inline-flex;
@@ -1332,7 +1339,7 @@ button.swiper-pagination-bullet {
 input {
   height: 35px;
   padding: .5rem;
-  color: var(--white-opacity-3);
+  color: var(--black-opacity-1);
   background-color: transparent;
 }
 
@@ -1350,6 +1357,30 @@ input::placeholder {
 
 .radio {
   display: inline-flex;
+  align-items: center;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+}
+
+.checkbox input {
+  margin-right: .5rem;
+}
+
+.checkbox + .checkbox {
+  margin-left: 1rem;
+}
+
+textarea {
+  padding: .75rem;
+  width: 100%;
+  border: 1px solid var(--black-opacity-4);
+}
+
+textarea:focus {
+  outline: none;
 }
 
 input[type="radio"] {
@@ -1383,6 +1414,12 @@ input[type="radio"] {
   .title--index img {
     max-height: 40px;
   }
+}
+
+.sub-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-500);
 }
 
 .text-line {
@@ -1874,18 +1911,6 @@ input[type="radio"] {
   background-color: var(--primary-500);
 }
 
-.login .verified {
-  display: flex;
-}
-
-.login .verified input {
-  margin-right: .75rem;
-}
-
-.login .verified img {
-  max-height: 35px;
-}
-
 .login .btn + .btn {
   border-left: 1px solid var(--primary-500);
 }
@@ -1895,6 +1920,67 @@ input[type="radio"] {
   width: 100%;
   margin-top: 1rem;
   padding: .5rem;
+}
+
+.mm-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mm-info--register {
+  max-width: 600px;
+  margin: auto;
+}
+
+.mm-info__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mm-info__group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+
+.mm-info__group + .mm-info__group {
+  margin-left: 10%;
+}
+
+.mm-info__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 0;
+  padding: 0rem .5rem;
+  border-bottom: 1px solid var(--black-opacity-4);
+}
+
+.mm-info__item .text-void {
+  margin-left: .25rem;
+}
+
+.mm-info .btn-group {
+  margin-top: 1.5rem;
+}
+
+.verified {
+  flex: 1;
+  display: flex;
+}
+
+.verified input {
+  flex: 0 0 auto;
+  width: calc( 100% - (105px + .75rem));
+  margin-right: .75rem;
+}
+
+.verified img {
+  max-height: 35px;
+  margin-bottom: .5rem;
 }
 
 .app {

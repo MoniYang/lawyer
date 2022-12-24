@@ -4,6 +4,13 @@
     margin-left: .375rem;
 }
 
+u,
+.text-void {
+    display: inline-flex;
+    color: red;
+    text-decoration: none;
+}
+
 .btn {
     flex: 0 0 auto;
     display: inline-flex;
@@ -84,7 +91,7 @@
 input{
     height: 35px;
     padding: .5rem;
-    color: var(--white-opacity-3);
+    color: var(--black-opacity-1);
     background-color: transparent;
    
     &:focus {
@@ -98,9 +105,33 @@ input{
 
 .radio {
     display: inline-flex;
+    align-items: center;
 
     & + .radio {
         
+    }
+}
+
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+
+    input {
+        margin-right: .5rem;
+    }
+
+    + .checkbox {
+        margin-left: 1rem;
+    }
+}
+
+textarea{
+    padding: .75rem;
+    width: 100%;
+    border: 1px solid var(--black-opacity-4);
+    &:focus {
+       
+        outline: none;
     }
 }
 
@@ -138,7 +169,11 @@ input[type="radio"] {
         }
     }
 }
-
+.sub-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-500);
+}
 .text-line {
     margin-right: auto;
     text-decoration: line-through;
