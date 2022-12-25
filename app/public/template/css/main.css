@@ -1369,10 +1369,6 @@ input::placeholder {
   margin-right: .5rem;
 }
 
-.checkbox + .checkbox {
-  margin-left: 1rem;
-}
-
 textarea {
   padding: .75rem;
   width: 100%;
@@ -1943,7 +1939,7 @@ input[type="radio"] {
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .mm-info__group + .mm-info__group {
@@ -1961,6 +1957,7 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   padding: .75rem;
+  white-space: nowrap;
 }
 
 .mm-info__panel .text-group + .text-group {
@@ -1977,7 +1974,7 @@ input[type="radio"] {
 
 .mm-info__panel .text-group:first-child {
   flex: 0 0 auto;
-  width: 20%;
+  min-width: 20%;
   padding-right: 1rem;
 }
 
@@ -1992,6 +1989,24 @@ input[type="radio"] {
 
 .mm-info__item .text-void {
   margin-left: .25rem;
+}
+
+.mm-info__item label {
+  color: var(--primary-700);
+}
+
+.mm-info__textarea {
+  margin-top: 1rem;
+}
+
+.mm-info__check-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mm-info__check-list .text:before {
+  content: '-';
+  margin-right: .5rem;
 }
 
 .mm-info .btn-group {
@@ -3045,6 +3060,48 @@ input[type="radio"] {
 
 .cart .cart-num {
   margin-right: auto;
+}
+
+.contract {
+  flex: 1;
+}
+
+@media only screen and (max-width: 991px) {
+  .contract {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+.contract__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contract__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.contract__item + .contract__item {
+  padding-top: 1rem;
+  border-top: 1px solid var(--grey-200);
+}
+
+.contract .topic {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: .5rem 1rem;
+  color: var(--primary-500);
+  font-weight: 700;
+}
+
+.contract .text {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: .5rem 1rem;
+  color: var(--black-opacity-2);
 }
 
 .faq {

@@ -120,9 +120,6 @@ input{
         margin-right: .5rem;
     }
 
-    + .checkbox {
-        margin-left: 1rem;
-    }
 }
 
 textarea{
@@ -130,7 +127,6 @@ textarea{
     width: 100%;
     border: 1px solid var(--black-opacity-4);
     &:focus {
-       
         outline: none;
     }
 }
