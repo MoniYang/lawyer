@@ -2,7 +2,7 @@
 //member-info
 //---------------------------------
 
-.mm-info{
+.mm-info {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -11,17 +11,20 @@
 
     @at-root .#{$this} {
 
+        //.mm-info--register
         &--register{
             max-width: 600px;
             margin: auto;
         }
         
+         //.mm-info__content
         &__content{
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
+        //.mm-info__group
         &__group {
             flex: 1;
             display: flex;
@@ -32,6 +35,38 @@
             }
         }
 
+        //.mm-info__panel
+        &__panel {
+            display: flex;
+            padding: .5rem;
+            margin-bottom: 1rem;
+            background-color: var(--grey-100);
+
+            .text-group {
+                display: flex;
+                flex-direction: column;
+                padding: .75rem;
+
+                + .text-group {
+                    flex: 1;
+                    justify-content: center;
+                    border-left: 1px solid var(--black-opacity-5);
+                }
+                .text-spectial {
+                    margin: auto;
+                    color: var(--primary-300);
+                    font-weight: bold;
+                }
+
+                &:first-child {
+                    flex:  0 0 auto;
+                    width: 20%;
+                    padding-right: 1rem;
+                }
+            }
+        }
+
+        //.mm-info__item
         &__item {
             flex: 1;
             display: flex;

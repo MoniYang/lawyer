@@ -1950,6 +1950,37 @@ input[type="radio"] {
   margin-left: 10%;
 }
 
+.mm-info__panel {
+  display: flex;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  background-color: var(--grey-100);
+}
+
+.mm-info__panel .text-group {
+  display: flex;
+  flex-direction: column;
+  padding: .75rem;
+}
+
+.mm-info__panel .text-group + .text-group {
+  flex: 1;
+  justify-content: center;
+  border-left: 1px solid var(--black-opacity-5);
+}
+
+.mm-info__panel .text-group .text-spectial {
+  margin: auto;
+  color: var(--primary-300);
+  font-weight: bold;
+}
+
+.mm-info__panel .text-group:first-child {
+  flex: 0 0 auto;
+  width: 20%;
+  padding-right: 1rem;
+}
+
 .mm-info__item {
   flex: 1;
   display: flex;
