@@ -4,13 +4,13 @@
 
 <!-- 自訂 <title> 標題 -->
 {% set title_text = "footer" %}
-{% macro dropdown( open="false", btn_text , accent , type , href , content ) %}
+{% macro dropdown( open="false", btn_text , accent , type , href , drop='' ) %}
       <div class="dropdown" data-open="{{ open }}">
         <div class="dropdown__btn {% if accent=='true' %} dropdown__btn--accent{% endif %}">
             <span class="text">{{ btn_text }}</span>
-            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+           {% if drop !='false' -%} <i class="fa-sharp fa-solid fa-chevron-down"></i>{% endif %}
         </div>
-        {% if content !='true' -%}
+        {% if drop !='false' -%}
         <div class="dropdown__content">
             {% if type =='menu' -%}
                 {% for i in range(1, 6) -%}
@@ -39,6 +39,7 @@
                 {% endfor %}
             {% endif %}
         </div>
+        
         {% endif %}
     </div>
           
