@@ -27,6 +27,12 @@
                       <a href="{{ link }}">CLASS-【爭端談判學】{{ i }}</a>
                   </div>
                 {% endfor -%}
+              {% elif side_nav_type == 'contract' %}
+                {% for  i in range( 1, 11) -%}
+                <div class="side-nav__item">
+                    <a href="contract_list.html">{{i}}不動產投資合夥契約書</a>
+                </div>
+                {% endfor -%}
               {% endif -%}
         </div>
       </div>
