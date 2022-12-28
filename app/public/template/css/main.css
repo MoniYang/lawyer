@@ -1922,11 +1922,24 @@ input[type="radio"] {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin: auto;
+  max-width: 600px;
 }
 
-.mm-info--register {
-  max-width: 600px;
-  margin: auto;
+.mm-info--cart .mm-info__group {
+  align-items: center;
+  flex-direction: row;
+}
+
+.mm-info--cart .mm-info__check-list {
+  padding: 1rem .5rem;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid var(--black-opacity-4);
+}
+
+.mm-info--cart .mm-info__panel {
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .mm-info__content {
@@ -1935,15 +1948,20 @@ input[type="radio"] {
   flex-direction: column;
 }
 
+.mm-info__title {
+  margin: 0 1rem  0 0;
+  padding-left: .5rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--primary-500);
+  border-left: 2px solid var(--primary-500);
+}
+
 .mm-info__group {
   flex: 1;
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
-}
-
-.mm-info__group + .mm-info__group {
-  margin-left: 10%;
 }
 
 .mm-info__panel {
@@ -2906,16 +2924,19 @@ input[type="radio"] {
   margin-top: 1rem;
 }
 
+.cart {
+  margin-bottom: 1rem;
+}
+
 .cart__content {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .cart__list {
   flex: 1;
   display: flex;
   flex-direction: column;
-  max-width: calc( 100% - ( 300px + 2rem ));
   font-size: 1rem;
 }
 
@@ -2976,6 +2997,7 @@ input[type="radio"] {
   padding: .5rem;
   border-bottom: 1px solid;
   border-color: inherit;
+  font-size: .875rem;
 }
 
 .cart__item--head {
@@ -3065,6 +3087,7 @@ input[type="radio"] {
 .contract {
   flex: 1;
   display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 991px) {
@@ -3074,10 +3097,17 @@ input[type="radio"] {
   }
 }
 
+.contract--info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .contract__content {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .contract__title {
@@ -3090,6 +3120,15 @@ input[type="radio"] {
 .contract__textarea {
   flex: 1;
   margin-bottom: 1.5rem;
+}
+
+.contract__item {
+  padding: 0.5rem;
+}
+
+.contract__item + .contract__item {
+  padding-top: 1rem;
+  border-top: 1px solid var(--grey-200);
 }
 
 .faq {

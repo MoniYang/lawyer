@@ -6,15 +6,30 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    margin: auto;
+    max-width: 600px;
 
     $this: 'mm-info';
 
     @at-root .#{$this} {
 
         //.mm-info--register
-        &--register{
-            max-width: 600px;
-            margin: auto;
+        &--cart{
+            .#{$this}__group {
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .#{$this}__check-list {
+                padding: 1rem .5rem;
+                margin-bottom: .5rem;
+                border-bottom: 1px solid var(--black-opacity-4)
+            }
+
+            .#{$this}__panel {
+                margin-top: 1rem;
+                margin-bottom: 0;
+            }
         }
         
          //.mm-info__content
@@ -24,15 +39,22 @@
             flex-direction: column;
         }
 
+        &__title {
+            margin: 0 1rem  0 0;
+            padding-left: .5rem;
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: var(--primary-500);
+            border-left: 2px solid var(--primary-500);
+        }
+
         //.mm-info__group
         &__group {
             flex: 1;
             display: flex;
             flex-direction: column;
             margin: 1rem 0;
-            + .#{$this}__group {
-                margin-left: 10%;
-            }
+           
         }
 
         //.mm-info__panel

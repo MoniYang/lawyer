@@ -7,7 +7,12 @@
 {% macro dropdown( open="false", btn_text , accent , type , href , drop='' ) %}
       <div class="dropdown" data-open="{{ open }}">
         <div class="dropdown__btn {% if accent=='true' %} dropdown__btn--accent{% endif %}">
-            <span class="text">{{ btn_text }}</span>
+            {% if drop !='false' -%}
+                <span class="text">{{ btn_text }}</span>
+            {% else %}
+                  <a href="{{ href }}" class="text">{{ btn_text }}</a>
+            {% endif %}
+           
            {% if drop !='false' -%} <i class="fa-sharp fa-solid fa-chevron-down"></i>{% endif %}
         </div>
         {% if drop !='false' -%}
