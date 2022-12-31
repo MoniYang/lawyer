@@ -7,28 +7,63 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    max-width: 600px;
+    max-width: 980px;
 
     $this: 'mm-info';
 
     @at-root .#{$this} {
 
-        //.mm-info--register
-        &--cart{
+        //.mm-info--cart
+        &[class*="mm-info--cart"]{
             .#{$this}__group {
                 align-items: center;
                 flex-direction: row;
             }
 
+            //.mm-info--check-list
             .#{$this}__check-list {
                 padding: 1rem .5rem;
                 margin-bottom: .5rem;
                 border-bottom: 1px solid var(--black-opacity-4)
             }
 
+            //.mm-info__panel
             .#{$this}__panel {
                 margin-top: 1rem;
                 margin-bottom: 0;
+            }
+        }
+        &--cart-check,
+        &--cart-ok {
+            .total {
+                margin-top: 1rem;
+                margin-left: auto;
+            }
+            .#{$this}__item {
+                padding: .5rem;
+
+                .text {
+                    min-height: 20px;
+                }
+
+                .#{$this}__group {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+        }
+        //.mm-info--cart-check
+        &--cart-check {
+           
+            
+            .btn-group {
+                flex-direction: column;
+
+                .btn-group__item + 
+                .btn-group__item {
+                    margin-left: 0;
+                    margin-top: 1rem;
+                }
             }
         }
         
@@ -39,6 +74,7 @@
             flex-direction: column;
         }
 
+        //.mm-info__title
         &__title {
             margin: 0 1rem  0 0;
             padding-left: .5rem;
@@ -98,6 +134,8 @@
             padding: 0rem .5rem;
             border-bottom: 1px solid var(--black-opacity-4);
             
+            
+
             .text-void {
                 margin-left: .25rem;
             }
@@ -122,7 +160,8 @@
         }
         .btn-group {
             margin-top: 1.5rem;
-        }   
+        }
+        
     }
     
 }
