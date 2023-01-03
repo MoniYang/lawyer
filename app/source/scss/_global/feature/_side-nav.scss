@@ -31,6 +31,27 @@
                 }
             }
 
+            &__type {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                margin: 0 0.25rem 1rem;
+                text-align: center;
+                background-color: var(--black-opacity-6);
+                // clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+
+                .text:first-child {
+                    font-size: .75rem;
+                    margin-bottom: .375rem;
+                }
+
+                .text:last-child {
+                    color: var(--primary-300);
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
+            }
+
             //.side-nav__list
             &__list {
                 padding: 0 .5rem;

@@ -181,20 +181,6 @@ input[type="radio"] {
     margin-bottom: 1rem;
 }
 
-.page-nav {
-    display: flex;
-    align-items: center;
-
-    .dropdown {
-        
-        color: var(--black-opacity-1);
-        border-bottom: 2px solid var(--black-opacity-4);
-    }
-
-    .text + .dropdown {
-        margin-left: .25rem;
-    }
-}
 
 .page-num{
     margin: .5rem auto 0;

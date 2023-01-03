@@ -7,7 +7,9 @@
 {% macro btn( link , text, icon , type ) %}
     <a class="btn btn--{{ type }}" href="{{ link }}">
         <span class="text">{{ text}}</span>
-        <i class="fa-solid {{ icon }}"></i>
+        {%- if icon =='' %}
+            <i class="fa-solid {{ icon }}"></i>
+        {% endif -%}
     </a>
 {% endmacro %}
 

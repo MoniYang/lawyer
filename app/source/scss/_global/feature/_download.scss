@@ -1,0 +1,64 @@
+.download {
+
+    $this:'download';
+
+    @at-root .#{$this} {
+        &__list {
+            display: flex;
+            flex-direction: column;
+            margin: .5rem 0;
+        }
+
+        &__title {
+            flex: 1;
+            display: flex;
+            padding: .5rem 0;
+            font-size: 1rem;
+            color: var(--primary-500);
+            border-bottom: 2px solid var(--primary-500);
+           
+            .text:last-child{
+                padding: 0 .5rem;
+            }
+        }
+
+        &__item {
+            flex: 1;
+            display: flex;
+            padding: .5rem 0;
+            border-bottom: 1px solid var(--black-opacity-6);
+           + .#{$this}__item {
+          
+            margin-top: .5rem;
+           }
+        }
+        .text{
+            &:nth-child(2) {
+                flex: 1;
+            }
+
+        
+        }
+        .text-num {
+            min-width: 40px;
+            margin-right: .5rem;
+        
+        }
+        .text-time {
+            min-width: 100px;
+            margin: 0 .5rem;
+        }
+        .text-time,
+        .text-num {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+
+        // [class*="text"] {
+        //     padding:.25rem .5rem;
+        //     + [class*="text"]  {
+        //         margin-left: .5rem;
+        //     } 
+        // }
+    }
+}

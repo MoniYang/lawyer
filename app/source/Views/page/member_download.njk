@@ -1,0 +1,64 @@
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+{# {% set missionItems = [
+    { img:'mission_1', text:'mission_text_1' },
+    { img:'mission_2', text:'mission_text_2' },
+    { img:'mission_3', text:'mission_text_3' },
+    { img:'mission_1', text:'mission_text_1' },
+] %} #}
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block content %}
+ 
+   <div class="product product--list product--member">
+        {{ side_nav(img_url=img_url , side_nav_title='member', side_nav_type='member')}}
+
+        <div class="product__content">
+            <div class="product__header">
+                <div class="page-title"><img src="{{img_url}}/page/page_title_download.png" alt=""></div>
+                <div class="page-nav page-nav--member"> 
+                    <div class="page-nav__item">
+                        <label for="">合約管理</label>
+                        <input type="text">
+                    </div>
+                    <div class="page-nav__item">
+                        <label for="">截止區間</label>
+                        <input type="text">
+                        <span class="text">~</span>
+                        <input type="text">
+                        {{ btn( link='#',text='查詢', type='primary' ) }}
+                    </div>
+                </div>
+            </div>
+            <div class="download">
+                 <div class="download__title">
+                    <span class="text-num">編號</span>
+                    <span class="text">合約名稱</span>
+                    <span class="text-time">下載截止日期</span>
+                    <span class="text">下載</span>
+                </div>
+                <div class="download__list ">
+                {% for i in range(1, 11) -%} 
+
+                    <div class="download__item">
+                        <span class="text-num">{{ i }}</span>
+                        <span class="text">不動產投資合夥契約書</span>
+                        <span class="text-time">2023-2-18</span>
+                        {{ btn( link='#',text='下載', type='delete' ) }}
+                    </div>
+                {% endfor -%}
+                </div>
+            </div>
+            {{ page_num() }}
+        </div>
+   </div>
+
+ 
+{% endblock -%}
