@@ -25,7 +25,7 @@
             font-size: 1rem;
             color: var(--primary-500);
            
-           
+            .order-status,
             [class*="text"] {
             
                 border-bottom: 2px solid var(--primary-500);
@@ -34,15 +34,23 @@
                 padding: 0 .5rem;
             }
         }
-
+        &-status {
+            padding: 0 .5rem; 
+            text-align: center;
+            input{
+                background-color: var(--black-opacity-6);
+            }
+        }
         &__item {
             flex: 1;
             display: flex;
+            align-items: center;
             padding: .5rem 0;
             border-bottom: 1px solid var(--black-opacity-6);
            + .#{$this}__item {
           
             margin-top: .5rem;
+            
            }
         }
         [class*="text"] {
@@ -68,6 +76,32 @@
         .text-time {
             min-width: 80px;
            
+        }
+        &-status {
+            flex:1 0 auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 250px;
+
+            .text-void{
+                padding: 0;
+            }
+            &--waiting{
+                color: red;
+            }
+            &--sucess{
+                color: green;
+            }
+        }
+        &-text-group {
+            display: flex;
+            align-items: center;
+            justify-content: baseline;
+            .btn {
+                padding: 0rem;
+                margin: 0 0 0 .5rem;
+            }
         }
         .text-time,
         .text-num {

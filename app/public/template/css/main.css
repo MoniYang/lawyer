@@ -1337,7 +1337,6 @@ u,
 }
 
 input {
-  height: 35px;
   padding: .5rem;
   color: var(--black-opacity-1);
   background-color: transparent;
@@ -2154,7 +2153,7 @@ input[type="radio"] {
   color: var(--primary-500);
 }
 
-.order__title [class*="text"] {
+.order__title .order-status, .order__title [class*="text"] {
   border-bottom: 2px solid var(--primary-500);
 }
 
@@ -2162,9 +2161,19 @@ input[type="radio"] {
   padding: 0 .5rem;
 }
 
+.order-status {
+  padding: 0 .5rem;
+  text-align: center;
+}
+
+.order-status input {
+  background-color: var(--black-opacity-6);
+}
+
 .order__item {
   flex: 1;
   display: flex;
+  align-items: center;
   padding: .5rem 0;
   border-bottom: 1px solid var(--black-opacity-6);
 }
@@ -2194,6 +2203,37 @@ input[type="radio"] {
 
 .order .text-time {
   min-width: 80px;
+}
+
+.order-status {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+}
+
+.order-status .text-void {
+  padding: 0;
+}
+
+.order-status--waiting {
+  color: red;
+}
+
+.order-status--sucess {
+  color: green;
+}
+
+.order-text-group {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+}
+
+.order-text-group .btn {
+  padding: 0rem;
+  margin: 0 0 0 .5rem;
 }
 
 .order .text-time, .order .text-num {
