@@ -1,0 +1,98 @@
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+{# {% set missionItems = [
+    { img:'mission_1', text:'mission_text_1' },
+    { img:'mission_2', text:'mission_text_2' },
+    { img:'mission_3', text:'mission_text_3' },
+    { img:'mission_1', text:'mission_text_1' },
+] %} #}
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block content %}
+    <div class="mm-info mm-info--register mm-info--golden">
+        <div class="page-title"><img src="{{img_url}}/page/page_title_golden.png" alt=""></div>
+        <div class="mm-info__panel">
+            <div class="text-group">
+                <div class="title">黃金會員</div>
+                <span class="text-spectial">NT.1296/年</span>
+            </div>
+            <div class="text-group">
+                <div class="text">- 每月法律法向球 (電子報)</div>
+                <div class="text">- 每月可下載2 份專業合約(1 次)</div>
+            </div>
+           
+        </div>
+        <div class="mm-info__content">
+            <div class="mm-info__group">  
+                <div class="mm-info__title">訂購資訊</div>
+                <div class="checkbox">
+                    <input type="checkbox" id="louie" name="drone" value="louie">
+                    <label for="louie">同會員資訊</label>
+                </div>
+            </div>
+
+            <div class="mm-info__item">
+                <label for=""><u>*</u>購買人/公司</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">部門/職稱</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>E-mail</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>聯絡電話1</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">聯絡電話2</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">發票郵寄地址</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__check-list">
+                <div class="sub-title">統一發票 :</div>
+                <div class="radio">
+                    <input type="radio" id="louie1" name="drone" value="louie1">
+                    <label for="louie2">二聯式</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="louie2" name="drone" value="louie2">
+                    <label for="louie1">三聯式 <span class="text-void">(說明：勾選此選項後下⽅公司抬頭與統⼀編號才會顯現)</span></label>
+                </div>
+            </div>
+            <div class="mm-info__item">
+                <label for="">公司抬頭</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">統一編號</label>
+                <input type="text" placeholder="">
+            </div>
+
+            <div class="mm-info__panel">
+                <p>本人已知悉同意本次消費商品為通訊交易之商品暨服務，符合「通訊交易解除權合理例外情事適用準則」第二條之規範，不適用七日鑑賞期，凡經購買完成，即無法退款或換貨。</p>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="louie{{ index }}" name="drone" value="louie3">
+                <label for="louie3">我已詳細閱讀購買條約，並同意上述條約款項</label>
+            </div>
+                <div class="btn-group">
+                {{ btn( link='#',text='返回上一頁', type='primary' ) }}
+                {{ btn( link='cart_check.html',text='確認下一步', type='primary' ) }}
+            </div>
+        </div>
+    </div>
+{% endblock -%}

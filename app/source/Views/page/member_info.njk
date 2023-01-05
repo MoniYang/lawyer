@@ -1,0 +1,60 @@
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+{# {% set missionItems = [
+    { img:'mission_1', text:'mission_text_1' },
+    { img:'mission_2', text:'mission_text_2' },
+    { img:'mission_3', text:'mission_text_3' },
+    { img:'mission_1', text:'mission_text_1' },
+] %} #}
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block content %}
+    <div class="product product--list product--member product--order">
+        {{ side_nav(img_url=img_url , side_nav_title='member', side_nav_type='member')}}
+        <div class="mm-info mm-info--register">
+        <div class="page-title"><img src="{{img_url}}/page/page_title_member-info.png" alt=""></div>
+       
+        <div class="mm-info__content">
+            {# <div class="title">會員資訊</div> #}
+            <div class="mm-info__item">
+                <label for=""><u>*</u>購買人/公司</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">部門/職稱</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>E-mail</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>聯絡電話1</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">聯絡電話2</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">統一編號</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>發票郵寄地址</label>
+                <input type="text" placeholder="">
+            </div>
+           
+             {{ btn( link='#',text='儲存', type='primary' ) }}
+          
+        </div>
+    </div>
+ </div>
+{% endblock -%}

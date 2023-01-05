@@ -53,12 +53,8 @@
         }
 
 
-        .btn-group {
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--grey-100);
-            .btn--add {
-                margin: 1rem;
-            }
+        .mm-info{
+            margin: 0;
         }
         
         .item {
@@ -219,6 +215,7 @@
             width: 100%;
         }
 
+        
         //.product-info-title
         &-title {
             flex: 0 0 auto;
@@ -309,7 +306,13 @@
                 padding-bottom: 0;
             }
         }
-
+        .btn-group {
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--grey-100);
+            .btn--add {
+                margin: 1rem;
+            }
+        }
         .btn--add {
             margin: 1rem auto 0;
         }

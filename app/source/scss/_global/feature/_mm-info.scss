@@ -33,6 +33,24 @@
                 margin-bottom: 0;
             }
         }
+
+        &--golden {
+            .#{$this}__panel{
+                margin-top: 1rem;
+            }
+            .#{$this}__group {
+                flex-direction: row;
+                align-items: center;
+            }
+            .btn-group{
+                margin-top: 0!important;
+                flex-direction: column;
+                .btn-group__item + .btn-group__item {
+                    margin-left: 0;
+                    margin-top: 1rem;
+                }
+            }
+        }
         &--cart-check,
         &--cart-ok {
             .total {
@@ -52,6 +70,8 @@
                 }
             }
         }
+      
+
         //.mm-info--cart-check
         &--cart-check {
            
