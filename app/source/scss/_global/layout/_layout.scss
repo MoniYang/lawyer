@@ -1095,6 +1095,7 @@
         width: 100%;
     }
 
+    //.contract--info
     &--info {
         display: flex;
         flex-direction: row;
@@ -1123,12 +1124,17 @@
         margin-bottom: 1.5rem;
     }
 
+    // .contract__item
     &__item {
+        display: flex;
         padding: 0.5rem;
-       
+        
         + .contract__item {
             padding-top: 1rem;
             border-top: 1px solid var(--grey-200);
+        }
+        .text{
+            flex: 1;
         }
     }
 }

@@ -33,11 +33,11 @@
                     </div>
                     <div class="page-nav__item">
                         <span class="text">來源</span>
-                        {{ dropdown(btn_text='預設', type='我是選項',open='false')}}
+                        {{ dropdown(btn_text='預設', modify='dropdown--order' , type='product',open='false')}}
                     </div>
                     <div class="page-nav__item">
                         <span class="text">繳款情形</span>
-                        {{ dropdown(btn_text='預設', type='我是選項',open='false')}}
+                        {{ dropdown(btn_text='預設', modify='dropdown--order',  type='product',open='false')}}
                     </div>
                     {{ btn( link='#',text='查詢', type='primary' ) }}
                 </div>
@@ -60,7 +60,7 @@
                         <span class="text">QT2022020000{{i}}</span>
                         <span class="text">會員線上刷卡</span>
                         <div class="order-status order-status--sucess">付款成功</div>
-                        {{ btn( link='#',text='進入', type='delete' ) }}
+                        {{ btn( link='member_order_info.html',text='進入', type='delete' ) }}
                     </div>
                      <div class="order__item">
                         <span class="text-num">{{ i }}</span>
@@ -84,7 +84,7 @@
                         <span class="text">QT2022020000{{i}}</span>
                         <span class="text">會員線上刷卡</span>
                         <div class="order-status order-status--sucess">對帳成功<br>45892</div>
-                        {{ btn( link='#',text='進入', type='delete' ) }}
+                        {{ btn( link='member_order_info.html',text='進入', type='delete' ) }}
                     </div>
                     <div class="order__item">
                         <span class="text-num">{{ i }}</span>
@@ -92,7 +92,7 @@
                         <span class="text">QT2022020000{{i}}</span>
                         <span class="text">購買ATM 轉帳</span>
                         <div class="order-status order-status--sucess">對帳成功<br>45892</div>
-                        {{ btn( link='#',text='進入', type='delete' ) }}
+                        {{ btn( link='member_order_info.html',text='進入', type='delete' ) }}
                     </div>
                     <div class="order__item">
                         <span class="text-num">{{ i }}</span>
@@ -100,7 +100,7 @@
                         <span class="text">QT2022020000{{i}}</span>
                         <span class="text">購買ATM 轉帳</span>
                         <div class="order-status order-status--waiting">等候對帳<br>45892</div>
-                        {{ btn( link='#',text='進入', type='delete' ) }}
+                        {{ btn( link='member_order_info.html',text='進入', type='delete' ) }}
                     </div>
                 {% endfor -%}
                 </div>

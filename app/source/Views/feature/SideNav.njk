@@ -11,9 +11,9 @@
         {% set navItems = ['不動產業','住宿業','公關活動娛樂業','出版及影音製作','美容健康業','電子商務業','顧問培訓業'] %}
     {% elif side_nav_type =='member'%}
         {% set navItems = [
-          {  text:'檔案下載' , link:''  },
-          {  text:'訂單資訊' , link:'' },
-          { text:'會員資訊', link:'' }
+          {  text:'檔案下載' , link:'member_download.html'  },
+          {  text:'訂單資訊' , link:'member_order.html' },
+          { text:'會員資訊', link:'member_info.html' }
          ] %}
     {% endif %}    
       <div class="side-nav {{ modify }}">

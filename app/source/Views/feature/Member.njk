@@ -16,7 +16,8 @@
             list1:'每月法律法向球（電子報）',
             list2:'',
             bg:'member_1.png',
-            cart_text:'立即註冊'
+            cart_text:'立即註冊',
+            link:'register.html'
             },
         { 
             title_text:'黃⾦會員', 
@@ -24,7 +25,8 @@
             list1:'每月法律法向球（電子報）',
             list2:'每月可下載2份專業合約',
             bg:'member_2.jpg',
-            cart_text:'立即購買'
+            cart_text:'立即購買',
+            link:'golden.html'
         },
         { 
             title_text:'鑽石會員', 
@@ -32,7 +34,8 @@
             list1:'每月法律法向球（電子報）',
             list2:'每月可下載5份專業合約',
             bg:'member_3.jpg',
-            cart_text:'立即購買'
+            cart_text:'立即購買',
+            link:'#'
         }
     ] %}
         <div class="member">
@@ -40,7 +43,7 @@
            
             <div class="member__list">
                 
-                <a href="#" class="member__item" style="background-image:url('{{img_url}}/member/{{ memberItems[0].bg }}')">
+                <a href="{{  memberItems[0].link }}" class="member__item" style="background-image:url('{{img_url}}/member/{{ memberItems[0].bg }}')">
                     <div class="member__inner">
                         <div class="member__title">{{ memberItems[0].title_text }}</div>
                         <div class="member__cost">{{ memberItems[0].cost }}</div>
@@ -55,7 +58,7 @@
                     
                 </a>
                 {% for memberItem in memberItems.slice(1, 3) -%}
-                <a href="#" class="member__item" style="background-image:url('{{img_url}}/member/{{ memberItem.bg }}')">
+                <a href="{{ memberItem.link }}" class="member__item" style="background-image:url('{{img_url}}/member/{{ memberItem.bg }}')">
                     <div class="member__inner">
                         <div class="member__title">{{ memberItem.title_text }}</div>
                         <div class="member__cost"><span class="text-cost">NT.</span>{{ memberItem.cost }}<span class="text-cost">/年</span></div>
