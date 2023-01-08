@@ -42,19 +42,19 @@
                 {%- for i in range( 1 , 6) %}
                     {%- if loop.index == 1 %}    
                     <div class="cart__item">
-                        <span class="text-num">No.{{i}}</span>
-                        <span class="text">簡單記錄透過 CSS 來限制字數寬度或行數做法，可以將長篇的文章進行截斷，並且結尾以點點點方式呈現</span>
-                        <span class="text-price">NT.2,880</span>
-                        <span class="text-qua">1</span>
-                        <span class="text-price">NT.2,880</span>
+                        <span class="text-num" data-text="">No.{{i}}</span>
+                        <span class="text" data-text="產品名稱">簡單記錄透過 CSS 來限制字數寬度或行數做法，可以將長篇的文章進行截斷，並且結尾以點點點方式呈現</span>
+                        <span class="text-price" data-text="單價">NT.2,880</span>
+                        <span class="text-qua" data-text="數量">1</span>
+                        <span class="text-price" data-text="小計">NT.2,880</span>
                     </div>
                     {%- endif %}
                     <div class="cart__item">
-                        <span class="text-num">No.{{i}}</span>
-                        <span class="text">商品名稱</span>
-                        <span class="text-price">NT.2,880</span>
-                        <span class="text-qua">1</span>
-                       <span class="text-price">NT.2,880</span>
+                        <span class="text-num" data-text="">No.{{i}}</span>
+                        <span class="text" data-text="產品名稱">商品名稱</span>
+                        <span class="text-price" data-text="單價">NT.2,880</span>
+                        <span class="text-qua" data-text="數量">1</span>
+                       <span class="text-price" data-text="小計">NT.2,880</span>
                     </div>
                 {%- endfor %}
                  <div class="total">

@@ -25,6 +25,10 @@
             font-size: 1rem;
             color: var(--primary-500);
            
+            @include rwdw-max(991) {
+                display: none;
+            }
+
             .order-status,
             [class*="text"] {
             
@@ -37,6 +41,10 @@
         &-status {
             padding: 0 .5rem; 
             text-align: center;
+            @include rwdw-max(991) {
+                margin-left: calc( 60px + .25rem );
+                align-items: flex-start!important;
+            }
             input{
                 background-color: var(--black-opacity-6);
             }
@@ -47,13 +55,35 @@
             align-items: center;
             padding: .5rem 0;
             border-bottom: 1px solid var(--black-opacity-6);
-           + .#{$this}__item {
+            
+            @include rwdw-max(991) {
+                flex-direction: column;
+                align-items: flex-start;
+                [class*="text"]:not(.text-void , .order-text-group){
+                    &::before{
+                        content: attr(data-text);
+                        min-width: 60px;
+                        margin-right: .5rem;
+                    }
+                }
+                .text-num::before{
+                    display: none;
+                }
+                .btn--delete {
+                    order: -1;
+                    margin-left: auto;
+                    position: absolute;
+                    right: 0;
+                }
+            }
+
+            + .#{$this}__item {
           
             margin-top: .5rem;
             
            }
         }
-        [class*="text"] {
+        [class*="text"]:not(.order-text-group , .text-void) {
             padding: .5rem;
          
         }
@@ -84,6 +114,10 @@
             flex-direction: column;
             width: 250px;
 
+            @include rwdw-max(991) {
+                text-align: left;
+            }
+
             .text-void{
                 padding: 0;
             }
@@ -98,6 +132,7 @@
             display: flex;
             align-items: center;
             justify-content: baseline;
+            margin: .25rem 0;
             .btn {
                 padding: 0rem;
                 margin: 0 0 0 .5rem;
