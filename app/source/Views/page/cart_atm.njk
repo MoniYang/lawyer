@@ -66,10 +66,13 @@
           
         </div>
     </div>
-    <div class="mm-info__content">
-         <div class="mm-info__title">訂購資訊</div>
-
-         <div class="mm-info__item">
+    <div class="mm-info__content" data-open="true">
+        <div class="mm-info__group">
+            <div class="mm-info__title">訂購資訊</div>
+            {{ mmbtn() }}
+        </div>
+        <div class="mm-info__inner" >
+            <div class="mm-info__item">
                 <label for=""><u>*</u>購買人/公司</label>
                 <span class="text">柯里昂股份有限公司</span>
             </div>
@@ -107,7 +110,7 @@
             </div>
             <div class="mm-info__item">
                 <label for="">付款方式</label>
-                <span class="text">ATM 轉帳-尚未轉帳</span>
+                <a href="member_info.html" class="text">ATM 轉帳-尚未轉帳</a>
 
                 <div class="mm-info__group">
                     <span class="sub-title">轉帳(匯款)資訊</span>
@@ -118,14 +121,13 @@
                 </div>
                 
             </div>
-          
-           
-             <div class="btn-group">
-              {{ btn( link='index.html',text='返回首頁', type='primary' ) }}
-              {{ btn( link='#',text='列印頁面', type='primary' ) }}
-            </div>
+            
         </div>
-   
+        <div class="btn-group">
+            {{ btn( link='index.html',text='返回首頁', type='primary' ) }}
+            {{ btn( link='#',text='列印頁面', type='primary' ) }}
+        </div>
+    </div>
 </div>
  
 {% endblock -%}

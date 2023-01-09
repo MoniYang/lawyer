@@ -21,6 +21,29 @@ $('.product .dropdown').on("click", function (e) {
     e.stopPropagation();
 });
 
+$('.mm-info--cart-check .mm-info__btn').click(function(e) {
+
+    $('.mm-info__group').attr("data-open") == "true" ? $('.mm-info__group').attr("data-open","false") : $('.mm-info__group').attr("data-open", "true");
+    
+});
+
+$('.mm-info--golden .mm-info__btn').click(function(e) {
+
+    $('.mm-info__group').attr("data-open") == "true" ? $('.mm-info__group').attr("data-open","false") : $('.mm-info__group').attr("data-open", "true");
+    
+});
+$('.mm-info--cart-ok .mm-info__content > .mm-info__group').click(function(e) {
+
+    $('.mm-info__content').attr("data-open") == "true" ? $('.mm-info__content').attr("data-open","false") : $('.mm-info__content').attr("data-open", "true");
+    
+});
+
+$('.mm-info--golden-ok .mm-info__content > .mm-info__group').click(function(e) {
+
+    $('.mm-info__content').attr("data-open") == "true" ? $('.mm-info__content').attr("data-open","false") : $('.mm-info__content').attr("data-open", "true");
+    
+});
+
 
 $("body").on("click", function () {
  

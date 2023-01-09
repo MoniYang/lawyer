@@ -1,0 +1,9 @@
+{%- macro mmbtn(text) %}
+    <div class="mm-info__btn">
+        {%- if text !='' %}
+            <span class="text">{{ text }}</span>
+        {%- endif %}
+        <i class="fa-solid fa-minus"></i>
+        <i class="fa-solid fa-plus"></i>
+    </div>
+{%- endmacro %}

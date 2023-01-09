@@ -68,19 +68,20 @@
                 <label for="">統一編號</label>
                 <span class="text">33657825</span>
             </div>
-
-            <div class="mm-info__panel">
-                <p>本人已知悉同意本次消費商品為通訊交易之商品暨服務，符合「通訊交易解除權
-合理例外情事適用準則」第二條之規範，不適用七日鑑賞期，凡經購買完成，即無法退款或換貨。</p>
+             <div class="mm-info__group mm-info__group--column"  data-open="false">
+                {{ mmbtn(text='會員權益說明') }}
+                <div class="mm-info__panel">
+                    <p>本人已知悉同意本次消費商品為通訊交易之商品暨服務，符合「通訊交易解除權
+    合理例外情事適用準則」第二條之規範，不適用七日鑑賞期，凡經購買完成，即無法退款或換貨。</p>
+                </div>
             </div>
-           
              <div class="btn-group">
              <div class="btn-group__item">
-                {{ btn( link='cart_credit.html',text='線上刷卡', type='primary' ) }}
+                {{ btn( link='golden_ok.html',text='線上刷卡', type='primary' ) }}
                 <span class="text-void">註：刷卡完成後可於「會員管理」中檔案下載</span>
              </div>
              <div class="btn-group__item">
-                {{ btn( link='cart_atm.html',text='ATM 轉帳', type='primary' ) }}
+                {{ btn( link='golden_ok.html',text='ATM 轉帳', type='primary' ) }}
                 <span class="text-void">註：商品將於「對帳完成」後開放下載。</span>
              </div>
             </div>

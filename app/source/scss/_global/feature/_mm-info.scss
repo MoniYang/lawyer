@@ -14,23 +14,13 @@
     @at-root .#{$this} {
 
         //.mm-info--cart
-        &[class*="mm-info--cart"]{
-            .#{$this}__group {
-                align-items: center;
-                flex-direction: row;
-            }
+        &--cart{
 
             //.mm-info--check-list
             .#{$this}__check-list {
                 padding: 1rem .5rem;
                 margin-bottom: .5rem;
                 border-bottom: 1px solid var(--black-opacity-4)
-            }
-
-            //.mm-info__panel
-            .#{$this}__panel {
-                margin-top: 1rem;
-                // margin-bottom: 0;
             }
         }
 
@@ -39,8 +29,8 @@
                 margin-top: 1rem;
             }
             .#{$this}__group {
-                flex-direction: row;
-                align-items: center;
+                flex-direction: row;      
+            
             }
             .btn-group{
                 margin-top: 0!important;
@@ -69,6 +59,42 @@
                     align-items: flex-start;
                 }
             }
+        }
+        &--golden-ok,
+        &--cart-ok {
+
+            .#{$this}__group {
+                cursor: pointer;
+            }
+            .#{$this}__content {
+                &[data-open="false"] {
+                    .fa-minus {
+                        display: none;
+                    }
+    
+                    .#{$this}__inner{
+                        height: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        margin: 0!important;
+                        padding: 0;
+                        display: none;
+                    }
+                }
+    
+                &[data-open="true"] {
+                    .fa-plus {
+                        display: none;
+                    }
+    
+                    .#{$this}__inner{
+                        height: 100%;
+                        opacity: 1;
+                    }
+    
+                }
+            }
+           
         }
       
 
@@ -103,30 +129,74 @@
 
         //.mm-info__title
         &__title {
-            margin: 0 1rem  0 0;
+            
             padding-left: .5rem;
             font-size: 1.125rem;
             font-weight: bold;
             color: var(--primary-500);
             border-left: 2px solid var(--primary-500);
+
+            + .checkbox {
+                margin-left: .5rem;
+            }
         }
 
         //.mm-info__group
         &__group {
             flex: 1;
             display: flex;
-            
+           
             margin: 1rem 0;
+            transition: all .3s ease;
            
             &--column {
-                flex-direction: column;
+                flex-direction: column!important;
             }
 
             &--row {
                 flex-direction: row;
+                align-items: center;
+            }
+
+            &[data-open="false"] {
+                .fa-minus {
+                    display: none;
+                }
+
+                .#{$this}__panel{
+                    height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    margin: 0!important;
+                    padding: 0;
+                }
+            }
+
+            &[data-open="true"] {
+                .fa-plus {
+                    display: none;
+                }
+
+                .#{$this}__panel{
+                    height: 100%;
+                    opacity: 1;
+                }
+
             }
         }
 
+        &__btn {
+            display: flex;
+            align-items: center;
+            color:var(--primary-500);
+            cursor: pointer;
+            + .#{$this}__panel {
+                margin-top: .5rem;
+                margin-bottom: .5rem;
+            }
+
+            
+        }
         //.mm-info__panel
         &__panel {
             display: flex;
@@ -165,10 +235,13 @@
             display: flex;
             flex-direction: column;
             margin: .5rem 0;
-            padding: 0rem .5rem;
+            padding: .5rem;
             border-bottom: 1px solid var(--black-opacity-4);
             
-            
+            + .#{$this}__panel {
+                margin-top: .5rem;
+                margin-bottom: .5rem;
+            }
 
             .text-void {
                 margin-left: .25rem;
@@ -177,6 +250,8 @@
             label {
                 color: var(--primary-700);
             }
+
+
         }
 
         &__textarea {
