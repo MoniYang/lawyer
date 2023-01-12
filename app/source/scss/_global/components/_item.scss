@@ -1,0 +1,44 @@
+
+
+.item {
+    flex: 0 0 auto;
+    &:hover{
+        cursor: pointer;
+    }
+
+    &__img{
+        display: block;
+        width: 100%;
+        height: 280px;
+        background-size: cover;
+        @include rwdw-max(767) {
+            height: 250px;
+        }
+
+        @include rwdw-max(480) {
+            height: 180px;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-wrap: wrap;
+        padding: .375rem;
+        background-color: var(--black-opacity-5);
+    }
+
+
+    [class*=text-] {
+        
+    }
+    .text-title {
+        width: 100%;
+        color: var(--black-opacity-1);
+    }
+    .text{
+        font-size: 1rem;
+        color: var(--primary-500);
+        @include rwdw-max(480) {
+            font-size: .875rem;
+        }
+    }
+}

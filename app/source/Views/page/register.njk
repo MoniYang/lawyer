@@ -1,0 +1,102 @@
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+{# {% set missionItems = [
+    { img:'mission_1', text:'mission_text_1' },
+    { img:'mission_2', text:'mission_text_2' },
+    { img:'mission_3', text:'mission_text_3' },
+    { img:'mission_1', text:'mission_text_1' },
+] %} #}
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block content %}
+    <div class="mm-info mm-info--register">
+        <div class="page-title"><img src="{{img_url}}/page/page_title_register.png" alt=""></div>
+        <div class="mm-info__panel">
+            <div class="text-group">
+                <div class="title">一般會員</div>
+                <span class="text-spectial">註冊會員</span>
+            </div>
+            <div class="text-group">
+                <div class="text">- 每月法律法向球 (電子報)</div>
+            </div>
+           
+        </div>
+        <div class="mm-info__content">
+            {# <div class="title">會員資訊</div> #}
+            <div class="mm-info__item">
+                <label for=""><u>*</u>帳號<span class="text-void">(公司戶可用統一編號為帳號)</span></label>
+                <input type="text" placeholder="請輸入E-mail">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>密碼</label>
+                <input type="text" placeholder="請輸入密碼">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>確認密碼</label>
+                <input type="text" placeholder="請輸入密碼">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>購買人/公司</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">部門/職稱</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>E-mail</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>聯絡電話1</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">聯絡電話2</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">統一編號</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for=""><u>*</u>發票郵寄地址</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__group mm-info__group--column">
+                <div class="sub-title">我有興趣收到資訊:</div>
+                <div class="mm-info__check-list">
+                 {%- set items = ['最新契約上架', '線上課程資訊','實體課程資訊','法律風向球電子報'] %}
+                {%- for i in items %}
+                    <div class="checkbox">
+                        <input type="checkbox" id="louie{{ index }}" name="drone" value="louie">
+                        <label for="louie">{{ i }}</label>
+                    </div>
+                {%- endfor %}
+                </div>
+                <div class="mm-info__textarea">
+                    <div class="sub-title">使用條款</div>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="mm-info__item">
+                <label for="">驗證碼</label>
+                <div class="verified">
+                    <input type="text" placeholder="請輸入驗證碼">
+                    <img src="{{img_url}}/code.png">
+                </div>
+            </div>
+            <div class="btn-group">
+             {{ btn( link='#',text='返回', type='primary' ) }}
+             {{ btn( link='register_ok.html',text='註冊', type='primary' ) }}
+            </div>
+        </div>
+    </div>
+{% endblock -%}

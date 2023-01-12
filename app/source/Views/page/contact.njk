@@ -1,0 +1,49 @@
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+{# {% set missionItems = [
+    { img:'mission_1', text:'mission_text_1' },
+    { img:'mission_2', text:'mission_text_2' },
+    { img:'mission_3', text:'mission_text_3' },
+    { img:'mission_1', text:'mission_text_1' },
+] %} #}
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block content %}
+<div class="mm-info mm-info--register">
+    <div class="page-title"><img src="{{img_url}}/page/page_title_contact.png" alt=""></div>
+    <div class="mm-info__content">
+            <div class="mm-info__item">
+                <label for="">諮詢項目：</label>
+                <input type="text">
+            </div>
+            <div class="mm-info__item">
+                <label for="">購買人/公司</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">E-mail</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__item">
+                <label for="">聯絡電話</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="mm-info__textarea">
+                <div class="sub-title">諮詢內容</div>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            
+            <div class="btn-group">
+             {{ btn( link='index.html',text='返回首頁', type='primary' ) }}
+             {{ btn( link='#',text='確認送出', type='primary' ) }}
+            </div>
+        </div>
+</div>
+{% endblock -%}

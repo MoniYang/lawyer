@@ -1,5 +1,5 @@
 <!-- 繼承 <html> 模板 -->
-{% extends "Views/Include/HtmlLayout.njk" %}
+{# {% extends "Views/Include/HtmlLayout.njk" %} #}
 
 
 <!-- 自訂 <title> 標題 -->
@@ -12,19 +12,19 @@
 {% macro footer(img_url) %}
       {% set footerNavItems = [
   
-        { text: '聯絡我們'},
-        { text: '隱私權利'},
-        { text: '網站條款'},
-        { text: '會員權益'}]
+        { text: '聯絡我們',href:'contact.html'},
+        { text: '隱私權利',href:'privacy.html'},
+        { text: '網站條款',href:'terms.html'},
+        { text: '會員權益',href:'benefits.html'}]
     %}
-                <div class="footer__top" style="background-image:url('{{img_url}}/footer_bg.png')"></div>
+               
                 <div class="footer__inner">
                 <div class="footer__content">
                     <div class="footer__nav-list" >
                       
                         {% for footerNavItem in footerNavItems %}
                             <div class="footer__item">
-                                <span class="text">{{ footerNavItem.text }}</span>
+                                <a href="{{ footerNavItem.href }}" class="text">{{ footerNavItem.text }}</a>
                             </div>
                         {% endfor %}
                     </div>

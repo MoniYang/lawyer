@@ -3,7 +3,7 @@
 .dropdown {
     flex: 0 0 auto;
     color: var(--white-opacity-1);
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
 
     $this:'dropdown';
 
@@ -103,6 +103,19 @@
         i {
             font-size: .75rem;
             opacity: .5;
+        }
+    }
+
+    @at-root .#{$this} {
+        &--order {
+            position: relative;
+
+            .#{$this}__content{
+                top: 0px;
+                transform: translateY(18%);
+                background-color: var(--grey-100);
+                box-shadow: var(--box-shadow);
+            }
         }
     }
 

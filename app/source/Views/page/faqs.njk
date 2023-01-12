@@ -1,0 +1,32 @@
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+{# {% set missionItems = [
+    { img:'mission_1', text:'mission_text_1' },
+    { img:'mission_2', text:'mission_text_2' },
+    { img:'mission_3', text:'mission_text_3' },
+    { img:'mission_1', text:'mission_text_1' },
+] %} #}
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block content %}
+    <div class="faq">
+    <div class="page-title"><img src="{{img_url}}/page/page_title_faqs.png" alt=""></div>
+        <div class="faq__content">
+        {%- for i in range(1, 6)  %}
+        <div class="faq__item">
+            <span class="topic">Q{{i}}: 是否需要先加入會員才可以訂購網站上的商品？</span>
+            <span class="text">A{{i}}: 合約網非常重視您的使用自主權，在成功購買後您可以選
+擇成為我們的會員，合約網也提供訂閱模式，讓您可以在第⼀
+時間收到相關優惠通知。</span>
+        </div>
+        {% endfor -%}
+        </div>
+    </div>
+{% endblock -%}

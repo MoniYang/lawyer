@@ -17,11 +17,20 @@
 //components
 @import "_global/components/components.scss";
 @import "_global/components/dropdown.scss";
+@import "_global/components/item.scss";
 
 //feature
-// @import "../_global/feature/collapse.scss";
+@import "_global/feature/side-nav.scss";
+@import "_global/feature/promotion.scss";
+@import "_global/feature/login.scss";
+@import "_global/feature/mm-info.scss";
+@import "_global/feature/download.scss";
+@import "_global/feature/order.scss";
+@import "_global/feature/page-nav.scss";
+@import "_global/feature/cart.scss";
 
 // layout
 @import "_global/layout/layout.scss";
 @import "_global/layout/header.scss";
+@import "_global/layout/product.scss";
 

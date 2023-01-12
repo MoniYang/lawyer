@@ -1,22 +1,51 @@
 <!-- 繼承 <html> 模板 -->
-{% extends "Views/Include/HtmlLayout.njk" %}
+{# {% extends "Views/Include/HtmlLayout.njk" %} #}
 
 
 <!-- 自訂 <title> 標題 -->
 {% set title_text = "footer" %}
-{% macro dropdown( open="false", btn_text , accent) %}
-      <div class="dropdown" data-open="{{ open }}">
+{% macro dropdown( open="false", modify , btn_text , accent , type , href , drop='' ) %}
+      <div class="dropdown {{ modify }}" data-open="{{ open }}">
         <div class="dropdown__btn {% if accent=='true' %} dropdown__btn--accent{% endif %}">
-            <span class="text">{{ btn_text }}</span>
-            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+            {% if drop !='false' -%}
+                <span class="text">{{ btn_text }}</span>
+            {% else %}
+                  <a href="{{ href }}" class="text">{{ btn_text }}</a>
+            {% endif %}
+           
+           {% if drop !='false' -%} <i class="fa-sharp fa-solid fa-chevron-down"></i>{% endif %}
         </div>
+        {% if drop !='false' -%}
         <div class="dropdown__content">
-            {% for i in range(1, 6) -%}
-            <a href="#" class="dropdown__item">
-                <span class="text">{{i}}我是選項</span>
-            </a>
-            {% endfor %}
+            {% if type =='menu'or type =='product' -%}
+                {% for i in range(1, 6) -%}
+                <a href="{{ href }}" class="dropdown__item">
+                    <span class="text">{{i}}我是選項</span>
+                </a>
+                {% endfor %}
+            {% elif type =='page_nav' -%}
+                <a href="#" class="dropdown__item">
+                    <span class="text">我是選項</span>
+                </a>
+            {% elif type =='menu_member' -%}
+                {% set members = [ 
+
+                { text:'會員登入', link:'login.html'},
+                { text:'會員註冊', link:'register.html' },
+                { text:'忘記密碼', link:'forget.html' },
+                { text:'檔案下載', link:'member_download.html' },
+                { text:'訂單資訊', link:'member_order.html' },
+                { text:'會員資訊', link:'member_info.html' }
+                ] %}
+                {% for member in members -%}
+                    <a href="{{ member.link }}" class="dropdown__item">
+                        <span class="text">{{ member.text }}</span>
+                    </a>
+                {% endfor %}
+            {% endif %}
         </div>
+        
+        {% endif %}
     </div>
           
 {% endmacro %}

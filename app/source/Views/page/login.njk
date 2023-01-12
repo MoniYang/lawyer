@@ -1,0 +1,44 @@
+{% extends "Views/Include/HtmlLayout.njk" %}
+
+
+<!-- 自訂 <title> 標題 -->
+{% set title_text = "軍師幫" %}
+
+
+<!-- 自訂站台 -->
+{# {% set missionItems = [
+    { img:'mission_1', text:'mission_text_1' },
+    { img:'mission_2', text:'mission_text_2' },
+    { img:'mission_3', text:'mission_text_3' },
+    { img:'mission_1', text:'mission_text_1' },
+] %} #}
+
+
+<!-- 在 <body> 之內加入 -->
+{%- block content %}
+    <div class="login">
+        <div class="login__content">
+            <div class="title">會員登入</div>
+            <div class="login__item">
+                <label for="">帳號</label>
+                <input type="text" placeholder="請輸入E-mail">
+            </div>
+            <div class="login__item">
+                <label for="">密碼</label>
+                <input type="text" placeholder="請輸入密碼">
+            </div>
+            <div class="login__item">
+                <label for="">驗證碼</label>
+                <div class="verified">
+                    <input type="text" placeholder="請輸入驗證碼">
+                    <img src="{{img_url}}/code.png">
+                </div>
+            </div>
+            <div class="login__btn-group">
+                <a class="btn">會員註冊</a>
+                <a class="btn">忘記密碼</a>
+            </div>
+             {{ btn( link='#',text='登入', type='primary' ) }}
+        </div>
+    </div>
+{% endblock -%}

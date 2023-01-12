@@ -1,0 +1,24 @@
+<!-- 繼承 <html> 模板 -->
+{# {% extends "Views/Include/HtmlLayout.njk" %} #}
+
+
+<!-- 自訂 <title> 標題 -->
+
+{% macro btn( link , text, icon , type ) %}
+    <a class="btn btn--{{ type }}" href="{{ link }}">
+        <span class="text">{{ text}}</span>
+        {%- if icon =='' %}
+            <i class="fa-solid {{ icon }}"></i>
+        {% endif -%}
+    </a>
+{% endmacro %}
+
+
+
+
+
+
+{%- block Body %}
+  
+   
+{% endblock -%}

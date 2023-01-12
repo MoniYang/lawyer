@@ -1,0 +1,174 @@
+
+//promotion
+//---------------------------------
+
+.promotion {
+    
+    $this: 'promotion';
+
+    @at-root .#{$this} {
+        &--index {  
+            // min-height: 600px;
+            background-size: cover;
+            background-position: bottom center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+    
+            @include rwdw-max(1199){
+                background-size:cover;
+                background-attachment: initial;
+    
+            }
+    
+            @include rwdw-max(768){
+                // min-height: 300px;
+                background-attachment: initial;
+            }
+
+            //.promotion__content
+            .#{$this}__content {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+                padding: 50px 10px;
+                @include rwdw-max(768) {
+                    padding: 30px 10px;
+                }
+            }
+    
+        }
+
+        &--prod {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+
+            .title {
+                width: 100%;
+                font-size: 1.5rem;
+                padding: .125rem 0 .125rem 0rem;
+                margin: 1rem 0;
+                color: var(--black);
+                border-bottom: 3px solid var(--primary-500);
+
+                @include rwdw-max(991) {
+                    margin: 0 auto 1rem;
+                    font-size: 1.25rem;
+                }
+            }
+
+            .#{$this}-item {    
+                flex: 1 0 auto;
+                width: calc( 25% - 1rem);
+                & + .#{$this}-item  {
+                    margin-left: 1rem;
+                    
+                }
+
+                // @include rwdw-max(991) {
+                //     width: calc( 33.3% - 1rem);
+                //     &:last-child{
+                //         display: none;
+                //     }
+                // }
+
+                @include rwdw-max(767) {
+                    width: calc( 50% - .5rem);
+                    margin-bottom: .5rem;
+                    
+
+                    &:nth-child(even){
+                        margin-right: .5rem;
+                    }
+
+                    & + .#{$this}-item {
+                        margin-left: 0;
+                    } 
+                    
+                    &:nth-last-child(-n+2) {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+        }
+    }
+    
+   
+
+    //.promotion-item
+    &-item {
+        // max-height: 200px;
+        position: relative;
+        img {
+            width: auto;
+            // max-height: 450px;
+            // @include rwdw-max(768) {
+            //     max-height: 350px;
+            // }
+        }
+
+        &__text-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0.5rem 1rem 0.5rem 2rem;
+            color: var(--white-opacity-1);
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--black-opacity-3);
+            @include rwdw-max(768){
+                font-size: .875rem;
+            }
+            
+            &::before{
+                content:'';
+                display: flex;
+                background-color: var(--white-opacity-2);
+                width: 2px;
+                position: absolute;
+                left:0;
+                top: 0;
+                bottom: 0;
+                margin: .5rem 1rem;
+
+            }
+
+            .text-title {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+            .text-line{
+                margin-right: auto;
+            }
+            .text{
+                font-size: 1.25rem;
+                color: var(--primary-100);
+                @include rwdw-max(768){
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .swiper {
+        max-width: 1180px;
+        padding-bottom: 30px;
+        // overflow-y: visible;
+    }
+    .swiper-slide {
+        width: auto;
+        max-width: 300px;
+        // margin: 0 4rem;
+        @include rwdw-max(1199){
+            // margin: auto;
+        }
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+        bottom: -20px;
+    }
+   
+}
