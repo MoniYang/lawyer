@@ -927,6 +927,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    max-width: 980px;
+    margin: 0 auto;
     @include rwdw-max(991) {
         flex: 0 0 auto;
         width: 100%;

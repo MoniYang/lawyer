@@ -87,6 +87,14 @@ u,
             filter: brightness(1.1);
         }
     }
+    &--payment {
+        font-size: 1.25rem;
+        padding: .375rem;
+        background-color: var(--grey-200);
+        border-radius: var(--border-radius);
+        color: var(--black);
+        text-shadow: var(--text-shadow);
+    }
 }
 
 input{

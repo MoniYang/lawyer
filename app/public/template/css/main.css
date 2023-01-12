@@ -1338,6 +1338,15 @@ u,
           filter: brightness(1.1);
 }
 
+.btn--payment {
+  font-size: 1.25rem;
+  padding: .375rem;
+  background-color: var(--grey-200);
+  border-radius: var(--border-radius);
+  color: var(--black);
+  text-shadow: var(--text-shadow);
+}
+
 input {
   padding: .5rem;
   color: var(--black-opacity-1);
@@ -3538,6 +3547,8 @@ input[type="radio"] {
   flex: 1;
   display: flex;
   flex-direction: column;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 991px) {
