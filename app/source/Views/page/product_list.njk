@@ -18,12 +18,15 @@
 {%- block content %}
  
    <div class="product product--list">
-        {{ side_nav(img_url=img_url , side_nav_title='prod', side_nav_type='prod',link='product_list.html')}}
+        {{ side_nav(img_url=img_url , side_nav_title='prod', side_nav_type='prod', link='product_list.html')}}
 
         <div class="product__content">
             {{search()}}
             <div class="product__header">
-                <div class="page-title"><img src="{{img_url}}/page/page_title_1.png" alt=""></div>
+                <div class="page-title">
+                    <img src="{{img_url}}/page/page_deco.png" alt="">
+                    <span class="text">買賣交易類</span>
+                </div>
                 <div class="page-nav"> 
                     <span class="text">排序方式:</span>
                     {{dropdown(btn_text="上架新→舊" , type ="page_nav" )}}
