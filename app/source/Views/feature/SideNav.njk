@@ -4,7 +4,7 @@
 
 <!-- 自訂 <title> 標題 -->
 
-{% macro side_nav(img_url , side_nav_title , side_nav_type , modify,link, site_nav_text ) %}
+{% macro side_nav(img_url , side_nav_title , side_nav_type , modify,link, site_nav_text , url ) %}
     {% if side_nav_type =='prod'%}
         {% set navItems = ['買賣交易','供貨代工','合資合夥','經銷加盟','工程承攬','居間仲介','不動產類','解約和解','各類租賃','借款擔保','信託借名','無償贈與','人事勞基','大廈管理','委任委託','婚姻關係','各式聲明','其他類別'] %}
     {% elif side_nav_type =='faqs'%}
@@ -35,12 +35,25 @@
                 </div>
                 {% endfor -%}
             {% elif side_nav_type =='member'%}
-                {% for navItem in navItems -%}
-                <div class="side-nav__item">
-                    <a href="{{ navItem.link }}">{{ navItem.text }}</a>
+                {% macro side_nav_item( text, open, link  ) -%}
+                <div class="side-nav__item" data-selected="{{ open }}">
+                    <a href="{{ link }}">{{ text }}</a>
                 </div>
-                {% endfor -%}
-             {% elif side_nav_type == 'course' %}
+                {% endmacro -%}
+                {% if url =='member_download'%}
+                  {{ side_nav_item( text=navItems[0].text , link=navItems[0].link , open='true' ) }}
+                  {{ side_nav_item( text=navItems[1].text , link=navItems[1].link , open='false' ) }}
+                  {{ side_nav_item( text=navItems[2].text , link=navItems[2].link , open='false' ) }}
+                {% elif url =='member_info'%}
+                  {{ side_nav_item( text=navItems[0].text , link=navItems[0].link , open='false' ) }}
+                  {{ side_nav_item( text=navItems[1].text , link=navItems[1].link , open='true' ) }}
+                  {{ side_nav_item( text=navItems[2].text , link=navItems[2].link , open='false' ) }}
+                {% elif url =='member_order'%}
+                  {{ side_nav_item( text=navItems[0].text , link=navItems[0].link , open='false' ) }}
+                  {{ side_nav_item( text=navItems[1].text , link=navItems[1].link , open='false' ) }}
+                  {{ side_nav_item( text=navItems[2].text , link=navItems[2].link , open='true' ) }}
+                {% endif -%}
+              {% elif side_nav_type == 'course' %}
                 {% for i in range( 1, 11) -%}
                   <div class="side-nav__item">
                       <a href="{{ link }}">CLASS-【爭端談判學】{{ i }}</a>

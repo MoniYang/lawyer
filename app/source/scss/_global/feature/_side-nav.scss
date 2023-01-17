@@ -100,6 +100,23 @@
                 }
             }
         }
+
+        //.side-nav--member
+        &--member {
+            //.side-nav__item
+            .#{$this}__item {
+                &:nth-child(even) {
+                    color: var(--black);
+                }
+
+                &[data-selected="true"] {
+                    color: var(--primary-500);
+                    text-decoration: underline;
+                }
+
+            }
+            
+        }
     }
  
 }

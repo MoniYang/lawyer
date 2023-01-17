@@ -120,6 +120,19 @@
             }
         }
         
+        //.mm-info--cart-check
+        &--triple {
+            transition: .3s ease;
+            &[data-open="false"] {
+                display: none;
+                opacity: 0;
+            }
+            &[data-open="open"] {
+                
+                opacity: 1;
+            }
+        }
+
          //.mm-info__content
         &__content{
             flex: 1;
@@ -152,11 +165,13 @@
             &--column {
                 flex-direction: column!important;
             }
-
+            
             &--row {
                 flex-direction: row;
                 align-items: center;
             }
+
+            
 
             &[data-open="false"] {
                 .fa-minus {
