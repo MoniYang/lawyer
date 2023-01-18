@@ -1260,6 +1260,10 @@ u,
   text-decoration: none;
 }
 
+.text-blue {
+  color: blue;
+}
+
 .btn {
   flex: 0 0 auto;
   display: inline-flex;
@@ -1464,7 +1468,7 @@ input[type="radio"] {
 }
 
 .anounce {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -1479,6 +1483,27 @@ input[type="radio"] {
 
 .path__item + .path__item {
   margin: 0 .5rem;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  margin-top: .5rem;
+}
+
+.share .text {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.share a {
+  margin: 0 .25rem;
+}
+
+.share i {
+  margin: 0 .5rem;
+  font-size: 1.5rem;
 }
 
 .swiper-pagination-bullet {
@@ -1650,7 +1675,7 @@ input[type="radio"] {
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  min-width: 150px;
+  width: 180px;
   margin-right: 1rem;
   padding: .5rem .25rem;
   background-color: var(--grey-100);
@@ -1664,7 +1689,7 @@ input[type="radio"] {
 
 .side-nav__header {
   flex: 0 0 auto;
-  text-align: center;
+  padding-left: 1rem;
   margin: 0 .5rem .5rem;
   padding-bottom: .5rem;
   border-bottom: 1px solid var(--primary-500);
@@ -1741,6 +1766,21 @@ input[type="radio"] {
 .side-nav--member .side-nav__item[data-selected="true"] {
   color: var(--primary-500);
   text-decoration: underline;
+}
+
+.side-nav--contract .side-nav__header {
+  padding-left: .5rem;
+}
+
+.side-nav--contract .side-nav__list {
+  padding: 0 .5rem;
+}
+
+.side-nav--contract a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
 .promotion--index {
@@ -3606,8 +3646,9 @@ input[type="radio"] {
 }
 
 .contract__title {
+  display: inline-flex;
+  align-items: center;
   padding-left: .5rem;
-  margin-bottom: 1rem;
   font-size: 1.125rem;
   border-left: 3px solid var(--primary-200);
 }
@@ -3629,6 +3670,22 @@ input[type="radio"] {
 
 .contract__item .text {
   flex: 1;
+}
+
+.contract__group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .contract__group {
+    flex-direction: column;
+  }
+}
+
+.contract .share {
+  margin-left: auto;
 }
 
 .faq {
@@ -3889,7 +3946,9 @@ input[type="radio"] {
 }
 
 .product {
+  flex: 0 0 auto;
   display: flex;
+  width: 100%;
   min-width: 0;
 }
 
@@ -3922,26 +3981,6 @@ input[type="radio"] {
     width: 100%;
     margin-bottom: 1rem;
   }
-}
-
-.product__share {
-  display: flex;
-  flex-direction: column;
-  margin-top: .5rem;
-}
-
-.product__share .text {
-  display: flex;
-  align-items: center;
-}
-
-.product__share a {
-  margin: 0 .25rem;
-}
-
-.product__share i {
-  margin: 0 .5rem;
-  font-size: 1.5rem;
 }
 
 .product .mm-info {

@@ -951,8 +951,10 @@
 
     // .contract__title
     &__title {
+        display: inline-flex;
+        align-items: center;
         padding-left: .5rem;
-        margin-bottom: 1rem;
+       
         font-size: 1.125rem;
         border-left: 3px solid var(--primary-200);
     }
@@ -975,6 +977,20 @@
         .text{
             flex: 1;
         }
+    }
+
+    &__group {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        @include rwdw-max(767)  {
+            flex-direction: column;
+        }
+    }
+
+    .share{
+        margin-left: auto;
     }
 }
 .faq {

@@ -31,13 +31,13 @@
              {% if side_nav_type =='prod' or side_nav_type =='faqs' %}
                 {% for navItem in navItems -%}
                 <div class="side-nav__item">
-                    <a href="{{ link }}">{{ navItem }}</a>
+                    <a href="{{ link }}" title="{{ navItem }}">{{ navItem }}</a>
                 </div>
                 {% endfor -%}
             {% elif side_nav_type =='member'%}
                 {% macro side_nav_item( text, open, link  ) -%}
                 <div class="side-nav__item" data-selected="{{ open }}">
-                    <a href="{{ link }}">{{ text }}</a>
+                    <a href="{{ link }}" title="{{ text }}">{{ text }}</a>
                 </div>
                 {% endmacro -%}
                 {% if url =='member_download'%}
@@ -46,23 +46,23 @@
                   {{ side_nav_item( text=navItems[2].text , link=navItems[2].link , open='false' ) }}
                 {% elif url =='member_info'%}
                   {{ side_nav_item( text=navItems[0].text , link=navItems[0].link , open='false' ) }}
-                  {{ side_nav_item( text=navItems[1].text , link=navItems[1].link , open='true' ) }}
-                  {{ side_nav_item( text=navItems[2].text , link=navItems[2].link , open='false' ) }}
-                {% elif url =='member_order'%}
-                  {{ side_nav_item( text=navItems[0].text , link=navItems[0].link , open='false' ) }}
                   {{ side_nav_item( text=navItems[1].text , link=navItems[1].link , open='false' ) }}
                   {{ side_nav_item( text=navItems[2].text , link=navItems[2].link , open='true' ) }}
+                {% elif url =='member_order'%}
+                  {{ side_nav_item( text=navItems[0].text , link=navItems[0].link , open='false' ) }}
+                  {{ side_nav_item( text=navItems[1].text , link=navItems[1].link , open='true' ) }}
+                  {{ side_nav_item( text=navItems[2].text , link=navItems[2].link , open='false' ) }}
                 {% endif -%}
               {% elif side_nav_type == 'course' %}
                 {% for i in range( 1, 11) -%}
                   <div class="side-nav__item">
-                      <a href="{{ link }}">CLASS-【爭端談判學】{{ i }}</a>
+                      <a href="{{ link }}" title="CLASS-【爭端談判學】{{ i }}">CLASS-【爭端談判學】{{ i }}</a>
                   </div>
                 {% endfor -%}
               {% elif side_nav_type == 'contract' %}
                 {% for  i in range( 1, 11) -%}
                 <div class="side-nav__item">
-                    <a href="contract_list.html">{{i}}不動產投資合夥契約書</a>
+                    <a href="contract_list.html" title="{{i}}不動產投資合夥契約書">{{i}}不動產投資合夥契約書</a>
                 </div>
                 {% endfor -%}
               {% endif -%}

@@ -11,6 +11,10 @@ u,
     text-decoration: none;
 }
 
+.text-blue {
+    color: blue;
+}
+
 .btn {
     flex: 0 0 auto;
     display: inline-flex;
@@ -215,7 +219,7 @@ input[type="radio"] {
 }
 
 .anounce {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-top: 1rem;
 }
 
@@ -234,6 +238,28 @@ input[type="radio"] {
         }
     }
 }
+//.share
+ .share{
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+    
+    .text{
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+    
+    a {
+        margin: 0 .25rem;
+    }
+
+    i{
+        margin: 0 .5rem;
+        font-size: 1.5rem;
+    }
+}
+
 
 // .text {
 //     &-deco {
