@@ -67,6 +67,9 @@ $("input#triple").on("click", function (e) {
     $(".mm-info--triple").attr("data-open","true");
 });
 
+$("input#double").on("click", function (e) {
+    $(".mm-info--triple").attr("data-open","false");
+});
 var swiper = new Swiper(".new-download__swiper .swiper", {
     
     autoplay: {

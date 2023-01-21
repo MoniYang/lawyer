@@ -219,8 +219,10 @@ input[type="radio"] {
 }
 
 .anounce {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
     margin-top: 1rem;
+    font-size: 1.5rem;
 }
 
 .path {

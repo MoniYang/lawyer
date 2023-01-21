@@ -66,7 +66,7 @@
           
         </div>
     </div>
-    <div class="mm-info__content"  data-open="true">
+    <div class="mm-info__content"  data-open="false">
         <div class="mm-info__group">
             <div class="mm-info__title">訂購資訊</div>
             {{ mmbtn() }}
@@ -108,14 +108,15 @@
                     <label for="">統一編號</label>
                     <span class="text">33657825</span>
                 </div>
-                <div class="mm-info__item">
-                    <label for="">付款方式</label>
-                    <span class="text">信用卡 - 刷卡成功</span>
-                </div>
+                
             
             
                 
             </div>
+            <div class="mm-info__item">
+                    <label for="">付款方式</label>
+                    <span class="text">信用卡 - 刷卡成功</span>
+                </div>
             <div class="btn-group">
                 {{ btn( link='index.html',text='返回首頁', type='primary' ) }}
                 {{ btn( link='#',text='列印頁面', type='primary' ) }}

@@ -926,9 +926,8 @@
 
     flex: 1;
     display: flex;
-    flex-direction: column;
-    max-width: 980px;
-    margin: 0 auto;
+    // flex-direction: column;
+    
     @include rwdw-max(991) {
         flex: 0 0 auto;
         width: 100%;
@@ -936,9 +935,19 @@
 
     //.contract--info
     &--info {
+        flex: 1;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    &__side {
+        max-width: 300px;
+        margin-right: 1rem;
+
+        @include rwdw-max(991) {
+            display: none;
+        }
     }
 
     // .contract__content
