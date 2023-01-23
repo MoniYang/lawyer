@@ -121,30 +121,52 @@
                 }
                 &__btn {
                     position: relative;
-                    &::before {
-                        content:'';
-                        display: flex;
-                        height: 3px;
-                        background-color: var(--primary-100);
-                        position: absolute;
-                        width: 0%;
-                        bottom: 0;
-                        z-index: 1;
-                   
+                    @include rwdw-min(991) {
+                        &::before {
+                            content:'';
+                            display: flex;
+                            height: 3px;
+                            background-color: var(--primary-100);
+                            position: absolute;
+                            width: 0%;
+                            bottom: 0;
+                            z-index: 1;
+                       
+                    }
+                    
+                    }
+
+                    a {
+                        flex: 1;
                     }
  
                 }
                 &__item {
+                    
                     &:hover{
                         color: var(--primary-100);
                     }
                 }
                 &[data-open="true"] {
                     .dropdown__btn {
-                        &::before {
-                            animation: menu .2s 1; 
-                            width: 100%;
-                           
+                        @include rwdw-min(991){
+                            &::before {
+                                animation: menu .2s 1; 
+                                width: 100%;
+                            
+                            }
+                        }
+                        @include rwdw-max(991) {
+                            &:before {
+                                content:'';
+                                display: flex;
+                                height: 3px;
+                                background-color: var(--primary-100);
+                                position: absolute;
+                                width: 100%;
+                                bottom: 0;
+                                z-index: 1;
+                            }
                         }
                     }
                 }
