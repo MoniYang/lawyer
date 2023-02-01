@@ -2021,12 +2021,6 @@ input[type="radio"] {
   max-width: 980px;
 }
 
-.mm-info--cart .mm-info__check-list {
-  padding: 1rem .5rem;
-  margin-bottom: .5rem;
-  border-bottom: 1px solid var(--black-opacity-4);
-}
-
 .mm-info--golden .mm-info__panel {
   margin-top: 1rem;
 }
@@ -2245,6 +2239,17 @@ input[type="radio"] {
 .mm-info__check-list {
   display: flex;
   flex-direction: column;
+  padding: 1rem .5rem;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid var(--black-opacity-4);
+}
+
+.mm-info__check-list + .mm-info__group {
+  margin: 0;
+}
+
+.mm-info__check-list + .mm-info__group .mm-info__item {
+  padding: 0 .5rem .5rem;
 }
 
 .mm-info__check-list .text:before {
@@ -2335,6 +2340,7 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   margin: .5rem 0;
+  overflow: hidden;
 }
 
 .order__title {
@@ -2366,8 +2372,13 @@ input[type="radio"] {
 
 @media only screen and (max-width: 991px) {
   .order-status {
-    margin-left: calc( 60px + .25rem);
-    align-items: flex-start !important;
+    display: flex;
+    flex-direction: row;
+  }
+  .order-status::before {
+    content: attr(data-text);
+    min-width: 60px;
+    margin-right: .5rem;
   }
 }
 
@@ -2400,7 +2411,7 @@ input[type="radio"] {
     order: -1;
     margin-left: auto;
     position: absolute;
-    right: 0;
+    right: 1rem;
   }
 }
 
@@ -2426,21 +2437,41 @@ input[type="radio"] {
   flex: 0 0 auto;
 }
 
-.order .text-num {
-  min-width: 40px;
-  padding-right: .5rem;
+.order .text-order {
+  width: 125px;
+}
+
+.order .text-pay {
+  width: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 991px) {
+  .order .text-pay {
+    flex-direction: row;
+  }
+}
+
+.order .btn--delete, .order .text-num {
+  width: 40px;
 }
 
 .order .text-time {
-  min-width: 80px;
+  width: 80px;
 }
 
 .order-status {
   flex: 1 0 auto;
   display: flex;
-  align-items: center;
-  flex-direction: column;
   width: 250px;
+}
+
+@media only screen and (min-width: 992px) {
+  .order-status {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -2463,9 +2494,13 @@ input[type="radio"] {
 
 .order-text-group {
   display: flex;
-  align-items: center;
-  justify-content: baseline;
-  margin: .25rem 0;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 992px) {
+  .order-text-group {
+    align-items: center;
+  }
 }
 
 .order-text-group .btn {
@@ -2473,9 +2508,24 @@ input[type="radio"] {
   margin: 0 0 0 .5rem;
 }
 
-.order .text-time, .order .text-num {
+@media only screen and (max-width: 991px) {
+  .order-text-group .text {
+    text-align: left;
+  }
+}
+
+.order-input-group {
+  margin: .25rem 0;
+}
+
+.order [class*="text-"] {
   flex: 0 0 auto;
-  text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .order [class*="text-"] {
+    text-align: center;
+  }
 }
 
 .page-nav {

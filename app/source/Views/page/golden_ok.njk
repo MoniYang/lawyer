@@ -18,7 +18,7 @@
 {%- block content %}
 <div class="mm-info mm-info--register mm-info--golden-ok">
     <div class="page-title"><img src="{{img_url}}/page/page_title_golden.png" alt=""></div>
-    <div class="anounce">已完成訂單，請盡速轉帳(匯款)，商品將於對帳完成後開放下載</div>
+    <div class="anounce text-void"><i class="fa-solid fa-star"></i>已完成訂單，請盡速轉帳(匯款)，商品將於對帳完成後開放下載</div>
     <div class="cart">
         <div class="cart__content">
             <div class="cart__detail">
@@ -86,7 +86,10 @@
                 <label for="">統一編號</label>
                 <span class="text">33657825</span>
             </div>
-            <div class="mm-info__item">
+            
+
+        </div>
+        <div class="mm-info__item">
                 <label for="">付款方式</label>
                 <span class="text">ATM 轉帳-尚未轉帳</span>
 
@@ -99,8 +102,6 @@
                 </div>
 
             </div>
-
-        </div>
         <div class="btn-group">
             {{ btn( link='index.html',text='返回首頁', type='primary' ) }}
             {{ btn( link='#',text='列印頁面', type='primary' ) }}
