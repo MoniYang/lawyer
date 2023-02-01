@@ -11,6 +11,10 @@ u,
     text-decoration: none;
 }
 
+.text-blue {
+    color: blue;
+}
+
 .btn {
     flex: 0 0 auto;
     display: inline-flex;
@@ -86,6 +90,14 @@ u,
         &:hover {
             filter: brightness(1.1);
         }
+    }
+    &--payment {
+        font-size: 1.25rem;
+        padding: .375rem;
+        background-color: var(--grey-200);
+        border-radius: var(--border-radius);
+        color: var(--black);
+        text-shadow: var(--text-shadow);
     }
 }
 
@@ -178,8 +190,20 @@ input[type="radio"] {
 }
 
 .page-title {
+    display: flex;
+    align-items: center;
     margin-right: auto;
     margin-bottom: 1rem;
+
+    img + .text {
+        margin-left: .375rem;
+    }
+
+    .text{
+        color: var(--primary-500);
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
 }
 
 
@@ -195,8 +219,10 @@ input[type="radio"] {
 }
 
 .anounce {
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
     margin-top: 1rem;
+    font-size: 1.5rem;
 }
 
 .path {
@@ -214,6 +240,28 @@ input[type="radio"] {
         }
     }
 }
+//.share
+ .share{
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+    
+    .text{
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+    
+    a {
+        margin: 0 .25rem;
+    }
+
+    i{
+        margin: 0 .5rem;
+        font-size: 1.5rem;
+    }
+}
+
 
 // .text {
 //     &-deco {

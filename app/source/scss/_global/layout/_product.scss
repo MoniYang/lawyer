@@ -2,7 +2,9 @@
 //--------------------------
 
 .product{
+    flex: 0 0 auto;
     display: flex;
+    width: 100%;
     // align-items: flex-start;
     min-width: 0;
 
@@ -42,27 +44,7 @@
             }
         }
         
-        //.product__share
-        &__share{
-            display: flex;
-            flex-direction: column;
-            margin-top: .5rem;
-            
-            .text{
-                display: flex;
-                align-items: center;
-            }
-            
-            a {
-                margin: 0 .25rem;
-            }
-
-            i{
-                margin: 0 .5rem;
-                font-size: 1.5rem;
-            }
-        }
-
+       
 
         .mm-info{
             margin: 0;

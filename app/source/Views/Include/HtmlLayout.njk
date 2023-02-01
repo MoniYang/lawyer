@@ -48,14 +48,14 @@
                             </div>
                             <div class="header__nav-group">
                                 {{ dropdown ( btn_text="依用途分類",open="false", type="menu",href="product_list.html" )}}
-                                {{ dropdown ( btn_text="依產業分類", type="menu" )}}
-                                {{ dropdown ( btn_text="免費專區" , type="menu")}}
+                                {{ dropdown ( btn_text="依產業分類", type="menu", href="industry_list.html" )}}
+                                {{ dropdown ( btn_text="免費專區" , type="menu" , href="free_list.html" )}}
                             </div>
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-2.png');">
                             </div>
-                            {{ dropdown ( btn_text="各類書狀", accent='true', type="menu" )}}
+                            {{ dropdown ( btn_text="各類書狀", accent='true', type="menu" , href='linguee_list.html' )}}
                         </div>
                         <div class="header__nav-item">
                             <div class="header__top" style="background-image:url('{{img_url}}/menu/menu_top-3.png');">
@@ -84,31 +84,31 @@
                         </button>
                         <div class="dropdown-group">
                             <span class="dropdown-text">大律師合約系列</span>
-                            {{ dropdown ( btn_text="依用途分類", type="menu", open="false" )}}
+                            {{ dropdown ( btn_text="依用途分類", type="menu", open="false", href="product_list.html" )}}
                         </div>
                         <div class="dropdown-group">
                  
-                           {{ dropdown ( btn_text="依產業分類", type="menu" )}}
+                           {{ dropdown ( btn_text="依產業分類", type="menu", href="industry_list.html" )}}
                         </div>
                         <div class="dropdown-group">
                    
-                            {{ dropdown ( btn_text="免費專區", type="menu" )}}
+                            {{ dropdown ( btn_text="免費專區", type="menu", href="free_list.html" )}}
                         </div>  
                         <div class="dropdown-group">
                             <span class="dropdown-text">小律師書狀系列</span>
-                            {{ dropdown ( btn_text="各類書狀", type="menu" )}}
+                            {{ dropdown ( btn_text="各類書狀", type="menu", href='linguee_list.html' )}}
                         </div>
                         <div class="dropdown-group">
                             <span class="dropdown-text">CLASS</span>
-                            {{ dropdown (btn_text="企業訓練" , type="menu" )}}
+                            {{ dropdown (btn_text="企業訓練" , type="menu",href="course_info.html" )}}
                         </div>
                         <div class="dropdown-group">
                             <span class="dropdown-text">ADVISER</span>
-                            {{ dropdown ( btn_text="專家專欄" , type="menu" ,link='contract_list.html' )}}
+                            {{ dropdown ( btn_text="專家專欄" , type="menu" ,link='contract_list.html', drop ="false" )}}
                         </div>
                         <div class="dropdown-group">
                             <span class="dropdown-text">FAQs</span>
-                            {{ dropdown ( btn_text="常見問題", type="menu" )}}
+                            {{ dropdown ( btn_text="常見問題", type="menu", href="faqs.html", drop ="false" )}}
                         </div>
                         <div class="dropdown-group">
                             <span class="dropdown-text">MEMBER</span>

@@ -77,6 +77,10 @@
                 }
             }
 
+            .btn--delete {
+                padding-right: 0;
+            }  
+
             + .#{$this}__item {
           
             margin-top: .5rem;

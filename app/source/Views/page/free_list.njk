@@ -18,7 +18,7 @@
 {%- block content %}
  
    <div class="product product--list">
-        {{ side_nav(img_url=img_url , side_nav_title='prod', side_nav_type='prod', link='product_list.html')}}
+        {{ side_nav(img_url=img_url , side_nav_title='free', side_nav_type='prod', link='product_list.html')}}
 
         <div class="product__content">
             {{search()}}
@@ -34,7 +34,7 @@
             </div>
             <div class="product__list">
                {% for i in range(0, 8) -%} 
-                {{ item(img_url=img_url , href='product_info.html') }}
+                {{ item(img_url=img_url , href='free_info.html' , type='free') }}
               {% endfor -%}
             </div>
             {{ page_num() }}

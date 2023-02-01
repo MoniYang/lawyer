@@ -3,7 +3,7 @@
 
 <!-- 自訂 <title> 標題 -->
 {% set title_text = "軍師幫" %}
-
+{% set url = "member_info" %}
 
 <!-- 自訂站台 -->
 {# {% set missionItems = [
@@ -17,7 +17,8 @@
 <!-- 在 <body> 之內加入 -->
 {%- block content %}
     <div class="product product--list product--member product--order">
-        {{ side_nav(img_url=img_url , side_nav_title='member', side_nav_type='member')}}
+        {% call side_nav(img_url=img_url , side_nav_title='member', side_nav_type='member', modify='side-nav--member', url=url) %}
+        {% endcall%}
         <div class="mm-info mm-info--register">
         <div class="page-title"><img src="{{img_url}}/page/page_title_member-info.png" alt=""></div>
        
@@ -48,7 +49,7 @@
                 <input type="text" placeholder="">
             </div>
             <div class="mm-info__item">
-                <label for=""><u>*</u>發票郵寄地址</label>
+                <label for=""><u>*</u><u>*</u>發票郵寄地址</label>
                 <input type="text" placeholder="">
             </div>
            

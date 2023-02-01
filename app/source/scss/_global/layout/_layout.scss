@@ -926,7 +926,8 @@
 
     flex: 1;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    
     @include rwdw-max(991) {
         flex: 0 0 auto;
         width: 100%;
@@ -934,9 +935,19 @@
 
     //.contract--info
     &--info {
+        flex: 1;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    &__side {
+        max-width: 300px;
+        margin-right: 1rem;
+
+        @include rwdw-max(991) {
+            display: none;
+        }
     }
 
     // .contract__content
@@ -949,8 +960,10 @@
 
     // .contract__title
     &__title {
+        display: inline-flex;
+        align-items: center;
         padding-left: .5rem;
-        margin-bottom: 1rem;
+       
         font-size: 1.125rem;
         border-left: 3px solid var(--primary-200);
     }
@@ -973,6 +986,20 @@
         .text{
             flex: 1;
         }
+    }
+
+    &__group {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        @include rwdw-max(767)  {
+            flex-direction: column;
+        }
+    }
+
+    .share{
+        margin-left: auto;
     }
 }
 .faq {

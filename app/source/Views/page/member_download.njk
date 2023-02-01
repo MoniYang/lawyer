@@ -3,7 +3,7 @@
 
 <!-- 自訂 <title> 標題 -->
 {% set title_text = "軍師幫" %}
-
+{% set url = "member_download" %}
 
 <!-- 自訂站台 -->
 {# {% set missionItems = [
@@ -18,14 +18,15 @@
 {%- block content %}
  
    <div class="product product--list product--member">
-        {{ side_nav(img_url=img_url , side_nav_title='member', side_nav_type='member')}}
-
+        
+        {% call side_nav(img_url=img_url , side_nav_title='member', side_nav_type='member', modify='side-nav--member', url=url) %}
+        {% endcall%}
         <div class="product__content">
             <div class="product__header">
                 <div class="page-title"><img src="{{img_url}}/page/page_title_download.png" alt=""></div>
                 <div class="page-nav page-nav--member"> 
                     <div class="page-nav__item">
-                        <label for="">合約管理</label>
+                        <label for="">合約名稱</label>
                         <input type="text">
                     </div>
                     <div class="page-nav__item">
