@@ -8,15 +8,16 @@
     overflow-x: auto;
 
     @at-root .#{$this} {
+        //.order__list
         &__list {
             flex: 1;
             display: flex;
             flex-direction: column;
             margin: .5rem 0;
-           
-       
+            overflow: hidden;
         }
 
+        //.order__title
         &__title {
             flex: 0 0 auto;
             display: flex;
@@ -42,8 +43,14 @@
             padding: 0 .5rem; 
             text-align: center;
             @include rwdw-max(991) {
-                margin-left: calc( 60px + .25rem );
-                align-items: flex-start!important;
+                display: flex;
+                flex-direction: row;
+
+                &::before{
+                    content: attr(data-text);
+                    min-width: 60px;
+                    margin-right: .5rem;
+                }
             }
             input{
                 background-color: var(--black-opacity-6);
@@ -73,7 +80,7 @@
                     order: -1;
                     margin-left: auto;
                     position: absolute;
-                    right: 0;
+                    right: 1rem;
                 }
             }
 
@@ -87,6 +94,7 @@
             
            }
         }
+       
         [class*="text"]:not(.order-text-group , .text-void) {
             padding: .5rem;
          
@@ -102,22 +110,38 @@
 
         
         }
+        .text-order{
+            width: 125px;
+        }
+        .text-pay {
+            width: 80px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+            @include rwdw-max(991){
+                flex-direction: row;
+            }
+            
+        }
+        .btn--delete,
         .text-num {
-            min-width: 40px;
-            padding-right: .5rem;
+            width: 40px;
+         
         
         }
         .text-time {
-            min-width: 80px;
+            width: 80px;
            
         }
         &-status {
             flex:1 0 auto;
             display: flex;
-            align-items: center;
-            flex-direction: column;
             width: 250px;
 
+            @include rwdw-min(992) {
+                flex-direction: column;
+            }
             @include rwdw-max(991) {
                 text-align: left;
             }
@@ -132,27 +156,35 @@
                 color: green;
             }
         }
+
+        //.order-text-group
         &-text-group {
             display: flex;
-            align-items: center;
-            justify-content: baseline;
-            margin: .25rem 0;
+          
+            flex-direction: column;
+            @include rwdw-min(992) {    
+                align-items: center;
+            }
             .btn {
                 padding: 0rem;
                 margin: 0 0 0 .5rem;
             }
-        }
-        .text-time,
-        .text-num {
-            flex: 0 0 auto;
-            text-align: center;
+            @include rwdw-max(991){
+                .text {
+                    text-align: left;
+                }
+            }
         }
 
-        // [class*="text"] {
-        //     padding:.25rem .5rem;
-        //     + [class*="text"]  {
-        //         margin-left: .5rem;
-        //     } 
-        // }
+        &-input-group {
+            margin: .25rem 0;
+        }
+        [class*="text-"] {
+            flex: 0 0 auto;
+            @include rwdw-min(992){
+
+                text-align: center;
+            }
+        }
     }
 }

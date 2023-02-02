@@ -18,7 +18,7 @@
 {%- block content %}
 <div class="mm-info mm-info--register mm-info--golden-ok">
     <div class="page-title"><img src="{{img_url}}/page/page_title_golden.png" alt=""></div>
-    <div class="anounce">已完成訂單，請盡速轉帳(匯款)，商品將於對帳完成後開放下載</div>
+    <div class="anounce text-blue">本訂單已結帳完成，感謝您的購買!檔案可至【會員管理】-【檔案下載】下載</div>
     <div class="cart">
         <div class="cart__content">
             <div class="cart__detail">
@@ -44,7 +44,7 @@
         </div>
 
     </div>
-    <div class="mm-info__content"  data-open="true">
+    <div class="mm-info__content"  data-open="false">
         <div class="mm-info__group">
             <div class="mm-info__title">訂購資訊</div>
             {{ mmbtn() }}
@@ -86,21 +86,15 @@
                 <label for="">統一編號</label>
                 <span class="text">33657825</span>
             </div>
-            <div class="mm-info__item">
-                <label for="">付款方式</label>
-                <span class="text">ATM 轉帳-尚未轉帳</span>
-
-                <div class="mm-info__group mm-info__group--column">
-                    <span class="sub-title">轉帳(匯款)資訊</span>
-                    <span class="text">匯款銀行：華南銀行 中崙分行</span>
-                    <span class="text">銀行代碼：008</span>
-                    <span class="text">銀行帳號：22650-5096882</span>
-                    <span class="text">戶 名：柯里昂股份有限公司</span>
-                </div>
-
-            </div>
-
+            
+        
+        
+            
         </div>
+        <div class="mm-info__item">
+                <label for="">付款方式</label>
+                <span class="text">信用卡 - 刷卡成功</span>
+            </div>
         <div class="btn-group">
             {{ btn( link='index.html',text='返回首頁', type='primary' ) }}
             {{ btn( link='#',text='列印頁面', type='primary' ) }}
