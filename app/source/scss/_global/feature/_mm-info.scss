@@ -21,7 +21,10 @@
 
         &--golden {
             .#{$this}__panel{
-                margin-top: 1rem;
+                
+                +.#{$this}__content {
+                    margin: 1rem 0;
+                }
             }
             .#{$this}__group {
                 flex-direction: row;      

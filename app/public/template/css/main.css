@@ -1470,7 +1470,6 @@ input[type="radio"] {
 .anounce {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
   font-size: 1.5rem;
 }
 
@@ -2021,8 +2020,8 @@ input[type="radio"] {
   max-width: 980px;
 }
 
-.mm-info--golden .mm-info__panel {
-  margin-top: 1rem;
+.mm-info--golden .mm-info__panel + .mm-info__content {
+  margin: 1rem 0;
 }
 
 .mm-info--golden .mm-info__group {
