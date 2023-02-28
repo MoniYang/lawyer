@@ -29,7 +29,9 @@
             @include rwdw-max(991) {
                 display: none;
             }
-
+            .order-status{
+                padding: .5rem;
+            }
             .order-status,
             [class*="text"] {
             
@@ -123,7 +125,7 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-
+          
             @include rwdw-max(991){
                 flex-direction: row;
                 text-align: left;

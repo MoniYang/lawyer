@@ -21,10 +21,10 @@
     <div class="search-result__announce">搜尋關鍵字「其」共找到39項結果</div>
         <div class="search-result__content">
         {%- for i in range(1, 6)  %}
-        <div class="search-result__item">
+        <a class="search-result__item" href="#">
             <i class="fa-solid fa-arrow-right"></i>
             <span class="text">是否需要先加入會員才可以訂購網站上的商品？</span>
-        </div>
+        </a>
         {% endfor -%}
         </div>
         {{ page_num() }}

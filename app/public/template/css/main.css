@@ -2409,6 +2409,10 @@ input[type="radio"] {
   }
 }
 
+.order__title .order-status {
+  padding: .5rem;
+}
+
 .order__title .order-status, .order__title [class*="text"] {
   border-bottom: 2px solid var(--primary-500);
 }
