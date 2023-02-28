@@ -1612,8 +1612,12 @@ input[type="radio"] {
   opacity: .5;
 }
 
-.dropdown--order {
-  position: relative;
+@media only screen and (min-width: 992px) {
+  .dropdown--order {
+    flex: 0 0 auto;
+    width: 150px;
+    position: relative;
+  }
 }
 
 .dropdown--order .dropdown__content {
@@ -2288,8 +2292,15 @@ input[type="radio"] {
   display: flex;
   padding: .5rem 0;
   font-size: 1rem;
+  text-align: center;
   color: var(--primary-500);
   border-bottom: 2px solid var(--primary-500);
+}
+
+@media only screen and (max-width: 991px) {
+  .download__title {
+    display: none;
+  }
 }
 
 .download__title .text:last-child {
@@ -2300,15 +2311,31 @@ input[type="radio"] {
   flex: 1;
   display: flex;
   padding: .5rem 0;
+  text-align: center;
   border-bottom: 1px solid var(--black-opacity-6);
+}
+
+@media only screen and (max-width: 991px) {
+  .download__item {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 }
 
 .download__item + .download__item {
   margin-top: .5rem;
 }
 
-.download .text:nth-child(2) {
+.download .text:nth-child(2), .download .text:nth-child(3) {
   flex: 1;
+}
+
+@media only screen and (max-width: 991px) {
+  .download .text:nth-child(2), .download .text:nth-child(3) {
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .download .text-num {
@@ -2316,14 +2343,39 @@ input[type="radio"] {
   margin-right: .5rem;
 }
 
+@media only screen and (max-width: 991px) {
+  .download .text-num {
+    order: -2;
+  }
+}
+
 .download .text-time {
   min-width: 100px;
-  margin: 0 .5rem;
 }
 
 .download .text-time, .download .text-num {
   flex: 0 0 auto;
-  text-align: center;
+}
+
+@media only screen and (max-width: 991px) {
+  .download .text-time, .download .text-num {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .download [class*="text"]::before {
+    content: attr(data-text);
+    min-width: 60px;
+    margin-right: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .download .btn--delete {
+    order: -1;
+    margin-left: auto;
+  }
 }
 
 .order {
@@ -2379,6 +2431,7 @@ input[type="radio"] {
     content: attr(data-text);
     min-width: 60px;
     margin-right: .5rem;
+    color: var(--body-text);
   }
 }
 
@@ -2427,6 +2480,12 @@ input[type="radio"] {
   padding: .5rem;
 }
 
+@media only screen and (max-width: 991px) {
+  .order [class*="text"]:not(.order-text-group, .text-void) {
+    padding: .25rem .5rem;
+  }
+}
+
 .order .text {
   flex: 1;
   text-align: center;
@@ -2451,6 +2510,7 @@ input[type="radio"] {
 @media only screen and (max-width: 991px) {
   .order .text-pay {
     flex-direction: row;
+    text-align: left;
   }
 }
 
@@ -2477,6 +2537,7 @@ input[type="radio"] {
 @media only screen and (max-width: 991px) {
   .order-status {
     text-align: left;
+    padding: .25rem .5rem;
   }
 }
 
@@ -2550,9 +2611,23 @@ input[type="radio"] {
   margin-left: .5rem;
 }
 
+@media only screen and (min-width: 992px) {
+  .page-nav--order .page-nav__item {
+    flex: 0 0 auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .page-nav--order .page-nav__item input {
+    flex: 0 0 auto;
+    width: 120px;
+  }
+}
+
 @media only screen and (max-width: 991px) {
   .page-nav--order {
     flex-wrap: wrap;
+    width: 100%;
   }
   .page-nav--order .page-nav__item:first-child {
     flex: 0 0 auto;
@@ -2791,6 +2866,10 @@ input[type="radio"] {
   background-color: var(--black-opacity-6);
 }
 
+.cart__detail + .mm-info__panel {
+  margin-top: 1rem;
+}
+
 .cart .cart-date,
 .cart .cart-num {
   font-size: .875rem;
@@ -2992,6 +3071,44 @@ input[type="radio"] {
   .search input {
     font-size: .875rem;
   }
+}
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-result__announce {
+  flex: 1;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  background-color: var(--grey-100);
+}
+
+.search-result__content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.search-result__item {
+  flex: 1;
+  padding: .5rem;
+  transition: .3s ease;
+}
+
+.search-result__item:hover {
+  color: var(--primary-500);
+}
+
+.search-result__item + .search-result__item {
+  padding-top: 1rem;
+  border-top: 1px solid var(--black-opacity-5);
+}
+
+.search-result__item i + .text {
+  margin-left: .5rem;
 }
 
 .video {
@@ -4176,6 +4293,12 @@ input[type="radio"] {
 
 .product--order {
   width: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+  .product--order .dropdown--order {
+    flex: 1;
+  }
 }
 
 .product-swiper {

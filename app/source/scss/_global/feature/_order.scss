@@ -50,6 +50,7 @@
                     content: attr(data-text);
                     min-width: 60px;
                     margin-right: .5rem;
+                    color: var(--body-text);
                 }
             }
             input{
@@ -97,6 +98,10 @@
        
         [class*="text"]:not(.order-text-group , .text-void) {
             padding: .5rem;
+
+            @include rwdw-max(991) {
+                padding: .25rem .5rem;
+            }
          
         }
         .text{
@@ -121,6 +126,7 @@
 
             @include rwdw-max(991){
                 flex-direction: row;
+                text-align: left;
             }
             
         }
@@ -144,6 +150,7 @@
             }
             @include rwdw-max(991) {
                 text-align: left;
+                padding: .25rem .5rem;
             }
 
             .text-void{

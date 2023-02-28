@@ -188,11 +188,15 @@
             }
         }
     }
-
+    //.cart__detail
     &__detail{
         display: flex;
         padding: 0.25rem;
         background-color: var(--black-opacity-6);
+        
+        + .mm-info__panel {
+            margin-top: 1rem;
+        }
     }
 
     .cart-date,

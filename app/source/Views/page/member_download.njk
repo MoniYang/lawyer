@@ -42,6 +42,7 @@
                  <div class="download__title">
                     <span class="text-num">編號</span>
                     <span class="text">合約名稱</span>
+                    <span class="text">檔案名稱</span>
                     <span class="text-time">下載截止日期</span>
                     <span class="text">下載</span>
                 </div>
@@ -49,9 +50,10 @@
                 {% for i in range(1, 11) -%} 
 
                     <div class="download__item">
-                        <span class="text-num">{{ i }}</span>
-                        <span class="text">不動產投資合夥契約書</span>
-                        <span class="text-time">2023-2-18</span>
+                        <span class="text-num" >{{ i }}</span>
+                        <span class="text" data-text="合約名稱">不動產投資合夥契約書</span>
+                        <span class="text" data-text="檔案名稱">不動產投資合夥契約書</span>
+                        <span class="text-time" data-text="下載截止日期">2023-2-18</span>
                         {{ btn( link='#',text='下載', type='delete' ) }}
                     </div>
                 {% endfor -%}

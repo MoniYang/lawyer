@@ -48,6 +48,7 @@
                     <span class="text-num">編號</span>
                     <span class="text-pay">來源<br>付款方式</span>
                     <div class="order-status">繳款情形</div>
+                    <div class="order-status">服務區間</div>
                     <span class="text-order">訂單編號</span>
                     <span class="text-time">訂購日期</span>
                     <span class="text-num">進入</span>
@@ -57,8 +58,9 @@
 
                     <div class="order__item">
                         <span class="text-num" data-text="">{{ i }}</span>
-                        <span class="text-pay" data-text="付款方式"><span>會員</span><span>線上刷卡</span></span>
+                        <span class="text-pay" data-text="付款方式">會員<br>線上刷卡</span>
                         <div class="order-status order-status--sucess" data-text="繳款情形">付款成功</div>
+                        <div class="order-status " data-text="服務區間">2023-02-25 ~202402-24</div>
                         <span class="text-order" data-text="訂單編號">QT2022020000{{i}}</span>
                         <span class="text-time" data-text="訂購日期">2023-2-18</span>
                         {{ btn( link='member_order_info.html',text='進入', type='delete' ) }}
@@ -66,11 +68,9 @@
                      <div class="order__item">
                         <span class="text-num" data-text="">{{ i }}</span>
                         <span class="text-pay" data-text="付款方式">
-                            <span>購買</span>
-                            <span>ATM轉帳</span></span>
-                            <div class="order-status" data-text="繳款情形">
-                           
-                            
+                            購買<br>ATM 轉帳
+                        </span>
+                        <div class="order-status" data-text="繳款情形">
                             <div class="order-text-group">
                                  <span class="text-void">等待轉帳(匯款)</span>
                                  <div class="order-input-group">
@@ -80,6 +80,7 @@
                             </div>
                             
                         </div>
+                        <div class="order-status " data-text="服務區間">2023-02-25 ~202402-24</div>
                         <span class="text-order" data-text="訂單編號">QT2022020000{{i}}</span>
                         <span class="text-time" data-text="訂購日期">2023-2-18</span>
                         
@@ -88,10 +89,10 @@
                     <div class="order__item">
                         <span class="text-num">{{ i }}</span>
                         <span class="text-pay" data-text="付款方式">
-                            <span>會員</span>
-                            <span>線上刷卡</span>
+                            會員<br>線上刷卡
                         </span>
                         <div class="order-status order-status--sucess" data-text="繳款情形">對帳成功<br>45892</div>
+                        <div class="order-status " data-text="服務區間">2023-02-25 ~202402-24</div>
                         <span class="text-order" data-text="訂單編號">QT2022020000{{i}}</span>
                         <span class="text-time" data-text="訂購日期">2023-2-18</span>
                         {{ btn( link='member_order_info.html',text='進入', type='delete' ) }}
@@ -99,18 +100,19 @@
                     <div class="order__item">
                         <span class="text-num">{{ i }}</span>
                         <span class="text-pay" data-text="付款方式">
-                            <span>購買</span>
-                            <span>ATM 轉帳</span>
+                            購買<br>ATM 轉帳
                         </span>
                         <div class="order-status order-status--sucess" data-text="繳款情形">對帳成功<br>45892</div>
+                        <div class="order-status " data-text="服務區間">2023-02-25 ~202402-24</div>
                         <span class="text-order" data-text="訂單編號">QT2022020000{{i}}</span>
                         <span class="text-time" data-text="訂購日期">2023-2-18</span>
                         {{ btn( link='member_order_info.html',text='進入', type='delete' ) }}
                     </div>
                     <div class="order__item">
                         <span class="text-num">{{ i }}</span>
-                        <span class="text-pay" data-text="付款方式"><span>購買</span><span>ATM 轉帳</span></span>
+                        <span class="text-pay" data-text="付款方式">購買<br>ATM 轉帳</span>
                         <div class="order-status order-status--waiting">等候對帳<br>45892</div>
+                        <div class="order-status " data-text="服務區間">2023-02-25 ~202402-24</div>
                         <span class="text-order" data-text="訂單編號">QT2022020000{{i}}</span>
                         <span class="text-time" data-text="訂購日期">2023-2-18</span>
                         {{ btn( link='member_order_info.html',text='進入', type='delete' ) }}
