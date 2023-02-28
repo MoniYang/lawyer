@@ -160,6 +160,13 @@
 
     &--order{
         width: 100%;
+
+        .dropdown--order {
+
+            @include rwdw-max(991) {
+                flex: 1;
+            }
+        }
     }
     
     //.product-swiper

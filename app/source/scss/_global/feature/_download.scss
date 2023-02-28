@@ -14,9 +14,14 @@
             display: flex;
             padding: .5rem 0;
             font-size: 1rem;
+            text-align: center;
             color: var(--primary-500);
             border-bottom: 2px solid var(--primary-500);
            
+            @include rwdw-max(991) {
+                display: none;
+            }
+
             .text:last-child{
                 padding: 0 .5rem;
             }
@@ -26,39 +31,70 @@
             flex: 1;
             display: flex;
             padding: .5rem 0;
+            text-align: center;
             border-bottom: 1px solid var(--black-opacity-6);
+
+            @include rwdw-max(991) {
+                flex-wrap: wrap;
+                align-items: flex-start;
+            }
+
            + .#{$this}__item {
           
             margin-top: .5rem;
            }
         }
         .text{
-            &:nth-child(2) {
+            &:nth-child(2),
+            &:nth-child(3) {
                 flex: 1;
-            }
 
+                @include rwdw-max(991) {
+                    flex: 0 0 auto;
+                    width: 100%;
+                    text-align: left;
+                }
+
+            }
+            
         
         }
         .text-num {
             min-width: 40px;
             margin-right: .5rem;
-        
+            @include rwdw-max(991) {
+                order: -2;
+            }
         }
         .text-time {
             min-width: 100px;
-            margin: 0 .5rem;
+          
         }
         .text-time,
         .text-num {
             flex: 0 0 auto;
-            text-align: center;
+            @include rwdw-max(991) {
+                text-align:left;
+            }
+            
         }
 
-        // [class*="text"] {
-        //     padding:.25rem .5rem;
-        //     + [class*="text"]  {
-        //         margin-left: .5rem;
-        //     } 
-        // }
+        [class*="text"] {
+            @include rwdw-max(991) {
+                &::before {
+                    content: attr(data-text);
+                    min-width: 60px;
+                    margin-right: 0.5rem;
+                }
+            }
+            
+        }
+
+        .btn--delete {
+            @include rwdw-max(991) {
+                order: -1;
+                margin-left: auto;
+            }
+        }
     }
 }

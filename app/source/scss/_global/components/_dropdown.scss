@@ -108,7 +108,13 @@
 
     @at-root .#{$this} {
         &--order {
-            position: relative;
+           
+            @include rwdw-min(992) {
+                flex: 0 0 auto;
+                width: 150px;
+                position: relative;
+            }
+          
 
             .#{$this}__content{
                 top: 0px;

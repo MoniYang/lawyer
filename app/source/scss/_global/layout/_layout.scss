@@ -189,6 +189,47 @@
             font-size: .875rem;
         }
     }
+    //.search-result
+    &-result {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        //.search-result__announce
+        &__announce {
+            flex:1;
+            padding: .5rem;
+            margin-bottom: 1rem;
+            background-color: var(--grey-100);
+        }
+         //.search-result__content
+        &__content{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+
+         //.search-result__item
+        &__item {
+            flex: 1;
+            padding: .5rem; 
+            transition: .3s ease;
+            
+            &:hover{
+                color: var(--primary-500);
+            }
+
+            + .search-result__item{
+                padding-top: 1rem;
+                border-top: 1px solid var(--black-opacity-5);
+            }
+
+            i + .text {
+                margin-left: .5rem;
+            }
+        }
+
+    }
    
 }
 
