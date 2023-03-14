@@ -1849,7 +1849,7 @@ input[type="radio"] {
 }
 
 .promotion--prod .promotion-item {
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   width: calc( 25% - 1rem);
 }
 
@@ -4249,7 +4249,7 @@ input[type="radio"] {
 }
 
 .product .search {
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   background-color: transparent;
   padding: 0;
   margin-bottom: 1rem;

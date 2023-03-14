@@ -59,7 +59,7 @@
             }
 
             .#{$this}-item {    
-                flex: 1 0 auto;
+                flex: 0 0 auto;
                 width: calc( 25% - 1rem);
                 & + .#{$this}-item  {
                     margin-left: 1rem;
